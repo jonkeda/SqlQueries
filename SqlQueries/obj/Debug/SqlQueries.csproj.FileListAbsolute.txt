@@ -1,0 +1,6 @@
+C:\Sources\SqlQueries\SqlQueries\obj\Debug\SqlQueries.csproj.CoreCompileInputs.cache
+C:\Sources\SqlQueries\SqlQueries\bin\Debug\SqlQueries.dll
+C:\Sources\SqlQueries\SqlQueries\bin\Debug\SqlQueries.pdb
+C:\Sources\SqlQueries\SqlQueries\obj\Debug\SqlQueries.dll
+C:\Sources\SqlQueries\SqlQueries\obj\Debug\SqlQueries.pdb
+C:\Sources\SqlQueries\SqlQueries\obj\Debug\SqlQueries.csprojResolveAssemblyReference.cache
