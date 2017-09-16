@@ -75,5 +75,8 @@
     <Compile Include="Parts\Table.cs" />
     <Compile Include="Truncate.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlQueries.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
