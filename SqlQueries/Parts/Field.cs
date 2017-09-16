@@ -26,7 +26,7 @@ namespace SqlQueries.Parts
         public string FieldName { get; private set; }
         public string Alias { get; private set; }
 
-        internal static Regex _parse = new Regex(@"(?:\s*\[?(\w*)\]?\s*[.])?\s*\[?(\w+|\*)\]?(?:\s*(?:AS)\s*)?\[?(\w*)\]?", 
+        internal static Regex _parse = new Regex(@"\s*(?:\[?(\w*)\]?\s*[.])?\s*\[?(\w+|[*])\]?\s*(?:AS)?\s*\[?(\w*)\]?", 
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private void Parse()
         {
