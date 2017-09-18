@@ -3,7 +3,7 @@ using SqlQueries.Statements;
 
 namespace SqlQueries
 {
-    public class Select : QueryBuilder, ITable, ITop, IOrderBy, IColumns, IGroupBy
+    public class Select : QueryBuilder, ITable, ITop, IOrderBy, IColumns, IGroupBy, IWhere
     {
         public Select()
         {
@@ -29,5 +29,7 @@ namespace SqlQueries
         public OrderByCollection OrderBy { get; } = new OrderByCollection();
 
         public GroupByCollection GroupBy { get; } = new GroupByCollection();
+
+        public WhereCollection Where { get; } = new WhereCollection();
     }
 }

@@ -1,4 +1,3 @@
-using System.Text;
 using SqlQueries.Parts;
 
 namespace SqlQueries.Statements
@@ -18,16 +17,43 @@ namespace SqlQueries.Statements
 
         protected abstract string DoCreateSql(T builder);
 
+        protected abstract void Table(SqlBuilder sb, Table table);
 
-        protected abstract void Table(StringBuilder sb, Table table);
+        protected abstract void Top(SqlBuilder sb, Top top);
 
-        protected abstract void Top(StringBuilder sb, Top top);
+        protected abstract void Columns(SqlBuilder sb, ColumnCollection columns);
 
-        protected abstract void Columns(StringBuilder sb, ColumnCollection columns);
+        protected abstract void OrderBy(SqlBuilder sb, OrderByCollection orderby);
 
-        protected abstract void OrderBy(StringBuilder sb, OrderByCollection orderby);
+        protected abstract void Field(SqlBuilder sb, Field field);
 
-        protected abstract void Field(StringBuilder sb, Field field);
-        protected abstract void GroupBy(StringBuilder sb, GroupByCollection groupBy);
+        protected abstract void GroupBy(SqlBuilder sb, GroupByCollection groupBy);
+
+        protected void Operator(SqlBuilder sb, SqlOperator sqlOperator)
+        {
+            switch (sqlOperator)
+            {
+                case SqlOperator.Equal:
+                    sb.Append(" =");
+                    break;
+                case SqlOperator.NotEqual:
+                    sb.Append(" <>");
+                    break;
+                case SqlOperator.Greater:
+                    sb.Append(" >");
+                    break;
+                case SqlOperator.GreaterOrEqual:
+                    sb.Append(" >=");
+                    break;
+                case SqlOperator.Less:
+                    sb.Append(" <");
+                    break;
+                case SqlOperator.LessOrEqual:
+                    sb.Append(" <=");
+                    break;
+            }
+        }
+
+        protected abstract void Where(SqlBuilder sb, WhereCollection @where);
     }
 }

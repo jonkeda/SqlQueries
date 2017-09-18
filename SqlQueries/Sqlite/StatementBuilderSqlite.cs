@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using SqlQueries.Parts;
 using SqlQueries.Statements;
 
@@ -8,7 +7,7 @@ namespace SqlQueries.Sqlite
     public abstract class StatementBuilderSqlite<T> : StatementBuilder<T>
         where T : QueryBuilder
     {
-        protected override void Top(StringBuilder sb, Top top)
+        protected override void Top(SqlBuilder sb, Top top)
         {
             throw new NotImplementedException();
             //if (top.TopCount > 0)
@@ -17,7 +16,7 @@ namespace SqlQueries.Sqlite
             //}
         }
 
-        protected override void Table(StringBuilder sb, Table table)
+        protected override void Table(SqlBuilder sb, Table table)
         {
             sb.Append(" ");
             sb.Append("[");
@@ -25,25 +24,29 @@ namespace SqlQueries.Sqlite
             sb.Append("]");
         }
 
-        protected override void Field(StringBuilder sb, Field field)
+        protected override void Field(SqlBuilder sb, Field field)
         {
             throw new NotImplementedException();
         }
 
-        protected override void Columns(StringBuilder sb, ColumnCollection top)
+        protected override void Columns(SqlBuilder sb, ColumnCollection top)
         {
             throw new NotImplementedException();
         }
 
-        protected override void OrderBy(StringBuilder sb, OrderByCollection top)
+        protected override void OrderBy(SqlBuilder sb, OrderByCollection top)
         {
             throw new NotImplementedException();
         }
 
-        protected override void GroupBy(StringBuilder sb, GroupByCollection top)
+        protected override void GroupBy(SqlBuilder sb, GroupByCollection top)
         {
             throw new NotImplementedException();
         }
 
+        protected override void Where(SqlBuilder sb, WhereCollection where)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

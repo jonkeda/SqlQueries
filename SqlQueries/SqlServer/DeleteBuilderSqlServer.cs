@@ -1,4 +1,4 @@
-using System.Text;
+using SqlQueries.Statements;
 
 namespace SqlQueries.SqlServer
 {
@@ -6,7 +6,7 @@ namespace SqlQueries.SqlServer
     {
         protected override string DoCreateSql(Delete builder)
         {
-            StringBuilder sb = new StringBuilder();
+            SqlBuilder sb = new SqlBuilder();
             sb.Append("DELETE");
             Top(sb, builder.Top);
             sb.Append(" FROM");

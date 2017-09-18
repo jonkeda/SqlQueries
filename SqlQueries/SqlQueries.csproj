@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parts\IWhere.cs" />
+    <Compile Include="Parts\WhereCollection.cs" />
+    <Compile Include="SqlOperator.cs" />
+    <Compile Include="Parts\Where.cs" />
     <Compile Include="Parts\ColumnCollection.cs" />
     <Compile Include="Parts\ColumnField.cs" />
     <Compile Include="Parts\Field.cs" />
@@ -55,6 +59,8 @@
     <Compile Include="Parts\GroupByField.cs" />
     <Compile Include="Parts\OrderByField.cs" />
     <Compile Include="Parts\Top.cs" />
+    <Compile Include="Parts\WhereField.cs" />
+    <Compile Include="Parts\WhereValue.cs" />
     <Compile Include="Select.cs" />
     <Compile Include="SqlServer\SelectBuilderSqlServer.cs" />
     <Compile Include="Statements\IQueryBuilder.cs" />
@@ -62,6 +68,7 @@
     <Compile Include="Sqlite\StatementBuilderSqlite.cs" />
     <Compile Include="SqlServer\StatementBuilderSqlServer.cs" />
     <Compile Include="Statements\QueryException.cs" />
+    <Compile Include="Statements\SqlBuilder.cs" />
     <Compile Include="Statements\StatementBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statements\QueryBuilder.cs" />
@@ -73,7 +80,7 @@
     <Compile Include="SqlServer\DeleteBuilderSqlServer.cs" />
     <Compile Include="SqlServer\QueryBuildersSqlServer.cs" />
     <Compile Include="SqlServer\TruncateBuilderSqlServer.cs" />
-    <Compile Include="Statements\StatementBuilderCollection.cs" />
+    <Compile Include="Statements\StatementBuildersCollection.cs" />
     <Compile Include="Statements\StatementBuilders.cs" />
     <Compile Include="Parts\Table.cs" />
     <Compile Include="Truncate.cs" />

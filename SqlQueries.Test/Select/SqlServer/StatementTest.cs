@@ -214,5 +214,42 @@ namespace SqlQueries.Test.Select.SqlServer
         }
 
         #endregion
+
+
+        #region Where
+
+        private const string WhereExpected = "SELECT * FROM [DimEmployee] WHERE [LastName] = @p1";
+
+        [TestMethod]
+        public void ConstructorWhere()
+        {
+            string statement = new SqlQueries.Select("DimEmployee").Where("LastName", "Daan").ToString();
+
+            Assert.AreEqual(WhereExpected, statement);
+        }
+
+        [TestMethod]
+        public void PropertiesWhere()
+        {
+            SqlQueries.Select select = new SqlQueries.Select
+            {
+                Table = "DimEmployee"
+            };
+            select.Where.Add(new WhereValue("LastName", "Daan"));
+
+            string statement = select.ToString();
+
+            Assert.AreEqual(WhereExpected, statement);
+        }
+
+        [TestMethod]
+        public void FluentWhere()
+        {
+            string statement = new SqlQueries.Select().Table("DimEmployee").Where("LastName", "Daan").ToString();
+
+            Assert.AreEqual(WhereExpected, statement);
+        }
+
+        #endregion
     }
 }

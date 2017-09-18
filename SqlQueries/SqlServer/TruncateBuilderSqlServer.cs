@@ -1,4 +1,4 @@
-using System.Text;
+using SqlQueries.Statements;
 
 namespace SqlQueries.SqlServer
 {
@@ -6,7 +6,7 @@ namespace SqlQueries.SqlServer
     {
         protected override string DoCreateSql(Truncate builder)
         {
-            StringBuilder sb = new StringBuilder();
+            SqlBuilder sb = new SqlBuilder();
             sb.Append("TRUNCATE TABLE");
             Table(sb, builder.Table);
             return sb.ToString();

@@ -54,6 +54,37 @@ namespace SqlQueries
 
         #endregion
 
+        #region Where
+
+        public static T Where<T>(this T query, Field field, SqlOperator sqlOperator, object value)
+            where T : IWhere
+        {
+            query.Where.Add(new WhereValue(field, sqlOperator, value));
+            return query;
+        }
+
+        public static T Where<T>(this T query, Field field, object value)
+            where T : IWhere
+        {
+            return query.Where(field, SqlOperator.Equal, value);
+        }
+
+        public static T WhereField<T>(this T query, Field field, SqlOperator sqlOperator, Field toField)
+            where T : IWhere
+        {
+            query.Where.Add(new WhereField(field, sqlOperator, toField));
+            return query;
+        }
+
+        public static T WhereField<T>(this T query, Field field, Field toField)
+            where T : IWhere
+        {
+            return query.WhereField(field, SqlOperator.Equal, toField);
+        }
+
+
+        #endregion
+
         #region Columns
 
         public static T Column<T>(this T query, Field field)

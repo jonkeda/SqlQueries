@@ -1,4 +1,4 @@
-using System.Text;
+using SqlQueries.Statements;
 
 namespace SqlQueries.Sqlite
 {
@@ -6,7 +6,7 @@ namespace SqlQueries.Sqlite
     {
         protected override string DoCreateSql(Delete builder)
         {
-            StringBuilder sb = new StringBuilder();
+            SqlBuilder sb = new SqlBuilder();
             sb.Append("DELETE");
             sb.Append(" FROM");
             Table(sb, builder.Table);
