@@ -43,6 +43,17 @@ namespace SqlQueries
 
         #endregion
 
+        #region GroupBy
+
+        public static T GroupBy<T>(this T query, Field field)
+            where T : IGroupBy
+        {
+            query.GroupBy.Add(new GroupByField(field));
+            return query;
+        }
+
+        #endregion
+
         #region Columns
 
         public static T Column<T>(this T query, Field field)

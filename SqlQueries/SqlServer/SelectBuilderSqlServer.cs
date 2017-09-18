@@ -14,6 +14,7 @@ namespace SqlQueries.SqlServer
             sb.Append(" FROM");
             Table(sb, builder.Table);
             OrderBy(sb, builder.OrderBy);
+            GroupBy(sb, builder.GroupBy);
             return sb.ToString();
         }
     }

@@ -39,5 +39,11 @@ namespace SqlQueries.Sqlite
         {
             throw new NotImplementedException();
         }
+
+        protected override void GroupBy(StringBuilder sb, GroupByCollection top)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

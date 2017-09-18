@@ -45,11 +45,14 @@
     <Compile Include="Parts\Field.cs" />
     <Compile Include="Parts\FieldCollection.cs" />
     <Compile Include="Parts\IColumns.cs" />
+    <Compile Include="Parts\IGroupBy.cs" />
     <Compile Include="Parts\IOrderBy.cs" />
     <Compile Include="Parts\ITop.cs" />
     <Compile Include="PartExentions.cs" />
     <Compile Include="Delete.cs" />
+    <Compile Include="Parts\GroupByCollection.cs" />
     <Compile Include="Parts\OrderByCollection.cs" />
+    <Compile Include="Parts\GroupByField.cs" />
     <Compile Include="Parts\OrderByField.cs" />
     <Compile Include="Parts\Top.cs" />
     <Compile Include="Select.cs" />

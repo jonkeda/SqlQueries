@@ -105,7 +105,7 @@ namespace SqlQueries.Test.Select.SqlServer
 
         #endregion
 
-        #region Column Star
+        #region Columns
 
         private const string ColumnsExpected = "SELECT [b], [a].[b], [a].[b] AS [c], [b] AS [c] FROM [DimEmployee] AS [e] ORDER BY [LastName]";
 
@@ -175,6 +175,42 @@ namespace SqlQueries.Test.Select.SqlServer
             string statement = new SqlQueries.Select().Table("DimEmployee").OrderBy("LastName").ToString();
 
             Assert.AreEqual(OrderByExpected, statement);
+        }
+
+        #endregion
+
+        #region GroupBy
+
+        private const string GroupByExpected = "SELECT * FROM [DimEmployee] GROUP BY [LastName]";
+
+        [TestMethod]
+        public void ConstructorGroupBy()
+        {
+            string statement = new SqlQueries.Select("DimEmployee").GroupBy("LastName").ToString();
+
+            Assert.AreEqual(GroupByExpected, statement);
+        }
+
+        [TestMethod]
+        public void PropertiesGroupBy()
+        {
+            SqlQueries.Select select = new SqlQueries.Select
+            {
+                Table = "DimEmployee"
+            };
+            select.GroupBy.Add(new GroupByField("LastName"));
+
+            string statement = select.ToString();
+
+            Assert.AreEqual(GroupByExpected, statement);
+        }
+
+        [TestMethod]
+        public void FluentGroupBy()
+        {
+            string statement = new SqlQueries.Select().Table("DimEmployee").GroupBy("LastName").ToString();
+
+            Assert.AreEqual(GroupByExpected, statement);
         }
 
         #endregion

@@ -28,5 +28,6 @@ namespace SqlQueries.Statements
         protected abstract void OrderBy(StringBuilder sb, OrderByCollection orderby);
 
         protected abstract void Field(StringBuilder sb, Field field);
+        protected abstract void GroupBy(StringBuilder sb, GroupByCollection groupBy);
     }
 }

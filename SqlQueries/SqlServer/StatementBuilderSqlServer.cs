@@ -117,5 +117,23 @@ namespace SqlQueries.SqlServer
             }
         }
 
+        protected override void GroupBy(StringBuilder sb, GroupByCollection groupBy)
+        {
+            bool first = true;
+            foreach (GroupByField groupByField in groupBy)
+            {
+                if (first)
+                {
+                    sb.Append(" GROUP BY");
+                    first = false;
+                }
+                else
+                {
+                    sb.Append(",");
+                }
+                Field(sb, groupByField.Field);
+            }
+        }
+
     }
 }
