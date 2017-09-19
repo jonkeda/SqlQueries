@@ -1,7 +1,11 @@
-using System.Collections.ObjectModel;
-
 namespace SqlQueries.Parts
 {
-    public class WhereCollection : Collection<Where>
-    { }
+    public class WhereCollection : ConditionCollection<IWhereCondition>
+    {
+    }
+
+    public class HavingCollection : ConditionCollection<IHavingCondition>
+    {
+    }
+
 }

@@ -1,6 +1,6 @@
 ﻿namespace SqlQueries.Parts
 {
-    public class WhereField: Where
+    public class WhereField: ConditionOnField, IWhereCondition
     {
         public WhereField()
         {
@@ -10,11 +10,9 @@
         {
         }
 
-        public WhereField(Field field, SqlOperator operand, Field toField) : base(field, operand)
+        public WhereField(Field field, SqlOperator operand, Field toField) : base(field, operand, toField)
         {
-            ToField = toField;
+            
         }
-
-        public Field ToField { get; set; }
     }
 }

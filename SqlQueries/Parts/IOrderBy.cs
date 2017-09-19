@@ -4,6 +4,6 @@ namespace SqlQueries.Parts
 {
     public interface IOrderBy : IQueryBuilder
     {
-        OrderByCollection OrderBy { get; }
+        OrderByCollection OrderBy { get; set; }
     }
 }

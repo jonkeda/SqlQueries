@@ -218,12 +218,12 @@ namespace SqlQueries.Test.Select.SqlServer
 
         #region Where
 
-        private const string WhereExpected = "SELECT * FROM [DimEmployee] WHERE [LastName] = @p1";
+        private const string WhereExpected = "SELECT * FROM [DimEmployee] WHERE [LastName] = @p1 AND [Number] > [Count]";
 
         [TestMethod]
         public void ConstructorWhere()
         {
-            string statement = new SqlQueries.Select("DimEmployee").Where("LastName", "Daan").ToString();
+            string statement = new SqlQueries.Select("DimEmployee").Where("LastName", "Daan").WhereField("Number", SqlOperator.Greater, "Count").ToString();
 
             Assert.AreEqual(WhereExpected, statement);
         }
@@ -236,6 +236,7 @@ namespace SqlQueries.Test.Select.SqlServer
                 Table = "DimEmployee"
             };
             select.Where.Add(new WhereValue("LastName", "Daan"));
+            select.Where.Add(new WhereField("Number", SqlOperator.Greater, "Count"));
 
             string statement = select.ToString();
 
@@ -245,9 +246,46 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentWhere()
         {
-            string statement = new SqlQueries.Select().Table("DimEmployee").Where("LastName", "Daan").ToString();
+            string statement = new SqlQueries.Select().Table("DimEmployee").Where("LastName", "Daan").WhereField("Number", SqlOperator.Greater, "Count").ToString();
 
             Assert.AreEqual(WhereExpected, statement);
+        }
+
+        #endregion
+
+        #region Having
+
+        private const string HavingExpected = "SELECT * FROM [DimEmployee] HAVING [LastName] = @p1 AND [Number] > [Count]";
+
+        [TestMethod]
+        public void ConstructorHaving()
+        {
+            string statement = new SqlQueries.Select("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.Greater, "Count").ToString();
+
+            Assert.AreEqual(HavingExpected, statement);
+        }
+
+        [TestMethod]
+        public void PropertiesHaving()
+        {
+            SqlQueries.Select select = new SqlQueries.Select
+            {
+                Table = "DimEmployee"
+            };
+            select.Having.Add(new HavingValue("LastName", "Daan"));
+            select.Having.Add(new HavingField("Number", SqlOperator.Greater, "Count"));
+
+            string statement = select.ToString();
+
+            Assert.AreEqual(HavingExpected, statement);
+        }
+
+        [TestMethod]
+        public void FluentHaving()
+        {
+            string statement = new SqlQueries.Select().Table("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.Greater, "Count").ToString();
+
+            Assert.AreEqual(HavingExpected, statement);
         }
 
         #endregion

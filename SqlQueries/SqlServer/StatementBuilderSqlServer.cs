@@ -75,27 +75,35 @@ namespace SqlQueries.SqlServer
 
         protected override void Columns(SqlBuilder sb, ColumnCollection columns)
         {
-            if (columns.Count == 0)
+            if (columns == null
+                || columns.Count == 0)
             {
                 sb.Append(" *");
             }
-            bool first = true;
-            foreach (ColumnField column in columns)
+            else
             {
-                if (first)
+                bool first = true;
+                foreach (ColumnField column in columns)
                 {
-                    first = false;
+                    if (first)
+                    {
+                        first = false;
+                    }
+                    else
+                    {
+                        sb.Append(",");
+                    }
+                    Field(sb, column.Field);
                 }
-                else
-                {
-                    sb.Append(",");
-                }
-                Field(sb, column.Field);
             }
         }
 
         protected override void OrderBy(SqlBuilder sb, OrderByCollection orderBy)
         {
+            if (orderBy == null)
+            {
+                return;
+            }
             bool first = true;
             foreach (OrderByField orderByField in orderBy)
             {
@@ -118,6 +126,10 @@ namespace SqlQueries.SqlServer
 
         protected override void GroupBy(SqlBuilder sb, GroupByCollection groupBy)
         {
+            if (groupBy == null)
+            {
+                return;
+            }
             bool first = true;
             foreach (GroupByField groupByField in groupBy)
             {
@@ -137,39 +149,62 @@ namespace SqlQueries.SqlServer
 
         protected override void Where(SqlBuilder sb, WhereCollection where)
         {
+            Conditions(sb, where, "WHERE");
+        }
+
+        protected override void Having(SqlBuilder sb, HavingCollection having)
+        {
+            Conditions(sb, having, "HAVING");
+        }
+
+        protected void Conditions<TC>(SqlBuilder sb, ConditionCollection<TC> conditions, string statement)
+            where TC : ICondition
+        {
+            if (conditions == null)
+            {
+                return;
+            }
             bool first = true;
-            foreach (Where w in where)
+            foreach (TC w in conditions)
             {
                 if (first)
                 {
-                    sb.Append(" WHERE");
+                    sb.Append(" ");
+                    sb.Append(statement);
                     first = false;
                 }
                 else
                 {
-                    sb.Append(" And");
+                    if (conditions.AndOr == SqlAndOr.And)
+                    {
+                        sb.Append(" AND");
+                    }
+                    else
+                    {
+                        sb.Append(" OR");
+                    }
                 }
-                WhereValue wv;
-                WhereField wf;
-                if ((wv = w as WhereValue) != null)
+                ConditionOnValue wv;
+                ConditionOnField wf;
+                if ((wv = w as ConditionOnValue) != null)
                 {
-                    Where(sb, wv);
+                    ConditionOnValue(sb, wv);
                 }
-                else if ((wf = w as WhereField) != null)
+                else if ((wf = w as ConditionOnField) != null)
                 {
-                    Where(sb, wf);
+                    ConditionOnField(sb, wf);
                 }
             }
         }
 
-        private void Where(SqlBuilder sb, WhereValue wv)
+        private void ConditionOnValue(SqlBuilder sb, ConditionOnValue wv)
         {
             Field(sb, wv.Field);
             Operator(sb, wv.Operand);
             sb.AppendParameter(wv.Value);
         }
 
-        private void Where(SqlBuilder sb, WhereField wf)
+        private void ConditionOnField(SqlBuilder sb, ConditionOnField wf)
         {
             Field(sb, wf.Field);
             Operator(sb, wf.Operand);

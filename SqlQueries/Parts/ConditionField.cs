@@ -1,12 +1,12 @@
 ﻿namespace SqlQueries.Parts
 {
-    public class Where
+    public abstract class ConditionField : ICondition
     {
-        public Where()
+        protected ConditionField()
         {
         }
 
-        public Where(Field field, SqlOperator operand)
+        protected ConditionField(Field field, SqlOperator operand)
         {
             Field = field;
             Operand = operand;
@@ -15,5 +15,6 @@
         public Field Field { get; set; }
 
         public SqlOperator Operand { get; set; }
+
     }
 }

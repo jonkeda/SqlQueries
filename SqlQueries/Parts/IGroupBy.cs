@@ -4,6 +4,7 @@ namespace SqlQueries.Parts
 {
     public interface IGroupBy : IQueryBuilder
     {
-        GroupByCollection GroupBy { get; }
+        GroupByCollection GroupBy { get; set; }
     }
+
 }

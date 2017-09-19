@@ -4,6 +4,11 @@ namespace SqlQueries.Parts
 {
     public interface IWhere : IQueryBuilder
     {
-        WhereCollection Where { get; }
+        WhereCollection Where { get; set; }
+    }
+
+    public interface IHaving : IQueryBuilder
+    {
+        HavingCollection Having { get; set; }
     }
 }

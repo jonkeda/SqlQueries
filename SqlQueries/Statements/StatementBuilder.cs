@@ -55,5 +55,6 @@ namespace SqlQueries.Statements
         }
 
         protected abstract void Where(SqlBuilder sb, WhereCollection @where);
+        protected abstract void Having(SqlBuilder sb, HavingCollection having);
     }
 }

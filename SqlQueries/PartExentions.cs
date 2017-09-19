@@ -85,6 +85,37 @@ namespace SqlQueries
 
         #endregion
 
+        #region Having
+
+        public static T Having<T>(this T query, Field field, SqlOperator sqlOperator, object value)
+            where T : IHaving
+        {
+            query.Having.Add(new HavingValue(field, sqlOperator, value));
+            return query;
+        }
+
+        public static T Having<T>(this T query, Field field, object value)
+            where T : IHaving
+        {
+            return query.Having(field, SqlOperator.Equal, value);
+        }
+
+        public static T HavingField<T>(this T query, Field field, SqlOperator sqlOperator, Field toField)
+            where T : IHaving
+        {
+            query.Having.Add(new HavingField(field, sqlOperator, toField));
+            return query;
+        }
+
+        public static T HavingField<T>(this T query, Field field, Field toField)
+            where T : IHaving
+        {
+            return query.HavingField(field, SqlOperator.Equal, toField);
+        }
+
+
+        #endregion
+
         #region Columns
 
         public static T Column<T>(this T query, Field field)

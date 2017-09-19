@@ -15,6 +15,7 @@ namespace SqlQueries.SqlServer
             Where(sb, builder.Where);
             OrderBy(sb, builder.OrderBy);
             GroupBy(sb, builder.GroupBy);
+            Having(sb, builder.Having);
             return sb.ToString();
         }
     }

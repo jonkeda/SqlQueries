@@ -1,7 +1,7 @@
 ﻿namespace SqlQueries.Parts
 {
-    public class WhereValue : Where
-    {
+    public class WhereValue : ConditionOnValue, IWhereCondition
+    { 
         public WhereValue()
         {
         }
@@ -10,11 +10,8 @@
         {
         }
 
-        public WhereValue(Field field, SqlOperator operand, object value) : base(field, operand)
+        public WhereValue(Field field, SqlOperator operand, object value) : base(field, operand, value)
         {
-            Value = value;
         }
-
-        public object Value { get; set; }
     }
 }

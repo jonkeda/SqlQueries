@@ -40,10 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parts\ConditionCollection.cs" />
+    <Compile Include="Parts\ConditionField.cs" />
+    <Compile Include="Parts\ConditionOnField.cs" />
+    <Compile Include="Parts\ConditionOnValue.cs" />
+    <Compile Include="Parts\HavingField.cs" />
+    <Compile Include="Parts\HavingValue.cs" />
+    <Compile Include="Parts\ICondition.cs" />
+    <Compile Include="Parts\IJoinOnCondition.cs" />
     <Compile Include="Parts\IWhere.cs" />
+    <Compile Include="Parts\IWhereCondition.cs" />
+    <Compile Include="Parts\Join.cs" />
+    <Compile Include="Parts\JoinOnCollection.cs" />
+    <Compile Include="Parts\JoinOnField.cs" />
+    <Compile Include="Parts\JoinOnValue.cs" />
+    <Compile Include="Parts\JoinType.cs" />
     <Compile Include="Parts\WhereCollection.cs" />
+    <Compile Include="SqlAndOr.cs" />
     <Compile Include="SqlOperator.cs" />
-    <Compile Include="Parts\Where.cs" />
+    <Compile Include="Parts\Condition.cs" />
     <Compile Include="Parts\ColumnCollection.cs" />
     <Compile Include="Parts\ColumnField.cs" />
     <Compile Include="Parts\Field.cs" />
