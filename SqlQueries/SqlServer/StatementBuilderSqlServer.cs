@@ -15,6 +15,29 @@ namespace SqlQueries.SqlServer
             }
         }
 
+        protected override void From(SqlBuilder sb, TableCollection tables)
+        {
+            if (tables == null
+                || tables.Count == 0)
+            {
+                return;
+            }
+            bool first = true;
+            foreach (Table table in tables)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    sb.Append(",");
+                }
+                Table(sb, table);
+            }
+        }
+
+
         protected override void Table(SqlBuilder sb, Table table)
         {
             if (table == null)
@@ -147,6 +170,7 @@ namespace SqlQueries.SqlServer
         }
 
 
+
         protected override void Where(SqlBuilder sb, WhereCollection where)
         {
             Conditions(sb, where, "WHERE");
@@ -210,5 +234,36 @@ namespace SqlQueries.SqlServer
             Operator(sb, wf.Operand);
             Field(sb, wf.ToField);
         }
+
+
+        protected override void Joins(SqlBuilder sb, JoinCollection joins)
+        {
+            if (joins == null)
+            {
+                return;
+            }
+            foreach (Join join in joins)
+            {
+                if (join.JoinType == JoinType.FullOuter)
+                {
+                    sb.Append(" FULL OUTER JOIN");
+                }
+                else if (join.JoinType == JoinType.Inner)
+                {
+                    sb.Append(" INNER JOIN");
+                }
+                else if (join.JoinType == JoinType.Left)
+                {
+                    sb.Append(" LEFT JOIN");
+                }
+                else if (join.JoinType == JoinType.Right)
+                {
+                    sb.Append(" RIGHT JOIN");
+                }
+                Table(sb, join.Table);
+                Conditions(sb, join.On, "ON");
+            }
+        }
+
     }
 }

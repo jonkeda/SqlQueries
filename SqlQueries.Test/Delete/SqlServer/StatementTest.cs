@@ -18,7 +18,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
             string statement = (new SqlQueries.Delete
             {
-                Table = "[Db].[schem].[TestTable]"
+                From = "[Db].[schem].[TestTable]"
             }).ToString();
 
             Assert.AreEqual("DELETE FROM [Db].[schem].[TestTable]", statement);
@@ -27,7 +27,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         [TestMethod]
         public void Fluent()
         {
-            string statement = new SqlQueries.Delete().Table("Db.schem.TestTable").ToString();
+            string statement = new SqlQueries.Delete().From("Db.schem.TestTable").ToString();
 
             Assert.AreEqual("DELETE FROM [Db].[schem].[TestTable]", statement);
         }
@@ -43,7 +43,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         [TestMethod]
         public void FluentTop()
         {
-            string statement = new SqlQueries.Delete().Table("Db.schem.TestTable").Top(10).ToString();
+            string statement = new SqlQueries.Delete().From("Db.schem.TestTable").Top(10).ToString();
 
             Assert.AreEqual("DELETE TOP (10) FROM [Db].[schem].[TestTable]", statement);
         }

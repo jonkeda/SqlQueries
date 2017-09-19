@@ -9,7 +9,7 @@ namespace SqlQueries.Sqlite
             SqlBuilder sb = new SqlBuilder();
             sb.Append("DELETE");
             sb.Append(" FROM");
-            Table(sb, builder.Table);
+            From(sb, builder.From);
             //if (builder.Top > 0)
             //{
             //    sb.Append($@" LIMIT {builder.Top}");

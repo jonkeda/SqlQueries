@@ -6,9 +6,4 @@ namespace SqlQueries.Parts
     {
         WhereCollection Where { get; set; }
     }
-
-    public interface IHaving : IQueryBuilder
-    {
-        HavingCollection Having { get; set; }
-    }
 }

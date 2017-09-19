@@ -11,7 +11,8 @@ namespace SqlQueries.SqlServer
             Top(sb, builder.Top);
             Columns(sb, builder.Columns);
             sb.Append(" FROM");
-            Table(sb, builder.Table);
+            From(sb, builder.From);
+            Joins(sb, builder.Joins);
             Where(sb, builder.Where);
             OrderBy(sb, builder.OrderBy);
             GroupBy(sb, builder.GroupBy);

@@ -21,7 +21,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             string statement = new SqlQueries.Select
             {
-                Table = "[Db].[schem].[TestTable]"
+                From = "[Db].[schem].[TestTable]"
             }.ToString();
 
             Assert.AreEqual("SELECT * FROM [Db].[schem].[TestTable]", statement);
@@ -30,7 +30,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void Fluent()
         {
-            string statement = new SqlQueries.Select().Table("Db.schem.TestTable").ToString();
+            string statement = new SqlQueries.Select().From("Db.schem.TestTable").ToString();
 
             Assert.AreEqual("SELECT * FROM [Db].[schem].[TestTable]", statement);
         }
@@ -51,7 +51,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             string statement = new SqlQueries.Select
             {
-                Table = "[Db].[schem].[TestTable]",
+                From = "[Db].[schem].[TestTable]",
                 Top = 10
             }.ToString();
 
@@ -61,7 +61,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentTop()
         {
-            string statement = new SqlQueries.Select().Table("Db.schem.TestTable").Top(10).ToString();
+            string statement = new SqlQueries.Select().From("Db.schem.TestTable").Top(10).ToString();
 
             Assert.AreEqual("SELECT TOP (10) * FROM [Db].[schem].[TestTable]", statement);
         }
@@ -85,7 +85,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                Table = "DimEmployee e",
+                From = "DimEmployee e",
                 Columns =  "e.*"
             };
             select.OrderBy.Add(new OrderByField("LastName"));
@@ -98,7 +98,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentColumnStar()
         {
-            string statement = new SqlQueries.Select().Column("e.*").Table("DimEmployee e").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select().Column("e.*").From("DimEmployee e").OrderBy("LastName").ToString();
 
             Assert.AreEqual(ColumnStarExpected, statement);
         }
@@ -122,7 +122,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                Table = "DimEmployee e",
+                From = "DimEmployee e",
                 Columns = "[b], [a].[b], [a].[b] as [c], [b] as [c]"
             };
             select.OrderBy.Add(new OrderByField("LastName"));
@@ -135,7 +135,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentColumns()
         {
-            string statement = new SqlQueries.Select().Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").Table("DimEmployee e").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select().Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").From("DimEmployee e").OrderBy("LastName").ToString();
 
             Assert.AreEqual(ColumnsExpected, statement);
         }
@@ -160,7 +160,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                Table = "DimEmployee"
+                From = "DimEmployee"
             };
             select.OrderBy.Add(new OrderByField("LastName"));
 
@@ -172,7 +172,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentOrderBy()
         {
-            string statement = new SqlQueries.Select().Table("DimEmployee").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee").OrderBy("LastName").ToString();
 
             Assert.AreEqual(OrderByExpected, statement);
         }
@@ -196,7 +196,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                Table = "DimEmployee"
+                From = "DimEmployee"
             };
             select.GroupBy.Add(new GroupByField("LastName"));
 
@@ -208,7 +208,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentGroupBy()
         {
-            string statement = new SqlQueries.Select().Table("DimEmployee").GroupBy("LastName").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee").GroupBy("LastName").ToString();
 
             Assert.AreEqual(GroupByExpected, statement);
         }
@@ -233,7 +233,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                Table = "DimEmployee"
+                From = "DimEmployee"
             };
             select.Where.Add(new WhereValue("LastName", "Daan"));
             select.Where.Add(new WhereField("Number", SqlOperator.Greater, "Count"));
@@ -246,7 +246,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentWhere()
         {
-            string statement = new SqlQueries.Select().Table("DimEmployee").Where("LastName", "Daan").WhereField("Number", SqlOperator.Greater, "Count").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee").Where("LastName", "Daan").WhereField("Number", SqlOperator.Greater, "Count").ToString();
 
             Assert.AreEqual(WhereExpected, statement);
         }
@@ -270,7 +270,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                Table = "DimEmployee"
+                From = "DimEmployee"
             };
             select.Having.Add(new HavingValue("LastName", "Daan"));
             select.Having.Add(new HavingField("Number", SqlOperator.Greater, "Count"));
@@ -283,11 +283,48 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentHaving()
         {
-            string statement = new SqlQueries.Select().Table("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.Greater, "Count").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.Greater, "Count").ToString();
 
             Assert.AreEqual(HavingExpected, statement);
         }
 
         #endregion
+
+        #region Join
+
+        private const string JoinExpected = "SELECT * FROM [DimEmployee] AS [e] INNER JOIN [DimOrder] AS [o] ON [e].[Id] = [o].[EmployeeId]";
+
+        [TestMethod]
+        public void ConstructorJoin()
+        {
+            string statement = new SqlQueries.Select("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString();
+
+            Assert.AreEqual(JoinExpected, statement);
+        }
+
+        [TestMethod]
+        public void PropertiesJoin()
+        {
+            SqlQueries.Select select = new SqlQueries.Select
+            {
+                From = "DimEmployee e"
+            };
+            select.Joins.Add(new Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId"));
+
+            string statement = select.ToString();
+
+            Assert.AreEqual(JoinExpected, statement);
+        }
+
+        [TestMethod]
+        public void FluentJoin()
+        {
+            string statement = new SqlQueries.Select().From("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString();
+
+            Assert.AreEqual(JoinExpected, statement);
+        }
+
+        #endregion
+
     }
 }

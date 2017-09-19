@@ -2,7 +2,4 @@
 {
     public interface IWhereCondition : ICondition
     { }
-
-    public interface IHavingCondition : ICondition
-    { }
 }

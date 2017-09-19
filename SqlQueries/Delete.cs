@@ -3,7 +3,7 @@ using SqlQueries.Statements;
 
 namespace SqlQueries
 {
-    public class Delete : QueryBuilder, ITable, ITop
+    public class Delete : QueryBuilder, IFrom, ITop
     {
         public Delete()
         {
@@ -11,17 +11,16 @@ namespace SqlQueries
 
         public Delete(Table tableName)
         {
-            Table = tableName;
+            From.Add(tableName);
         }
 
-        public Delete(Table tableName, int top)
+        public Delete(Table tableName, int top) : this(tableName)
         {
-            Table = tableName;
             Top = top;
         }
 
         public Top Top { get; set; }
 
-        public Table Table { get; set; }
+        public TableCollection From { get; set; } = new TableCollection();
     }
 }

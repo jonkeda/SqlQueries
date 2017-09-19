@@ -10,7 +10,7 @@ namespace SqlQueries.SqlServer
             sb.Append("DELETE");
             Top(sb, builder.Top);
             sb.Append(" FROM");
-            Table(sb, builder.Table);
+            From(sb, builder.From);
             return sb.ToString();
         }
     }

@@ -17,7 +17,7 @@ namespace SqlQueries.Test.Delete.Sqlite
         [TestMethod]
         public void Fluent()
         {
-            string statement = new SqlQueries.Delete().Table("TestTable").ToString(typeof(SQLiteConnection));
+            string statement = new SqlQueries.Delete().From("TestTable").ToString(typeof(SQLiteConnection));
 
             Assert.AreEqual("DELETE FROM [TestTable]", statement);
         }

@@ -56,5 +56,7 @@ namespace SqlQueries.Statements
 
         protected abstract void Where(SqlBuilder sb, WhereCollection @where);
         protected abstract void Having(SqlBuilder sb, HavingCollection having);
+        protected abstract void Joins(SqlBuilder sb, JoinCollection joins);
+        protected abstract void From(SqlBuilder sb, TableCollection tables);
     }
 }

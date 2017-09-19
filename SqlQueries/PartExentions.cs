@@ -4,7 +4,7 @@ namespace SqlQueries
 {
     public static class PartExentions
     {
-        #region TableName
+        #region Table
 
         public static T Table<T>(this T query, Table name)
             where T : ITable
@@ -12,6 +12,19 @@ namespace SqlQueries
             query.Table = name;
             return query;
         }
+
+
+        #endregion
+
+        #region From
+
+        public static T From<T>(this T query, Table name)
+            where T : IFrom
+        {
+            query.From.Add(name);
+            return query;
+        }
+
         #endregion
 
         #region Top
@@ -132,6 +145,17 @@ namespace SqlQueries
             { 
                 query.Columns.Add(new ColumnField(field));
             }
+            return query;
+        }
+
+        #endregion
+
+        #region Joins
+
+        public static T Join<T>(this T query, Table table, JoinType joinType, Field fromField, Field toField)
+            where T : IJoins
+        {
+            query.Joins.Add(new Join(table, joinType, fromField, toField));
             return query;
         }
 
