@@ -8,9 +8,9 @@ namespace SqlQueries.SqlServer
         public QueryBuildersSqlServer()
             : base(typeof(SqlConnection))
         {
-            Statements.Register(new SelectBuilderSqlServer());
-            Statements.Register(new DeleteBuilderSqlServer());
-            Statements.Register(new TruncateBuilderSqlServer());
+            Statements.Register(new SelectBuilderSqlServer(ConnectionType));
+            Statements.Register(new DeleteBuilderSqlServer(ConnectionType));
+            Statements.Register(new TruncateBuilderSqlServer(ConnectionType));
         }
     }
 }

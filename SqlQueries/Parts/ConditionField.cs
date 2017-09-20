@@ -1,20 +1,16 @@
 ﻿namespace SqlQueries.Parts
 {
-    public abstract class ConditionField : ICondition
+    public abstract class ConditionField : Condition
     {
         protected ConditionField()
         {
         }
 
-        protected ConditionField(Field field, SqlOperator operand)
+        protected ConditionField(Field field)
         {
             Field = field;
-            Operand = operand;
         }
 
         public Field Field { get; set; }
-
-        public SqlOperator Operand { get; set; }
-
     }
 }

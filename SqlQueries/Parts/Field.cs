@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using SqlQueries.Statements;
 
 namespace SqlQueries.Parts
 {
@@ -13,7 +14,10 @@ namespace SqlQueries.Parts
             Parse();
         }
 
-        public Field(string tableName, string fieldName, string @alias)
+        public Field(string tableName, string fieldName) : this(tableName, fieldName, null)
+        { }
+
+        public Field(string tableName, string fieldName, string alias)
         {
             TableName = tableName;
             FieldName = fieldName;
@@ -35,6 +39,34 @@ namespace SqlQueries.Parts
             TableName = match.Groups[1].Value;
             FieldName = match.Groups[2].Value;
             Alias = match.Groups[3].Value;
+        }
+
+        public virtual void Write(SqlBuilder sb)
+        {
+            sb.Append(" ");
+
+            if (!string.IsNullOrEmpty(TableName))
+            {
+                sb.Append("[");
+                sb.Append(TableName);
+                sb.Append("].");
+            }
+            if (FieldName == "*")
+            {
+                sb.Append("*");
+            }
+            else
+            {
+                sb.Append("[");
+                sb.Append(FieldName);
+                sb.Append("]");
+            }
+            if (!string.IsNullOrEmpty(Alias))
+            {
+                sb.Append(" AS [");
+                sb.Append(Alias);
+                sb.Append("]");
+            }
         }
 
         public static IEnumerable<Field> ParseFields(string fields)
@@ -61,6 +93,5 @@ namespace SqlQueries.Parts
         {
             return new Field(value);
         }
-
     }
 }

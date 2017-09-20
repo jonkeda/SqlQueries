@@ -40,19 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parts\Average.cs" />
     <Compile Include="Parts\ConditionCollection.cs" />
     <Compile Include="Parts\ConditionField.cs" />
+    <Compile Include="Parts\ConditionIsNotNull.cs" />
+    <Compile Include="Parts\ConditionIsNull.cs" />
     <Compile Include="Parts\ConditionOnField.cs" />
     <Compile Include="Parts\ConditionOnValue.cs" />
+    <Compile Include="Parts\ConditionOperator.cs" />
+    <Compile Include="Parts\Exists.cs" />
+    <Compile Include="Parts\Function.cs" />
     <Compile Include="Parts\HavingCollection.cs" />
     <Compile Include="Parts\HavingField.cs" />
     <Compile Include="Parts\HavingValue.cs" />
     <Compile Include="Parts\ICondition.cs" />
+    <Compile Include="Parts\IDistinct.cs" />
     <Compile Include="Parts\IFrom.cs" />
     <Compile Include="Parts\IHaving.cs" />
     <Compile Include="Parts\IHavingCondition.cs" />
-    <Compile Include="Parts\IJoin.cs" />
+    <Compile Include="Parts\IJoins.cs" />
     <Compile Include="Parts\IJoinOnCondition.cs" />
+    <Compile Include="Parts\In.cs" />
+    <Compile Include="Parts\IsNotNull.cs" />
+    <Compile Include="Parts\IsNull.cs" />
     <Compile Include="Parts\IWhere.cs" />
     <Compile Include="Parts\IWhereCondition.cs" />
     <Compile Include="Parts\Join.cs" />
@@ -61,6 +71,7 @@
     <Compile Include="Parts\JoinOnField.cs" />
     <Compile Include="Parts\JoinOnValue.cs" />
     <Compile Include="Parts\JoinType.cs" />
+    <Compile Include="Parts\NotIn.cs" />
     <Compile Include="Parts\TableCollection.cs" />
     <Compile Include="Parts\WhereCollection.cs" />
     <Compile Include="SqlAndOr.cs" />

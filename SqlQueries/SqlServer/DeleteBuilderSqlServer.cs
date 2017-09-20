@@ -1,12 +1,16 @@
+using System;
 using SqlQueries.Statements;
 
 namespace SqlQueries.SqlServer
 {
     public class DeleteBuilderSqlServer : StatementBuilderSqlServer<Delete>
     {
-        protected override string DoCreateSql(Delete builder)
+        public DeleteBuilderSqlServer(Type connectionType) : base(connectionType)
         {
-            SqlBuilder sb = new SqlBuilder();
+        }
+
+        protected override string DoCreateSql(SqlBuilder sb, Delete builder)
+        {
             sb.Append("DELETE");
             Top(sb, builder.Top);
             sb.Append(" FROM");

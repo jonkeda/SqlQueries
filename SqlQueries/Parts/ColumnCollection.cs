@@ -20,5 +20,10 @@ namespace SqlQueries.Parts
         {
             return new ColumnCollection(value);
         }
+
+        public void Add(Field field)
+        {
+            Add(new ColumnField(field));
+        }
     }
 }

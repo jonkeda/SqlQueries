@@ -28,6 +28,14 @@ namespace SqlQueries.Statements
 
             return statementBuilder?.CreateSql(this);
         }
+
+        public string CreateSql(SqlBuilder sb)
+        {
+            StatementBuilder statementBuilder = QueryBuilders.Builders.Get(sb.ConnectionType, GetType());
+
+            return statementBuilder?.CreateSql(sb, this);
+        }
+
         public override string ToString()
         {
             return CreateSql(typeof(SqlConnection));

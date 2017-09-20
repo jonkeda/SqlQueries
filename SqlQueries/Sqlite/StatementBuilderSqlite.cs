@@ -8,6 +8,10 @@ namespace SqlQueries.Sqlite
     public abstract class StatementBuilderSqlite<T> : StatementBuilderSqlServer<T>
         where T : QueryBuilder
     {
+        protected StatementBuilderSqlite(Type connectionType) : base(connectionType)
+        {
+        }
+
         protected override void Top(SqlBuilder sb, Top top)
         {
             throw new NotImplementedException();

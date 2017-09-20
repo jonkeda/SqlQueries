@@ -1,12 +1,16 @@
+using System;
 using SqlQueries.Statements;
 
 namespace SqlQueries.Sqlite
 {
     public class DeleteBuilderSqlite : StatementBuilderSqlite<Delete>
     {
-        protected override string DoCreateSql(Delete builder)
+        public DeleteBuilderSqlite(Type connectionType) : base(connectionType)
         {
-            SqlBuilder sb = new SqlBuilder();
+        }
+
+        protected override string DoCreateSql(SqlBuilder sb, Delete builder)
+        {
             sb.Append("DELETE");
             sb.Append(" FROM");
             From(sb, builder.From);

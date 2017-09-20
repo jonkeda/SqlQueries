@@ -8,8 +8,8 @@ namespace SqlQueries.Sqlite
         public QueryBuildersSqlLite(Type connectionType)
             : base(connectionType)
         {
-            Statements.Register(new TruncateBuilderSqlite());
-            Statements.Register(new DeleteBuilderSqlite());
+            Statements.Register(new TruncateBuilderSqlite(ConnectionType));
+            Statements.Register(new DeleteBuilderSqlite(ConnectionType));
         }
     }
 }

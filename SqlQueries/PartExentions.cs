@@ -36,6 +36,13 @@ namespace SqlQueries
             return query;
         }
 
+        public static T Top<T>(this T query, int top, bool percentage)
+            where T : ITop
+        {
+            query.Top = new Top(top, percentage);
+            return query;
+        }
+
         #endregion
 
         #region OrderBy
@@ -69,6 +76,12 @@ namespace SqlQueries
 
         #region Where
 
+        public static T Where<T>(this T query)
+            where T : IWhere
+        {
+            return query;
+        }
+
         public static T Where<T>(this T query, Field field, SqlOperator sqlOperator, object value)
             where T : IWhere
         {
@@ -93,6 +106,20 @@ namespace SqlQueries
             where T : IWhere
         {
             return query.WhereField(field, SqlOperator.Equal, toField);
+        }
+
+        public static T IsNull<T>(this T query, Field field)
+            where T : IWhere
+        {
+            query.Where.Add(new IsNull(field));
+            return query;
+        }
+
+        public static T IsNotNull<T>(this T query, Field field)
+            where T : IWhere
+        {
+            query.Where.Add(new IsNotNull(field));
+            return query;
         }
 
 
@@ -150,6 +177,138 @@ namespace SqlQueries
 
         #endregion
 
+        #region Average
+
+        public static T Average<T>(this T query, Average field)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(field));
+            return query;
+        }
+
+        public static T Average<T>(this T query, string tableName, string fieldName)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Average(tableName, fieldName)));
+            return query;
+        }
+
+        public static T Average<T>(this T query, string tableName, string fieldName, string alias)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Average(tableName, fieldName, alias)));
+            return query;
+        }
+
+        #endregion
+
+        #region Minimum
+
+        public static T Minimum<T>(this T query, Minimum field)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(field));
+            return query;
+        }
+
+        public static T Minimum<T>(this T query, string tableName, string fieldName)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Minimum(tableName, fieldName)));
+            return query;
+        }
+
+        public static T Minimum<T>(this T query, string tableName, string fieldName, string alias)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Minimum(tableName, fieldName, alias)));
+            return query;
+        }
+
+        #endregion
+
+        #region Maximum
+
+        public static T Maximum<T>(this T query, Maximum field)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(field));
+            return query;
+        }
+
+        public static T Maximum<T>(this T query, string tableName, string fieldName)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Maximum(tableName, fieldName)));
+            return query;
+        }
+
+        public static T Maximum<T>(this T query, string tableName, string fieldName, string alias)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Maximum(tableName, fieldName, alias)));
+            return query;
+        }
+
+        #endregion
+
+        #region Sum
+
+        public static T Sum<T>(this T query, Sum field)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(field));
+            return query;
+        }
+
+        public static T Sum<T>(this T query, string tableName, string fieldName)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Sum(tableName, fieldName)));
+            return query;
+        }
+
+        public static T Sum<T>(this T query, string tableName, string fieldName, string alias)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Sum(tableName, fieldName, alias)));
+            return query;
+        }
+
+        #endregion
+
+        #region Count
+
+        public static T Count<T>(this T query)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Count()));
+            return query;
+        }
+
+        public static T Count<T>(this T query, Count field)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(field));
+            return query;
+        }
+
+        public static T Count<T>(this T query, string tableName, string fieldName)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Count(tableName, fieldName)));
+            return query;
+        }
+
+        public static T Count<T>(this T query, string tableName, string fieldName, string alias)
+            where T : IColumns
+        {
+            query.Columns.Add(new ColumnField(new Count(tableName, fieldName, alias)));
+            return query;
+        }
+
+        #endregion
+
         #region Joins
 
         public static T Join<T>(this T query, Table table, JoinType joinType, Field fromField, Field toField)
@@ -161,5 +320,48 @@ namespace SqlQueries
 
         #endregion
 
+        #region Distinct
+
+        public static T Distinct<T>(this T query)
+            where T : IDistinct
+        {
+            query.Distinct = true;
+            return query;
+        }
+
+        #endregion
+
+        #region In
+
+        public static T In<T>(this T query, Field field, Select select)
+            where T : IWhere
+        {
+            query.Where.Add(new In(field, select));
+            return query;
+        }
+
+        #endregion
+
+        #region NotIn
+
+        public static T NotIn<T>(this T query, Field field, Select select)
+            where T : IWhere
+        {
+            query.Where.Add(new NotIn(field, select));
+            return query;
+        }
+
+        #endregion
+
+        #region NotIn
+
+        public static T Exists<T>(this T query, Select select)
+            where T : IWhere
+        {
+            query.Where.Add(new Exists(select));
+            return query;
+        }
+
+        #endregion
     }
 }

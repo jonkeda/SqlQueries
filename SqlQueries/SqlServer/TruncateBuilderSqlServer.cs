@@ -1,12 +1,16 @@
+using System;
 using SqlQueries.Statements;
 
 namespace SqlQueries.SqlServer
 {
     public class TruncateBuilderSqlServer : StatementBuilderSqlServer<Truncate>
     {
-        protected override string DoCreateSql(Truncate builder)
+        public TruncateBuilderSqlServer(Type connectionType) : base(connectionType)
         {
-            SqlBuilder sb = new SqlBuilder();
+        }
+
+        protected override string DoCreateSql(SqlBuilder sb, Truncate builder)
+        {
             sb.Append("TRUNCATE TABLE");
             Table(sb, builder.Table);
             return sb.ToString();

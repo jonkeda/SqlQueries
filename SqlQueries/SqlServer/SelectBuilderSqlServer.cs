@@ -1,14 +1,19 @@
+using System;
 using SqlQueries.Statements;
 
 namespace SqlQueries.SqlServer
 {
     public class SelectBuilderSqlServer : StatementBuilderSqlServer<Select>
     {
-        protected override string DoCreateSql(Select builder)
+        public SelectBuilderSqlServer(Type connectionType) : base(connectionType)
         {
-            SqlBuilder sb = new SqlBuilder();
+        }
+
+        protected override string DoCreateSql(SqlBuilder sb, Select builder)
+        {
             sb.Append("SELECT");
             Top(sb, builder.Top);
+            Distinct(sb, builder.Distinct);
             Columns(sb, builder.Columns);
             sb.Append(" FROM");
             From(sb, builder.From);

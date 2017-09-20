@@ -1,6 +1,9 @@
-﻿namespace SqlQueries.Parts
+﻿using System;
+using SqlQueries.Statements;
+
+namespace SqlQueries.Parts
 {
-    public abstract class ConditionOnValue : ConditionField
+    public abstract class ConditionOnValue : ConditionOperator
     {
         public object Value { get; set; }
 
@@ -15,6 +18,13 @@
 
         protected ConditionOnValue(Field field, object value) : this(field, SqlOperator.Equal, value)
         {
+        }
+
+        public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
+        {
+            fieldWriter(sb, Field);
+            Operator(sb, Operand);
+            sb.AppendParameter(Value);
         }
     }
 }

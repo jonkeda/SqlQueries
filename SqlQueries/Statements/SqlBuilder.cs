@@ -1,11 +1,17 @@
+using System;
 using System.Text;
 
 namespace SqlQueries.Statements
 {
     public class SqlBuilder
     {
+        public SqlBuilder(Type connectionType)
+        {
+            ConnectionType = connectionType;
+        }
+
         private readonly StringBuilder _sb = new StringBuilder();
-        private int _count = 1;
+        private int _count;
 
         public void Append(string text)
         {
@@ -16,6 +22,8 @@ namespace SqlQueries.Statements
         {
             get { return _sb.ToString(); }
         }
+
+        public Type ConnectionType { get; }
 
         public void AppendParameter(object wvValue)
         {

@@ -1,3 +1,4 @@
+using System;
 using SqlQueries.Parts;
 using SqlQueries.Statements;
 
@@ -6,12 +7,20 @@ namespace SqlQueries.SqlServer
     public abstract class StatementBuilderSqlServer<T> : StatementBuilder<T>
         where T : QueryBuilder
     {
+        protected StatementBuilderSqlServer(Type connectionType) : base(connectionType)
+        {
+        }
+
         protected override void Top(SqlBuilder sb, Top top)
         {
             if (top != null
                 && top.TopCount > 0)
             {
-                sb.Append($@" TOP ({top.TopCount})");
+                sb.Append($@" TOP {top.TopCount}");
+                if (top.Percentage)
+                {
+                    sb.Append($@" PERCENTAGE");
+                }
             }
         }
 
@@ -77,22 +86,14 @@ namespace SqlQueries.SqlServer
 
         protected override void Field(SqlBuilder sb, Field field)
         {
-            sb.Append(" ");
+            field.Write(sb);
+        }
 
-            if (!string.IsNullOrEmpty(field.TableName))
+        protected override void Distinct(SqlBuilder sb, bool distinct)
+        {
+            if (distinct)
             {
-                sb.Append("[");
-                sb.Append(field.TableName);
-                sb.Append("].");
-            }
-            sb.Append("[");
-            sb.Append(field.FieldName);
-            sb.Append("]");
-            if (!string.IsNullOrEmpty(field.Alias))
-            {
-                sb.Append(" AS [");
-                sb.Append(field.Alias);
-                sb.Append("]");
+                sb.Append(" DISTINCT");
             }
         }
 
@@ -208,33 +209,9 @@ namespace SqlQueries.SqlServer
                         sb.Append(" OR");
                     }
                 }
-                ConditionOnValue wv;
-                ConditionOnField wf;
-                if ((wv = w as ConditionOnValue) != null)
-                {
-                    ConditionOnValue(sb, wv);
-                }
-                else if ((wf = w as ConditionOnField) != null)
-                {
-                    ConditionOnField(sb, wf);
-                }
+                w.Write(sb, Field);
             }
         }
-
-        private void ConditionOnValue(SqlBuilder sb, ConditionOnValue wv)
-        {
-            Field(sb, wv.Field);
-            Operator(sb, wv.Operand);
-            sb.AppendParameter(wv.Value);
-        }
-
-        private void ConditionOnField(SqlBuilder sb, ConditionOnField wf)
-        {
-            Field(sb, wf.Field);
-            Operator(sb, wf.Operand);
-            Field(sb, wf.ToField);
-        }
-
 
         protected override void Joins(SqlBuilder sb, JoinCollection joins)
         {

@@ -10,7 +10,16 @@ namespace SqlQueries.Parts
             TopCount = top;
         }
 
-        public int TopCount { get; }
+        public Top(int top, bool percentage)
+        {
+            TopCount = top;
+            Percentage = percentage;
+        }
+
+        public int TopCount { get; set; }
+
+        public bool Percentage { get; set; }
+
 
         [DebuggerStepThrough]
         public static explicit operator int(Top value)

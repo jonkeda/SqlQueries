@@ -37,7 +37,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
             string statement = new SqlQueries.Delete("Db.schem.TestTable", 10).ToString();
 
-            Assert.AreEqual("DELETE TOP (10) FROM [Db].[schem].[TestTable]", statement);
+            Assert.AreEqual("DELETE TOP 10 FROM [Db].[schem].[TestTable]", statement);
         }
 
         [TestMethod]
@@ -45,7 +45,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
             string statement = new SqlQueries.Delete().From("Db.schem.TestTable").Top(10).ToString();
 
-            Assert.AreEqual("DELETE TOP (10) FROM [Db].[schem].[TestTable]", statement);
+            Assert.AreEqual("DELETE TOP 10 FROM [Db].[schem].[TestTable]", statement);
         }
     }
 }

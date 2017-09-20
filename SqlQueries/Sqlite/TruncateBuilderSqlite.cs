@@ -1,12 +1,16 @@
+using System;
 using SqlQueries.Statements;
 
 namespace SqlQueries.Sqlite
 {
     public class TruncateBuilderSqlite : StatementBuilderSqlite<Truncate>
     {
-        protected override string DoCreateSql(Truncate builder)
+        public TruncateBuilderSqlite(Type connectionType) : base(connectionType)
         {
-            SqlBuilder sb = new SqlBuilder();
+        }
+
+        protected override string DoCreateSql(SqlBuilder sb, Truncate builder)
+        {
             sb.Append("DELETE");
             sb.Append(" FROM");
             Table(sb, builder.Table);
