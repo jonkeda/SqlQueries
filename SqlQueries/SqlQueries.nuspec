@@ -2,17 +2,17 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>0.1.0</version>
+    <version>$version</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <!--<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>-->
+    <projectUrl>https://github.com/jonkeda/SqlQueries</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>description</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2017</copyright>
-    <tags>Tag1 Tag2</tags>
+    <description>SQL Statement builders for SQL Server and Sqlite</description>
+    <releaseNotes>First release with Delete, Truncate and partial Select functionality.</releaseNotes>
+    <copyright>Public Domain</copyright>
+    <tags>SQL Sqlite SQLserver database ado.net</tags>
   </metadata>
 </package>
