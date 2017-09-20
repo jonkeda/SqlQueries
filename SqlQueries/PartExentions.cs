@@ -47,17 +47,43 @@ namespace SqlQueries
 
         #region OrderBy
 
-        public static T OrderBy<T>(this T query, Field field)
+        public static T OrderByField<T>(this T query, Field field)
             where T : IOrderBy
         {
             query.OrderBy.Add(new OrderByField(field));
             return query;
         }
 
-        public static T OrderByDescending<T>(this T query, Field field)
+        public static T OrderByFieldDescending<T>(this T query, Field field)
             where T : IOrderBy
         {
             query.OrderBy.Add(new OrderByField(field, true));
+            return query;
+        }
+
+        public static T OrderBy<T>(this T query, FieldCollection fields)
+            where T : IOrderBy
+        {
+            if (fields != null)
+            {
+                foreach (Field field in fields)
+                {
+                    query.OrderBy.Add(new OrderByField(field));
+                }
+            }
+            return query;
+        }
+
+        public static T OrderByDescending<T>(this T query, FieldCollection fields)
+            where T : IOrderBy
+        {
+            if (fields != null)
+            {
+                foreach (Field field in fields)
+                {
+                    query.OrderBy.Add(new OrderByField(field, true));
+                }
+            }
             return query;
         }
 
@@ -65,10 +91,23 @@ namespace SqlQueries
 
         #region GroupBy
 
-        public static T GroupBy<T>(this T query, Field field)
+        public static T GroupByField<T>(this T query, Field fields)
             where T : IGroupBy
         {
-            query.GroupBy.Add(new GroupByField(field));
+            query.GroupBy.Add(new GroupByField(fields));
+            return query;
+        }
+
+        public static T GroupBy<T>(this T query, FieldCollection fields)
+            where T : IGroupBy
+        {
+            if (fields != null)
+            {
+                foreach (Field field in fields)
+                {
+                    query.GroupBy.Add(new GroupByField(field));
+                }
+            }
             return query;
         }
 
@@ -76,16 +115,26 @@ namespace SqlQueries
 
         #region Where
 
+        private static IConditionContainer SetCurrentWhere<T>(T query)
+            where T : IWhere
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.SetCurrent(query.Where);
+            return container;
+        }
+
         public static T Where<T>(this T query)
             where T : IWhere
         {
+            SetCurrentWhere(query);
             return query;
         }
 
         public static T Where<T>(this T query, Field field, SqlOperator sqlOperator, object value)
             where T : IWhere
         {
-            query.Where.Add(new WhereValue(field, sqlOperator, value));
+            IConditionContainer container = SetCurrentWhere(query);
+            container.Add(new ConditionOnValue(field, sqlOperator, value));
             return query;
         }
 
@@ -98,7 +147,8 @@ namespace SqlQueries
         public static T WhereField<T>(this T query, Field field, SqlOperator sqlOperator, Field toField)
             where T : IWhere
         {
-            query.Where.Add(new WhereField(field, sqlOperator, toField));
+            IConditionContainer container = SetCurrentWhere(query);
+            container.Add(new ConditionOnField(field, sqlOperator, toField));
             return query;
         }
 
@@ -107,18 +157,60 @@ namespace SqlQueries
         {
             return query.WhereField(field, SqlOperator.Equal, toField);
         }
+        #endregion
+
+
+        #region Equals
+
+        public static T Equal<T>(this T query, Field field, Field toField)
+            where T : IWhere
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.Add(new Equals(field, toField));
+            return query;
+        }
+
+        public static T EqualToValue<T>(this T query, Field field, object value)
+            where T : IWhere
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.Add(new EqualToValue(field, value));
+            return query;
+        }
+
+        public static T GreaterThan<T>(this T query, Field field, Field toField)
+            where T : IWhere
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.Add(new GreaterThan(field, toField));
+            return query;
+        }
+
+        public static T GreaterThanValue<T>(this T query, Field field, object value)
+            where T : IWhere
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.Add(new GreaterThanValue(field, value));
+            return query;
+        }
+
+        #endregion
+
+        #region Null
 
         public static T IsNull<T>(this T query, Field field)
             where T : IWhere
         {
-            query.Where.Add(new IsNull(field));
+            IConditionContainer container = (IConditionContainer)query;
+            container.Add(new IsNull(field));
             return query;
         }
 
         public static T IsNotNull<T>(this T query, Field field)
             where T : IWhere
         {
-            query.Where.Add(new IsNotNull(field));
+            IConditionContainer container = (IConditionContainer)query;
+            container.Add(new IsNotNull(field));
             return query;
         }
 
@@ -127,10 +219,26 @@ namespace SqlQueries
 
         #region Having
 
+        private static IConditionContainer SetCurrentHaving<T>(T query)
+            where T : IHaving
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.SetCurrent(query.Having);
+            return container;
+        }
+
+        public static T Having<T>(this T query)
+            where T : IHaving
+        {
+            SetCurrentHaving(query);
+            return query;
+        }
+
         public static T Having<T>(this T query, Field field, SqlOperator sqlOperator, object value)
             where T : IHaving
         {
-            query.Having.Add(new HavingValue(field, sqlOperator, value));
+            IConditionContainer container = SetCurrentHaving(query);
+            container.Add(new HavingValue(field, sqlOperator, value));
             return query;
         }
 
@@ -143,7 +251,8 @@ namespace SqlQueries
         public static T HavingField<T>(this T query, Field field, SqlOperator sqlOperator, Field toField)
             where T : IHaving
         {
-            query.Having.Add(new HavingField(field, sqlOperator, toField));
+            IConditionContainer container = SetCurrentHaving(query);
+            container.Add(new HavingField(field, sqlOperator, toField));
             return query;
         }
 
@@ -314,10 +423,28 @@ namespace SqlQueries
 
         #region Joins
 
+        private static void SetCurrentJoin<T>(T query, Join @join)
+            where T : IJoins
+        {
+            IConditionContainer container = (IConditionContainer)query;
+            container.SetCurrent(join.On);
+        }
+
+        public static T Join<T>(this T query, Table table, JoinType joinType)
+            where T : IJoins
+        {
+            Join join = new Join(table, joinType);
+            SetCurrentJoin(query, @join);
+            query.Joins.Add(join);
+            return query;
+        }
+
         public static T Join<T>(this T query, Table table, JoinType joinType, Field fromField, Field toField)
             where T : IJoins
         {
-            query.Joins.Add(new Join(table, joinType, fromField, toField));
+            Join join = new Join(table, joinType, fromField, toField);
+            SetCurrentJoin(query, @join);
+            query.Joins.Add(join);
             return query;
         }
 

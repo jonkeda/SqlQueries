@@ -16,14 +16,14 @@ namespace SqlQueries.Parts
         {
             Table = table;
             JoinType = joinType;
-            On.Add(new JoinOnField(fromField, toField)); 
+            On.Add(new Equals(fromField, toField)); 
         }
 
         public Table Table { get; set; }
 
         public JoinType JoinType { get; set; }
 
-        public JoinOnCollection On { get; set; } = new JoinOnCollection();
+        public ConditionCollection On { get; set; } = new ConditionCollection();
     }
     
 }

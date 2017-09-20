@@ -4,6 +4,6 @@ namespace SqlQueries.Parts
 {
     public interface IWhere : IQueryBuilder
     {
-        WhereCollection Where { get; set; }
+        ConditionCollection Where { get; set; }
     }
 }

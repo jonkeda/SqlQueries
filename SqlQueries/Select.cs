@@ -3,7 +3,7 @@ using SqlQueries.Statements;
 
 namespace SqlQueries
 {
-    public class Select : QueryBuilder, IFrom, ITop, IOrderBy, IColumns, IGroupBy, IWhere, IHaving, IJoins, IDistinct
+    public class Select : QueryBuilder, IFrom, ITop, IOrderBy, IColumns, IGroupBy, IWhere, IHaving, IJoins, IDistinct, IConditionContainer
     {
         public Select()
         {
@@ -34,12 +34,31 @@ namespace SqlQueries
 
         public GroupByCollection GroupBy { get; set; } = new GroupByCollection();
 
-        public WhereCollection Where { get; set; } = new WhereCollection();
+        public ConditionCollection Where { get; set; } = new ConditionCollection();
 
-        public HavingCollection Having { get; set; } = new HavingCollection();
+        public ConditionCollection Having { get; set; } = new ConditionCollection();
 
         public JoinCollection Joins { get; set; } = new JoinCollection();
 
         public bool Distinct { get; set; }
+
+        private ConditionCollection _conditions;
+
+        void IConditionContainer.SetCurrent(ConditionCollection conditions)
+        {
+            _conditions = conditions;
+        }
+
+        void IConditionContainer.Add(Condition condition)
+        {
+            if (_conditions == null)
+            {
+                Where.Add(condition);
+            }
+            else
+            {
+                _conditions.Add(condition);
+            }
+        }
     }
 }

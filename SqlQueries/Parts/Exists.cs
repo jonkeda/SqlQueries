@@ -3,7 +3,7 @@ using SqlQueries.Statements;
 
 namespace SqlQueries.Parts
 {
-    public class Exists : Condition, IWhereCondition
+    public class Exists : Condition
     {
         public Select Select { get; set; }
 

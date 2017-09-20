@@ -10,3 +10,4 @@ bin
 obj
 bin
 /SqlQueries.Test/SqlQueries.Test.1.0.0.nupkg
+/.vs/SqlQueries/lut

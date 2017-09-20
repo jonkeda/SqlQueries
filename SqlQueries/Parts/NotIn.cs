@@ -3,7 +3,7 @@ using SqlQueries.Statements;
 
 namespace SqlQueries.Parts
 {
-    public class NotIn : ConditionField, IWhereCondition
+    public class NotIn : ConditionField
     {
         public Select Select { get; set; }
 

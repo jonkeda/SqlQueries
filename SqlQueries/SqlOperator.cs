@@ -4,9 +4,9 @@
     {
         Equal,
         NotEqual,
-        Greater,
+        GreaterThan,
         GreaterOrEqual,
-        Less,
+        LessThan,
         LessOrEqual
 
     }

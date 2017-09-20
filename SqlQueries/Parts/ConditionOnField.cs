@@ -5,21 +5,17 @@ namespace SqlQueries.Parts
 {
 
 
-    public abstract class ConditionOnField : ConditionOperator
+    public class ConditionOnField : ConditionOperator
     {
         public Field ToField { get; set; }
 
-        protected ConditionOnField()
+        public ConditionOnField()
         {
         }
 
-        protected ConditionOnField(Field field, SqlOperator operand, Field toField) : base(field, operand)
+        public ConditionOnField(Field field, SqlOperator operand, Field toField) : base(field, operand)
         {
             ToField = toField;
-        }
-
-        protected ConditionOnField(Field field, Field toField) : this(field, SqlOperator.Equal, toField)
-        {
         }
 
         public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)

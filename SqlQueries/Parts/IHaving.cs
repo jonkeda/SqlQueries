@@ -4,6 +4,6 @@ namespace SqlQueries.Parts
 {
     public interface IHaving : IQueryBuilder
     {
-        HavingCollection Having { get; set; }
+        ConditionCollection Having { get; set; }
     }
 }

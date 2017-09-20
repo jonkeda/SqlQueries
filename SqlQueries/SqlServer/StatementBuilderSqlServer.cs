@@ -172,25 +172,24 @@ namespace SqlQueries.SqlServer
 
 
 
-        protected override void Where(SqlBuilder sb, WhereCollection where)
+        protected override void Where(SqlBuilder sb, ConditionCollection where)
         {
             Conditions(sb, where, "WHERE");
         }
 
-        protected override void Having(SqlBuilder sb, HavingCollection having)
+        protected override void Having(SqlBuilder sb, ConditionCollection having)
         {
             Conditions(sb, having, "HAVING");
         }
 
-        protected void Conditions<TC>(SqlBuilder sb, ConditionCollection<TC> conditions, string statement)
-            where TC : ICondition
+        protected void Conditions(SqlBuilder sb, ConditionCollection conditions, string statement)
         {
             if (conditions == null)
             {
                 return;
             }
             bool first = true;
-            foreach (TC w in conditions)
+            foreach (Condition w in conditions)
             {
                 if (first)
                 {

@@ -45,9 +45,9 @@ namespace SqlQueries.Statements
 
         protected abstract void GroupBy(SqlBuilder sb, GroupByCollection groupBy);
 
-        protected abstract void Where(SqlBuilder sb, WhereCollection @where);
+        protected abstract void Where(SqlBuilder sb, ConditionCollection @where);
 
-        protected abstract void Having(SqlBuilder sb, HavingCollection having);
+        protected abstract void Having(SqlBuilder sb, ConditionCollection having);
 
         protected abstract void Joins(SqlBuilder sb, JoinCollection joins);
 

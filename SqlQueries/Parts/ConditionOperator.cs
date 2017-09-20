@@ -26,13 +26,13 @@ namespace SqlQueries.Parts
                 case SqlOperator.NotEqual:
                     sb.Append(" <>");
                     break;
-                case SqlOperator.Greater:
+                case SqlOperator.GreaterThan:
                     sb.Append(" >");
                     break;
                 case SqlOperator.GreaterOrEqual:
                     sb.Append(" >=");
                     break;
-                case SqlOperator.Less:
+                case SqlOperator.LessThan:
                     sb.Append(" <");
                     break;
                 case SqlOperator.LessOrEqual:

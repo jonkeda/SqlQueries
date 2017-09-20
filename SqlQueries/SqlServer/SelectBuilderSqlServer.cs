@@ -19,9 +19,9 @@ namespace SqlQueries.SqlServer
             From(sb, builder.From);
             Joins(sb, builder.Joins);
             Where(sb, builder.Where);
-            OrderBy(sb, builder.OrderBy);
             GroupBy(sb, builder.GroupBy);
             Having(sb, builder.Having);
+            OrderBy(sb, builder.OrderBy);
             return sb.ToString();
         }
     }

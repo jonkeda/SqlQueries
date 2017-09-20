@@ -95,7 +95,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void ConstructorColumnStar()
         {
-            string statement = new SqlQueries.Select("DimEmployee e").Column("e.*").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select("DimEmployee e").Column("e.*").OrderByField("LastName").ToString();
 
             Assert.AreEqual(ColumnStarExpected, statement);
         }
@@ -118,7 +118,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentColumnStar()
         {
-            string statement = new SqlQueries.Select().Column("e.*").From("DimEmployee e").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select().Column("e.*").From("DimEmployee e").OrderByField("LastName").ToString();
 
             Assert.AreEqual(ColumnStarExpected, statement);
         }
@@ -136,7 +136,7 @@ namespace SqlQueries.Test.Select.SqlServer
                 .Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]")
                 .Average("x").Minimum("y").Maximum("z").Sum("q")
                 .Count("p").Count()
-                .OrderBy("LastName").ToString();
+                .OrderByField("LastName").ToString();
 
             Assert.AreEqual(ColumnsExpected, statement);
         }
@@ -173,7 +173,7 @@ namespace SqlQueries.Test.Select.SqlServer
                 .Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]")
                 .Average("x").Minimum("y").Maximum("z").Sum("q")
                 .Count("p").Count()
-                .From("DimEmployee e").OrderBy("LastName").ToString();
+                .From("DimEmployee e").OrderByField("LastName").ToString();
 
             Assert.AreEqual(ColumnsExpected, statement);
         }
@@ -187,7 +187,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void ConstructorDistinct()
         {
-            string statement = new SqlQueries.Select("DimEmployee e").Distinct().Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select("DimEmployee e").Distinct().Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").OrderByField("LastName").ToString();
 
             Assert.AreEqual(DistinctExpected, statement);
         }
@@ -211,7 +211,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentDistinct()
         {
-            string statement = new SqlQueries.Select().Distinct().Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").From("DimEmployee e").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select().Distinct().Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").From("DimEmployee e").OrderByField("LastName").ToString();
 
             Assert.AreEqual(DistinctExpected, statement);
         }
@@ -225,7 +225,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void ConstructorOrderBy()
         {
-            string statement = new SqlQueries.Select("DimEmployee").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select("DimEmployee").OrderByField("LastName").ToString();
 
             Assert.AreEqual(OrderByExpected, statement);
         }
@@ -247,7 +247,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentOrderBy()
         {
-            string statement = new SqlQueries.Select().From("DimEmployee").OrderBy("LastName").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee").OrderByField("LastName").ToString();
 
             Assert.AreEqual(OrderByExpected, statement);
         }
@@ -299,7 +299,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
             string statement = new SqlQueries.Select("DimEmployee")
                 .Where("LastName", "Daan")
-                .WhereField("Number", SqlOperator.Greater, "Count")
+                .WhereField("Number", SqlOperator.GreaterThan, "Count")
                 .IsNull("First")
                 .IsNotNull("Second")
                 .ToString();
@@ -314,8 +314,8 @@ namespace SqlQueries.Test.Select.SqlServer
             {
                 From = "DimEmployee"
             };
-            select.Where.Add(new WhereValue("LastName", "Daan"));
-            select.Where.Add(new WhereField("Number", SqlOperator.Greater, "Count"));
+            select.Where.Add(new EqualToValue("LastName", "Daan"));
+            select.Where.Add(new GreaterThan("Number", "Count"));
             select.Where.Add(new IsNull("First"));
             select.Where.Add(new IsNotNull("Second"));
 
@@ -330,7 +330,7 @@ namespace SqlQueries.Test.Select.SqlServer
             string statement = new SqlQueries.Select()
                 .From("DimEmployee")
                 .Where("LastName", "Daan")
-                .WhereField("Number", SqlOperator.Greater, "Count")
+                .WhereField("Number", SqlOperator.GreaterThan, "Count")
                 .IsNull("First")
                 .IsNotNull("Second")
                 .ToString();
@@ -347,7 +347,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void ConstructorHaving()
         {
-            string statement = new SqlQueries.Select("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.Greater, "Count").ToString();
+            string statement = new SqlQueries.Select("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.GreaterThan, "Count").ToString();
 
             Assert.AreEqual(HavingExpected, statement);
         }
@@ -360,7 +360,7 @@ namespace SqlQueries.Test.Select.SqlServer
                 From = "DimEmployee"
             };
             select.Having.Add(new HavingValue("LastName", "Daan"));
-            select.Having.Add(new HavingField("Number", SqlOperator.Greater, "Count"));
+            select.Having.Add(new HavingField("Number", SqlOperator.GreaterThan, "Count"));
 
             string statement = select.ToString();
 
@@ -370,7 +370,7 @@ namespace SqlQueries.Test.Select.SqlServer
         [TestMethod]
         public void FluentHaving()
         {
-            string statement = new SqlQueries.Select().From("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.Greater, "Count").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee").Having("LastName", "Daan").HavingField("Number", SqlOperator.GreaterThan, "Count").ToString();
 
             Assert.AreEqual(HavingExpected, statement);
         }
@@ -542,5 +542,40 @@ namespace SqlQueries.Test.Select.SqlServer
 
         #endregion
 
+        #region Conditions
+
+        private const string ConditionExpected = "SELECT [Orders].[OrderID], [Customers].[CustomerName] FROM [Orders] INNER JOIN [Customers] ON [Orders].[CustomerID] = [Customers].[CustomerID] WHERE [Customers].[Country] = @p0 GROUP BY [Orders].[OrderID], [Customers].[CustomerName] HAVING AVG([Order].[Amount]) > @p1 ORDER BY [Customers].[CustomerName], [Orders].[OrderID]";
+
+        [TestMethod]
+        public void FluentConditions()
+        {
+            string statement = new SqlQueries.Select()
+                .Columns("Orders.OrderID, Customers.CustomerName").From("Orders")
+                .Join("Customers", JoinType.Inner, "Orders.CustomerID", "Customers.CustomerID")
+                .Where("Customers.Country", "Germany")
+                .GroupBy("Orders.OrderID, Customers.CustomerName")
+                .OrderBy("Customers.CustomerName, Orders.OrderID")
+                .Having(new Average("Order.Amount"), SqlOperator.GreaterThan, 500)  
+                .ToString();
+
+            Assert.AreEqual(ConditionExpected, statement);
+        }
+
+        [TestMethod]
+        public void FluentConditions2()
+        {
+            string statement = new SqlQueries.Select()
+                .Columns("Orders.OrderID, Customers.CustomerName").From("Orders")
+                .Join("Customers", JoinType.Inner).Equal("Orders.CustomerID", "Customers.CustomerID")
+                .Where().EqualToValue("Customers.Country", "Germany")
+                .GroupBy("Orders.OrderID, Customers.CustomerName")
+                .OrderBy("Customers.CustomerName, Orders.OrderID")
+                .Having().GreaterThanValue(new Average("Order.Amount"), 500)
+                .ToString();
+
+            Assert.AreEqual(ConditionExpected, statement);
+        }
+
+        #endregion
     }
 }

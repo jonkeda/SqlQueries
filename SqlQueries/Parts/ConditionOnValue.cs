@@ -3,21 +3,17 @@ using SqlQueries.Statements;
 
 namespace SqlQueries.Parts
 {
-    public abstract class ConditionOnValue : ConditionOperator
+    public class ConditionOnValue : ConditionOperator
     {
         public object Value { get; set; }
 
-        protected ConditionOnValue()
+        public ConditionOnValue()
         {
         }
 
-        protected ConditionOnValue(Field field, SqlOperator operand, object value) : base(field, operand)
+        public ConditionOnValue(Field field, SqlOperator operand, object value) : base(field, operand)
         {
             Value = value;
-        }
-
-        protected ConditionOnValue(Field field, object value) : this(field, SqlOperator.Equal, value)
-        {
         }
 
         public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
@@ -27,4 +23,27 @@ namespace SqlQueries.Parts
             sb.AppendParameter(Value);
         }
     }
+
+    public class EqualToValue : ConditionOnValue
+    {
+        public EqualToValue()
+        {
+        }
+
+        public EqualToValue(Field field, object value) : base(field, SqlOperator.Equal, value)
+        {
+        }
+    }
+
+    public class GreaterThanValue : ConditionOnValue
+    {
+        public GreaterThanValue()
+        {
+        }
+
+        public GreaterThanValue(Field field, object value) : base(field, SqlOperator.GreaterThan, value)
+        {
+        }
+    }
+
 }
