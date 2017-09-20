@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -75,7 +78,7 @@
     <Compile Include="Parts\NotIn.cs" />
     <Compile Include="Parts\TableCollection.cs" />
     <Compile Include="Parts\WhereCollection.cs" />
-    <Compile Include="SharedAssemblyInfo.cs" />
+    <Compile Include="Properties\SharedAssemblyInfo.cs" />
     <Compile Include="SqlAndOr.cs" />
     <Compile Include="SqlOperator.cs" />
     <Compile Include="Parts\Condition.cs" />

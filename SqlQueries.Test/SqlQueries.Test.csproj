@@ -65,8 +65,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SqlQueries\SharedAssemblyInfo.cs">
-      <Link>SharedAssemblyInfo.cs</Link>
+    <Compile Include="..\SqlQueries\Properties\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AssemblyInitializer.cs" />
     <Compile Include="Parts\FieldTest.cs" />

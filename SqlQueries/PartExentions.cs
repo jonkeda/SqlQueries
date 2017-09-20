@@ -2,7 +2,7 @@
 
 namespace SqlQueries
 {
-    public static class PartExentions
+    public static class PartExtentions
     {
         #region Table
 
@@ -168,9 +168,12 @@ namespace SqlQueries
         public static T Columns<T>(this T query, FieldCollection fields)
             where T : IColumns
         {
-            foreach (Field field in fields)
-            { 
-                query.Columns.Add(new ColumnField(field));
+            if (fields != null)
+            {
+                foreach (Field field in fields)
+                {
+                    query.Columns.Add(new ColumnField(field));
+                }
             }
             return query;
         }

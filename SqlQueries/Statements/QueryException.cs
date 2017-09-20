@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace SqlQueries.Statements
 {
+    [Serializable]
     public class QueryException : Exception
     {
         public QueryException()
