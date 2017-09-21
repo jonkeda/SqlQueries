@@ -10,13 +10,13 @@ namespace SqlQueries.Parts
 
         protected ConditionOperator(Field field, SqlOperator operand) : base(field)
         {
-            Operand = operand;
+            Operator = operand;
         }
 
-        public SqlOperator Operand { get; set; }
+        public SqlOperator Operator { get; set; }
 
 
-        protected void Operator(SqlBuilder sb, SqlOperator sqlOperator)
+        protected void AppendOperator(SqlBuilder sb, SqlOperator sqlOperator)
         {
             switch (sqlOperator)
             {

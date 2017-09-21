@@ -2,7 +2,7 @@
 
 namespace SqlQueries.Parts
 {
-    public interface IOrderBy : IQueryBuilder
+    public interface IOrderBy : IQueryBuilder, IFieldContainer
     {
         OrderByCollection OrderBy { get; set; }
     }

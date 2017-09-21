@@ -2,7 +2,7 @@
 
 namespace SqlQueries.Parts
 {
-    public interface IGroupBy : IQueryBuilder
+    public interface IGroupBy : IQueryBuilder, IFieldContainer
     {
         GroupByCollection GroupBy { get; set; }
     }

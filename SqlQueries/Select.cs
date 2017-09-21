@@ -3,7 +3,16 @@ using SqlQueries.Statements;
 
 namespace SqlQueries
 {
-    public class Select : QueryBuilder, IFrom, ITop, IOrderBy, IColumns, IGroupBy, IWhere, IHaving, IJoins, IDistinct, IConditionContainer
+    public class Select : QueryBuilder, 
+        IFrom, 
+        ITop, 
+        IColumns,
+        IOrderBy,
+        IGroupBy, 
+        IWhere, 
+        IHaving, 
+        IJoins, 
+        IDistinct
     {
         public Select()
         {
@@ -43,13 +52,14 @@ namespace SqlQueries
         public bool Distinct { get; set; }
 
         private ConditionCollection _conditions;
+        private IFieldCollection _fields;
 
-        void IConditionContainer.SetCurrent(ConditionCollection conditions)
+        public void SetCurrent(ConditionCollection conditions)
         {
             _conditions = conditions;
         }
 
-        void IConditionContainer.Add(Condition condition)
+        public void Add(Condition condition)
         {
             if (_conditions == null)
             {
@@ -58,6 +68,23 @@ namespace SqlQueries
             else
             {
                 _conditions.Add(condition);
+            }
+        }
+
+        public void SetCurrent(IFieldCollection fields)
+        {
+            _fields = fields;
+        }
+
+        public void Add(Field field)
+        {
+            if (_fields == null)
+            {
+                Columns.Add(field);
+            }
+            else
+            {
+                _fields.Add(field);
             }
         }
     }

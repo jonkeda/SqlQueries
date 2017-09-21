@@ -11,7 +11,9 @@
     <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SQL Statement builders for SQL Server and Sqlite</description>
-    <releaseNotes>First release with Delete, Truncate and partial Select functionality.</releaseNotes>
+    <releaseNotes>
+      0.2.0 Select Functionality, Columns, Functions, From, Joins, Where, Group By, Having, Order By
+      0.1.0 Delete, Truncate and partial Select functionality.</releaseNotes>
     <copyright>Public Domain</copyright>
     <tags>SQL Sqlite SQLserver database ado.net</tags>
   </metadata>

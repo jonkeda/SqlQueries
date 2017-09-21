@@ -2,7 +2,7 @@ using System.Collections.ObjectModel;
 
 namespace SqlQueries.Parts
 {
-    public class OrderByCollection : Collection<OrderByField>
+    public class OrderByCollection : Collection<OrderByField>, IFieldCollection
     {
         public OrderByCollection()
         {

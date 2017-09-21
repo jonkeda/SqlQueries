@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.2\lib\net45\System.Data.SQLite.dll</HintPath>
     </Reference>
@@ -69,9 +70,40 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AssemblyInitializer.cs" />
+    <Compile Include="Base\BaseTest.cs" />
+    <Compile Include="Contexts\Customers.cs" />
+    <Compile Include="Contexts\DatabaseContext.cs" />
     <Compile Include="Parts\FieldTest.cs" />
     <Compile Include="Parts\TableTest.cs" />
-    <Compile Include="Select\Sqlite\StatementTest.cs" />
+    <Compile Include="Select\ColumnStarBaseTest.cs" />
+    <Compile Include="Select\ColumnsBaseTest.cs" />
+    <Compile Include="Select\DistinctBaseTest.cs" />
+    <Compile Include="Select\ExistsBaseTest.cs" />
+    <Compile Include="Select\JoinBaseTest.cs" />
+    <Compile Include="Select\InBaseTest.cs" />
+    <Compile Include="Select\NotInBaseTest.cs" />
+    <Compile Include="Select\HavingBaseTest.cs" />
+    <Compile Include="Select\SqlServer\DistinctTest.cs" />
+    <Compile Include="Select\SqlServer\WhereTest.cs" />
+    <Compile Include="Select\SqlServer\OrderByTest.cs" />
+    <Compile Include="Select\SqlServer\NotInTest.cs" />
+    <Compile Include="Select\SqlServer\InTest.cs" />
+    <Compile Include="Select\SqlServer\HavingTest.cs" />
+    <Compile Include="Select\SqlServer\GroupByTest.cs" />
+    <Compile Include="Select\SqlServer\ExistsTest.cs" />
+    <Compile Include="Select\WhereBaseTest.cs" />
+    <Compile Include="Select\GroupByBaseTest.cs" />
+    <Compile Include="Select\OrderByBaseTest.cs" />
+    <Compile Include="Select\Sqlite\ColumnStarTest.cs" />
+    <Compile Include="Select\SqlServer\ColumnsTest.cs" />
+    <Compile Include="Select\SqlServer\ETest.cs" />
+    <Compile Include="Select\Sqlite\TopTest.cs" />
+    <Compile Include="Select\EBaseTest.cs" />
+    <Compile Include="Select\TopTest.cs" />
+    <Compile Include="Select\FromTest.cs" />
+    <Compile Include="Select\Sqlite\FromTest.cs" />
+    <Compile Include="Select\SqlServer\TopTest.cs" />
+    <Compile Include="Select\SqlServer\FromTest.cs" />
     <Compile Include="Select\SqlServer\StatementTest.cs" />
     <Compile Include="Delete\Sqlite\StatementTest.cs" />
     <Compile Include="Delete\SqlServer\StatementTest.cs" />

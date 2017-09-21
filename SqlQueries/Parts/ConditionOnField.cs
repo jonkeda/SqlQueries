@@ -21,7 +21,7 @@ namespace SqlQueries.Parts
         public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
         {
             fieldWriter(sb, Field);
-            Operator(sb, Operand);
+            AppendOperator(sb, Operator);
             fieldWriter(sb, ToField);
         }
     }

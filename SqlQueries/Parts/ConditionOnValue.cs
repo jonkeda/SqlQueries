@@ -19,31 +19,8 @@ namespace SqlQueries.Parts
         public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
         {
             fieldWriter(sb, Field);
-            Operator(sb, Operand);
+            AppendOperator(sb, Operator);
             sb.AppendParameter(Value);
         }
     }
-
-    public class EqualToValue : ConditionOnValue
-    {
-        public EqualToValue()
-        {
-        }
-
-        public EqualToValue(Field field, object value) : base(field, SqlOperator.Equal, value)
-        {
-        }
-    }
-
-    public class GreaterThanValue : ConditionOnValue
-    {
-        public GreaterThanValue()
-        {
-        }
-
-        public GreaterThanValue(Field field, object value) : base(field, SqlOperator.GreaterThan, value)
-        {
-        }
-    }
-
 }

@@ -2,7 +2,7 @@ using System.Collections.ObjectModel;
 
 namespace SqlQueries.Parts
 {
-    public class GroupByCollection : Collection<GroupByField>
+    public class GroupByCollection : Collection<GroupByField>, IFieldCollection
     {
         public GroupByCollection()
         {

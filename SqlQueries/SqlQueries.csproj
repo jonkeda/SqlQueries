@@ -45,9 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parts\All.cs" />
+    <Compile Include="Parts\Any.cs" />
     <Compile Include="Parts\Average.cs" />
+    <Compile Include="Parts\Between.cs" />
     <Compile Include="Parts\ConditionCollection.cs" />
     <Compile Include="Parts\ConditionField.cs" />
+    <Compile Include="Parts\Count.cs" />
+    <Compile Include="Parts\Equals.cs" />
+    <Compile Include="Parts\EqualToValue.cs" />
+    <Compile Include="Parts\GreaterOrEqual.cs" />
+    <Compile Include="Parts\GreaterThan.cs" />
+    <Compile Include="Parts\GreaterThanValue.cs" />
+    <Compile Include="Parts\IConditionContainer.cs" />
+    <Compile Include="Parts\IFieldCollection.cs" />
+    <Compile Include="Parts\IFieldContainer.cs" />
     <Compile Include="Parts\IsNotNull.cs" />
     <Compile Include="Parts\IsNull.cs" />
     <Compile Include="Parts\ConditionOnField.cs" />
@@ -69,10 +81,18 @@
     <Compile Include="Parts\Join.cs" />
     <Compile Include="Parts\JoinCollection.cs" />
     <Compile Include="Parts\JoinType.cs" />
+    <Compile Include="Parts\LessOrEqual.cs" />
+    <Compile Include="Parts\LessThan.cs" />
+    <Compile Include="Parts\Like.cs" />
+    <Compile Include="Parts\Maximum.cs" />
+    <Compile Include="Parts\Minimum.cs" />
+    <Compile Include="Parts\NotEqual.cs" />
     <Compile Include="Parts\NotIn.cs" />
+    <Compile Include="Parts\Sum.cs" />
     <Compile Include="Parts\TableCollection.cs" />
     <Compile Include="Properties\SharedAssemblyInfo.cs" />
     <Compile Include="SqlAndOr.cs" />
+    <Compile Include="Sqlite\SelectBuilderSqliteServer.cs" />
     <Compile Include="SqlOperator.cs" />
     <Compile Include="Parts\Condition.cs" />
     <Compile Include="Parts\ColumnCollection.cs" />
@@ -83,7 +103,7 @@
     <Compile Include="Parts\IGroupBy.cs" />
     <Compile Include="Parts\IOrderBy.cs" />
     <Compile Include="Parts\ITop.cs" />
-    <Compile Include="PartExentions.cs" />
+    <Compile Include="PartExtentions.cs" />
     <Compile Include="Delete.cs" />
     <Compile Include="Parts\GroupByCollection.cs" />
     <Compile Include="Parts\OrderByCollection.cs" />

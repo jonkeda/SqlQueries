@@ -2,7 +2,7 @@ using System.Collections.ObjectModel;
 
 namespace SqlQueries.Parts
 {
-    public class ColumnCollection : Collection<ColumnField>
+    public class ColumnCollection : Collection<ColumnField>, IFieldCollection
     {
         public ColumnCollection()
         {

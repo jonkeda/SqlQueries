@@ -14,11 +14,11 @@ namespace SqlQueries.Sqlite
 
         protected override void Top(SqlBuilder sb, Top top)
         {
-            throw new NotImplementedException();
-            //if (top.TopCount > 0)
-            //{
-            //    sb.Append($@" TOP ({top.TopCount})");
-            //}
+            if (top != null
+                && top.TopCount > 0)
+            {
+                sb.Append($@" LIMIT ({top.TopCount})");
+            }
         }
 
         protected override void Table(SqlBuilder sb, Table table)
@@ -28,30 +28,5 @@ namespace SqlQueries.Sqlite
             sb.Append(table.TableName);
             sb.Append("]");
         }
-
-        //protected override void Field(SqlBuilder sb, Field field)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //protected override void Columns(SqlBuilder sb, ColumnCollection top)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //protected override void OrderBy(SqlBuilder sb, OrderByCollection top)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //protected override void GroupBy(SqlBuilder sb, GroupByCollection top)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //protected override void Where(SqlBuilder sb, WhereCollection where)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

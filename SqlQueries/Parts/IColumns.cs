@@ -2,7 +2,7 @@
 
 namespace SqlQueries.Parts
 {
-    public interface IColumns : IQueryBuilder
+    public interface IColumns : IQueryBuilder, IFieldContainer
     {
         ColumnCollection Columns { get; set; }
     }
