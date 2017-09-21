@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Diagnostics;
 using SqlQueries.Statements;
 
 namespace SqlQueries.Parts
 {
+    [DebuggerDisplay("Field: {Field.FullName} Operator: {Operator} Select: {Select: }")]
     public class All : ConditionOperator
     {
         public Select Select { get; set; }
 
-        public All()
+        public All() : base(SqlOperator.Equal)
         {
         }
 

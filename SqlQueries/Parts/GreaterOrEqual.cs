@@ -2,7 +2,7 @@
 {
     public class GreaterOrEqual : ConditionOnField
     {
-        public GreaterOrEqual()
+        public GreaterOrEqual() : base(SqlOperator.GreaterOrEqual)
         {
         }
 

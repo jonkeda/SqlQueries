@@ -52,9 +52,10 @@
     <Compile Include="Parts\ConditionCollection.cs" />
     <Compile Include="Parts\ConditionField.cs" />
     <Compile Include="Parts\Count.cs" />
-    <Compile Include="Parts\Equals.cs" />
+    <Compile Include="Parts\Equal.cs" />
     <Compile Include="Parts\EqualToValue.cs" />
     <Compile Include="Parts\GreaterOrEqual.cs" />
+    <Compile Include="Parts\GreaterOrEqualThanValue.cs" />
     <Compile Include="Parts\GreaterThan.cs" />
     <Compile Include="Parts\GreaterThanValue.cs" />
     <Compile Include="Parts\IConditionContainer.cs" />
@@ -82,11 +83,13 @@
     <Compile Include="Parts\JoinCollection.cs" />
     <Compile Include="Parts\JoinType.cs" />
     <Compile Include="Parts\LessOrEqual.cs" />
+    <Compile Include="Parts\LessOrEqualThanValue.cs" />
     <Compile Include="Parts\LessThan.cs" />
     <Compile Include="Parts\Like.cs" />
     <Compile Include="Parts\Maximum.cs" />
     <Compile Include="Parts\Minimum.cs" />
     <Compile Include="Parts\NotEqual.cs" />
+    <Compile Include="Parts\NotEqualToValue.cs" />
     <Compile Include="Parts\NotIn.cs" />
     <Compile Include="Parts\Sum.cs" />
     <Compile Include="Parts\TableCollection.cs" />

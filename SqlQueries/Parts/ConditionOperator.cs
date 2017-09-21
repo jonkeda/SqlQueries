@@ -4,13 +4,14 @@ namespace SqlQueries.Parts
 {
     public abstract class ConditionOperator : ConditionField
     {
-        protected ConditionOperator()
+        protected ConditionOperator(SqlOperator sqlOperator)
         {
+            Operator = sqlOperator;
         }
 
-        protected ConditionOperator(Field field, SqlOperator operand) : base(field)
+        protected ConditionOperator(Field field, SqlOperator sqlOperator) : base(field)
         {
-            Operator = operand;
+            Operator = sqlOperator;
         }
 
         public SqlOperator Operator { get; set; }

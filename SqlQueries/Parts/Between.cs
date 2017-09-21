@@ -7,7 +7,6 @@ namespace SqlQueries.Parts
     {
         public object FromValue { get; set; }
         public object ToValue { get; set; }
-        public Field ToField { get; set; }
 
         public Between()
         {

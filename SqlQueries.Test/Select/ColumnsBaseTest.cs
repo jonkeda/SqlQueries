@@ -18,7 +18,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void ConstructorColumns()
         {
-            string statement = SelectCustomerAs().Columns("[b], [a].[b], [a].[b] as [c], [b] AS [c]").ToString();
+            string statement = SelectCustomerAs().Columns("[b], [a].[b], [a].[b] as [c], [b] AS [c]").ToString(DbConnectionType);
 
             Assert.AreEqual(ColumnsExpected, statement);
         }
@@ -33,7 +33,7 @@ namespace SqlQueries.Test.Select
             };
             select.Columns.Add("[b] as [c]");
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(ColumnsExpected, statement);
         }
@@ -42,7 +42,7 @@ namespace SqlQueries.Test.Select
         public void FluentColumns()
         {
             string statement = SelectCustomerAs()
-                .Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").ToString();
+                .Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").ToString(DbConnectionType);
 
             Assert.AreEqual(ColumnsExpected, statement);
         }

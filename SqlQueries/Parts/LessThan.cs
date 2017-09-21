@@ -2,7 +2,7 @@
 {
     public class LessThan : ConditionOnField
     {
-        public LessThan()
+        public LessThan() : base(SqlOperator.LessThan)
         {
         }
 

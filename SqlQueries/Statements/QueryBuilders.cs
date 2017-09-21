@@ -22,10 +22,6 @@ namespace SqlQueries.Statements
 
         public static QueryBuildersCollection Builders { get; } = new QueryBuildersCollection();
 
-        public StatementBuilder Get<T>()
-        {
-            return Get(typeof(T));
-        }
         public StatementBuilder Get(Type builderType)
         {
             var statement = Statements.Get(builderType);

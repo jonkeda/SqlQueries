@@ -20,15 +20,4 @@ namespace SqlQueries.Test.Contexts
 
         public string Country { get; set; }
     }
-
-    public class Orders
-    {
-        [Key, Column("OrderID")]
-        public int OrderId { get; set; }
-
-        [Column("CustomerID")]
-        public string CustomerId { get; set; }
-
-        public string OrderDate { get; set; }
-    }
 }

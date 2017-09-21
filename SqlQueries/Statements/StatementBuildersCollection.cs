@@ -6,10 +6,7 @@ namespace SqlQueries.Statements
 {
     public class StatementBuildersCollection : Collection<StatementBuilders>
     {
-        public StatementBuilder Get<T>()
-        {
-            return Get(typeof(T));
-        }
+
         public StatementBuilder Get(Type queryBuilderInterfaceType)
         {
             return this.FirstOrDefault(t => t.QueryBuilderInterfaceType == queryBuilderInterfaceType)?.StatementBuilder;

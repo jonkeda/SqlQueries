@@ -351,6 +351,14 @@ namespace SqlQueries
             return query;
         }
 
+        public static T Where<T>(this T query, Condition condition)
+            where T : IWhere
+        {
+            SetCurrentWhere(query);
+            query.Add(condition);
+            return query;
+        }
+
         public static T WhereField<T>(this T query, Field field, Field toField)
             where T : IWhere
         {
@@ -496,7 +504,7 @@ namespace SqlQueries
         public static T Equal<T>(this T query, Field field, Field toField)
             where T : IConditionContainer
         {
-            query.Add(new Equals(field, toField));
+            query.Add(new Equal(field, toField));
             return query;
         }
 
@@ -504,6 +512,24 @@ namespace SqlQueries
             where T : IConditionContainer
         {
             query.Add(new EqualToValue(field, value));
+            return query;
+        }
+
+        #endregion
+
+        #region NotEquals
+
+        public static T NotEqual<T>(this T query, Field field, Field toField)
+            where T : IConditionContainer
+        {
+            query.Add(new NotEqual(field, toField));
+            return query;
+        }
+
+        public static T NotEqualToValue<T>(this T query, Field field, object value)
+            where T : IConditionContainer
+        {
+            query.Add(new NotEqualToValue(field, value));
             return query;
         }
 
@@ -526,6 +552,63 @@ namespace SqlQueries
         }
 
         #endregion
+
+        #region GreaterOrEqual
+
+        public static T GreaterOrEqual<T>(this T query, Field field, Field toField)
+            where T : IConditionContainer
+        {
+            query.Add(new GreaterOrEqual(field, toField));
+            return query;
+        }
+
+        public static T GreaterOrEqualThanValue<T>(this T query, Field field, object value)
+            where T : IConditionContainer
+        {
+            query.Add(new GreaterOrEqualThanValue(field, value));
+            return query;
+        }
+
+        #endregion
+
+
+        #region LessThan
+
+        public static T LessThan<T>(this T query, Field field, Field toField)
+            where T : IConditionContainer
+        {
+            query.Add(new LessThan(field, toField));
+            return query;
+        }
+
+        public static T LessThanValue<T>(this T query, Field field, object value)
+            where T : IConditionContainer
+        {
+            query.Add(new LessThanValue(field, value));
+            return query;
+        }
+
+        #endregion
+
+        #region LessOrEqual
+
+        public static T LessOrEqual<T>(this T query, Field field, Field toField)
+            where T : IConditionContainer
+        {
+            query.Add(new LessOrEqual(field, toField));
+            return query;
+        }
+
+        public static T LessOrEqualThanValue<T>(this T query, Field field, object value)
+            where T : IConditionContainer
+        {
+            query.Add(new LessOrEqualThanValue(field, value));
+            return query;
+        }
+
+        #endregion
+
+
 
 
         #region IsNull

@@ -7,7 +7,7 @@ namespace SqlQueries.Parts
     {
         public Select Select { get; set; }
 
-        public Any()
+        public Any() : base(SqlOperator.Equal)
         {
         }
 
@@ -20,7 +20,7 @@ namespace SqlQueries.Parts
         {
             fieldWriter(sb, Field);
             AppendOperator(sb, Operator);
-            sb.Append(" ALL (");
+            sb.Append(" ANY (");
             Select.CreateSql(sb);
             sb.Append(")");
         }

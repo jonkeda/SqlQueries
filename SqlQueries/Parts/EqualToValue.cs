@@ -2,7 +2,7 @@
 {
     public class EqualToValue : ConditionOnValue
     {
-        public EqualToValue()
+        public EqualToValue() : base(SqlOperator.Equal)
         {
         }
 

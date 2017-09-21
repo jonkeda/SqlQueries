@@ -2,7 +2,7 @@
 
 namespace SqlQueries.Parts
 {
-    public interface IWhere : IQueryBuilder, IConditionContainer
+    public interface IWhere : IConditionContainer
     {
         ConditionCollection Where { get; set; }
     }

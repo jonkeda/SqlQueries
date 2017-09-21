@@ -20,8 +20,7 @@ namespace SqlQueries.Test.Select
         public void ConstructorIn()
         {
             string statement = new SqlQueries.Select("Customers")
-                .Where()
-                .In("Country", new SqlQueries.Select("Suppliers", "Country"))
+                .Where(new In("Country", new SqlQueries.Select("Suppliers", "Country")))
                 .ToString();
 
             Assert.AreEqual(InExpected, statement);
@@ -34,7 +33,7 @@ namespace SqlQueries.Test.Select
             {
                 From = "Customers"
             };
-            select.Where.Add(new In("Country", new SqlQueries.Select("Suppliers", "Country")));
+            select.Where.Add(new In { Field = "Country", Select = new SqlQueries.Select("Suppliers", "Country")});
 
             string statement = select.ToString();
 

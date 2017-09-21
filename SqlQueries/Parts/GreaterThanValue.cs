@@ -2,7 +2,7 @@
 {
     public class GreaterThanValue : ConditionOnValue
     {
-        public GreaterThanValue()
+        public GreaterThanValue() : base(SqlOperator.GreaterThan)
         {
         }
 

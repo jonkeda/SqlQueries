@@ -21,8 +21,7 @@ namespace SqlQueries.Test.Select
         public void ConstructorExist()
         {
             string statement = SelectCustomer()
-                .Where()
-                .Exists(new SqlQueries.Select("Orders", "CustomerID"))
+                .Where(new Exists(new SqlQueries.Select("Orders", "CustomerID")))
                 .ToString();
 
             Assert.AreEqual(ExistExpected, statement);
@@ -35,7 +34,7 @@ namespace SqlQueries.Test.Select
             {
                 From = "[TestDatabase].[Dbo].[Customers]"
             };
-            select.Where.Add(new Exists(new SqlQueries.Select("Orders", "CustomerID")));
+            select.Where.Add(new Exists {Select = new SqlQueries.Select("Orders", "CustomerID")});
 
             string statement = select.ToString();
 

@@ -7,11 +7,11 @@ namespace SqlQueries.Parts
     {
         public object Value { get; set; }
 
-        public ConditionOnValue()
+        public ConditionOnValue(SqlOperator sqlOperator) : base(sqlOperator)
         {
         }
 
-        public ConditionOnValue(Field field, SqlOperator operand, object value) : base(field, operand)
+        public ConditionOnValue(Field field, SqlOperator sqlOperator, object value) : base(field, sqlOperator)
         {
             Value = value;
         }

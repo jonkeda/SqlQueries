@@ -16,7 +16,7 @@ namespace SqlQueries.Parts
         {
             Table = table;
             JoinType = joinType;
-            On.Add(new Equals(fromField, toField)); 
+            On.Add(new Equal(fromField, toField)); 
         }
 
         public Table Table { get; set; }

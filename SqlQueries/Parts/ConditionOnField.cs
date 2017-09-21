@@ -9,11 +9,11 @@ namespace SqlQueries.Parts
     {
         public Field ToField { get; set; }
 
-        public ConditionOnField()
+        public ConditionOnField(SqlOperator sqlOperator) : base(sqlOperator)
         {
         }
 
-        public ConditionOnField(Field field, SqlOperator operand, Field toField) : base(field, operand)
+        public ConditionOnField(Field field, SqlOperator sqlOperator, Field toField) : base(field, sqlOperator)
         {
             ToField = toField;
         }

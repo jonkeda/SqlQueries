@@ -2,7 +2,7 @@
 {
     public class HavingValue : ConditionOnValue, IHavingCondition
     {
-        public HavingValue()
+        public HavingValue() : base(SqlOperator.Equal)
         {
         }
 
@@ -10,7 +10,7 @@
         {
         }
 
-        public HavingValue(Field field, SqlOperator operand, object value) : base(field, operand, value)
+        public HavingValue(Field field, SqlOperator sqlOperator, object value) : base(field, sqlOperator, value)
         {
         }
     }

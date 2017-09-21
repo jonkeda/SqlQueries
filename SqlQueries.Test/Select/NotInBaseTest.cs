@@ -13,43 +13,42 @@ namespace SqlQueries.Test.Select
 
         #region Where In
 
-        public abstract string InExpected { get; } // = @"SELECT * FROM [Customers] WHERE [Country] IN (SELECT [Country] FROM [Suppliers])";
+        public abstract string Expected { get; } // = @"SELECT * FROM [Customers] WHERE [Country] IN (SELECT [Country] FROM [Suppliers])";
 
 
         [TestMethod]
-        public void ConstructorIn()
+        public void ConstructorNotIn()
         {
             string statement = new SqlQueries.Select("Customers")
-                .Where()
-                .In("Country", new SqlQueries.Select("Suppliers", "Country"))
+                .Where(new NotIn("Country", new SqlQueries.Select("Suppliers", "Country")))
                 .ToString();
 
-            Assert.AreEqual(InExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
-        public void PropertiesIn()
+        public void PropertiesNotIn()
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
                 From = "Customers"
             };
-            select.Where.Add(new In("Country", new SqlQueries.Select("Suppliers", "Country")));
+            select.Where.Add(new NotIn { Field = "Country", Select = new SqlQueries.Select("Suppliers", "Country")});
 
             string statement = select.ToString();
 
-            Assert.AreEqual(InExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
-        public void FluentIn()
+        public void FluentNotIn()
         {
             string statement = new SqlQueries.Select()
                 .From("Customers")
-                .In("Country", new SqlQueries.Select("Suppliers", "Country"))
+                .NotIn("Country", new SqlQueries.Select("Suppliers", "Country"))
                 .ToString();
 
-            Assert.AreEqual(InExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

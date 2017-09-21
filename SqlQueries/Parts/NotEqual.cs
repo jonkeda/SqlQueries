@@ -2,7 +2,7 @@
 {
     public class NotEqual : ConditionOnField
     {
-        public NotEqual()
+        public NotEqual() : base(SqlOperator.NotEqual)
         {
         }
 
