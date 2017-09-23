@@ -1,6 +1,6 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Delete.SqlServer;
+using SqlQueries.Statements;
 
 namespace SqlQueries.Test.Delete.Sqlite
 {
@@ -13,18 +13,29 @@ namespace SqlQueries.Test.Delete.Sqlite
 
         public override string Expected { get; } = "DELETE FROM [Customers]";
 
-        public override string TopExpected { get; } = "DELETE FROM [Customers] LIMIT 10";
+        public override string TopExpected { get; } = "DELETE FROM [Customers] LIMIT (10)";
 
         [TestMethod]
-        public override void ConstructorTop()
+        [ExpectedException(typeof(SQLiteException))]
+        public override void TestTopExpectedSql()
         {
-            // todo: Delete Top not implemented for Sqlite
+            base.TestTopExpectedSql();
         }
 
         [TestMethod]
+        [ExpectedException(typeof(QueryBuilderNotImplementedForSqliteException))]
+        public override void ConstructorTop()
+        {
+            // todo: Delete Top not implemented for Sqlite
+            base.ConstructorTop();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(QueryBuilderNotImplementedForSqliteException))]
         public override void FluentTop()
         {
             // todo: Delete Top not implemented for Sqlite
+            base.FluentTop();
         }
     }
 }

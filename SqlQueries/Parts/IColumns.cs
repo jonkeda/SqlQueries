@@ -1,9 +1,7 @@
-﻿using SqlQueries.Statements;
-
-namespace SqlQueries.Parts
+﻿namespace SqlQueries.Parts
 {
-    public interface IColumns : IQueryBuilder, IFieldContainer
+    public interface IColumns : IFieldContainer
     {
-        ColumnCollection Columns { get; set; }
+        ColumnCollection Columns { get; }
     }
 }

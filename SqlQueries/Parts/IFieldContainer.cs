@@ -1,6 +1,8 @@
-﻿namespace SqlQueries.Parts
+﻿using SqlQueries.Statements;
+
+namespace SqlQueries.Parts
 {
-    public interface IFieldContainer
+    public interface IFieldContainer : IQueryBuilder
     {
         void SetCurrent(IFieldCollection conditions);
         void Add(Field field);

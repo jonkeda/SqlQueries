@@ -1,9 +1,7 @@
-﻿using SqlQueries.Statements;
-
-namespace SqlQueries.Parts
+﻿namespace SqlQueries.Parts
 {
-    public interface IHaving : IQueryBuilder, IConditionContainer
+    public interface IHaving : IConditionContainer
     {
-        ConditionCollection Having { get; set; }
+        ConditionCollection Having { get; }
     }
 }

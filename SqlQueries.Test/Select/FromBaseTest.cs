@@ -17,10 +17,15 @@ namespace SqlQueries.Test.Select
         protected abstract string SingleExpected { get; } 
         protected abstract string MultipleExpected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return SingleExpected;
-            yield return MultipleExpected;
+            return SingleExpected;
+        }
+
+        [TestMethod]
+        public virtual void TestMultipleExpectedSql()
+        {
+            RunSql(MultipleExpected, Parameters);
         }
 
         [TestMethod]
@@ -44,7 +49,7 @@ namespace SqlQueries.Test.Select
         {
             string statement = new SqlQueries.Select
             {
-                From = "TestDatabase.Dbo.Customers"
+                From = {"TestDatabase.Dbo.Customers" }
             }.ToString(DbConnectionType);
 
             Assert.AreEqual(SingleExpected, statement);
@@ -55,7 +60,7 @@ namespace SqlQueries.Test.Select
         {
             string statement = new SqlQueries.Select
             {
-                From = "TestDatabase.Dbo.Customers"
+                From = {"TestDatabase.Dbo.Customers" }
             }.From("TestDatabase.Dbo.Orders").ToString(DbConnectionType);
 
             Assert.AreEqual(MultipleExpected, statement);

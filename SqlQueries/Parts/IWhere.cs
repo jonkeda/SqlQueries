@@ -2,6 +2,6 @@
 {
     public interface IWhere : IConditionContainer
     {
-        ConditionCollection Where { get; set; }
+        ConditionCollection Where { get; }
     }
 }

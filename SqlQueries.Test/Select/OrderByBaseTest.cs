@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -14,17 +13,32 @@ namespace SqlQueries.Test.Select
 
         #region OrderBy
 
-        public abstract string Expected { get; } 
+        public abstract string Expected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
         }
 
         [TestMethod]
         public void ConstructorOrderBy()
         {
-            string statement = SelectCustomer().OrderByField("CustomerName").ToString(DbConnectionType);
+            string statement = SelectCustomer().OrderByField("CustomerName").OrderByFieldDescending("ContactName").ToString(DbConnectionType);
+
+            Assert.AreEqual(Expected, statement);
+        }
+
+
+        [TestMethod]
+        public void Constructor2GroupBy()
+        {
+            SqlQueries.Select select = new SqlQueries.Select
+            {
+                From = { "[TestDatabase].[Dbo].[Customers]" },
+                OrderBy = { "CustomerName" }
+            };
+            select.OrderByFieldDescending("ContactName");
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -34,6 +48,23 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = SelectCustomer();
             select.OrderBy.Add(new OrderByField("CustomerName"));
+            select.OrderBy.Add(new OrderByField
+            {
+                Field = "ContactName",
+                Descending = true
+            });
+
+            string statement = select.ToString(DbConnectionType);
+
+            Assert.AreEqual(Expected, statement);
+        }
+
+        [TestMethod]
+        public void Properties2GroupBy()
+        {
+            SqlQueries.Select select = SelectCustomer();
+            select.OrderBy.Add(new Field("CustomerName"));
+            select.OrderBy.Add(new OrderByField("ContactName", true));
 
             string statement = select.ToString(DbConnectionType);
 
@@ -43,9 +74,16 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentOrderBy()
         {
-            string statement = SelectCustomer().OrderByField("CustomerName").ToString(DbConnectionType);
+            string statement = SelectCustomer().OrderByField("CustomerName").OrderByFieldDescending("ContactName").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
+        }
+
+
+        [TestMethod]
+        public void OperatorGroupBy()
+        {
+            OrderByCollection gb = "ContactNaam";
         }
 
         #endregion

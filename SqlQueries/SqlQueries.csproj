@@ -120,6 +120,7 @@
     <Compile Include="Parts\ITable.cs" />
     <Compile Include="Sqlite\StatementBuilderSqlite.cs" />
     <Compile Include="SqlServer\StatementBuilderSqlServer.cs" />
+    <Compile Include="Statements\QueryBuilderNotImplementedForSqliteException.cs" />
     <Compile Include="Statements\QueryException.cs" />
     <Compile Include="Statements\QueryNotImplementedException.cs" />
     <Compile Include="Statements\SqlBuilder.cs" />

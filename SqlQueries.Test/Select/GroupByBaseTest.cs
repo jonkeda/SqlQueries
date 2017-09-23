@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -16,15 +15,29 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
         }
 
         [TestMethod]
-        public void ConstructorGroupBy()
+        public void Constructor1GroupBy()
         {
             string statement = SelectCustomer().GroupBy(new GroupByField {Field = "ContactName"}).ToString(DbConnectionType);
+
+            Assert.AreEqual(Expected, statement);
+        }
+
+        [TestMethod]
+        public void Constructor2GroupBy()
+        {
+            SqlQueries.Select select = new SqlQueries.Select
+            {
+                From = { "[TestDatabase].[Dbo].[Customers]" },
+                GroupBy = { "ContactName" }
+            };
+
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -41,11 +54,27 @@ namespace SqlQueries.Test.Select
         }
 
         [TestMethod]
+        public void Properties2GroupBy()
+        {
+            SqlQueries.Select select = SelectCustomer();
+            select.GroupBy.Add(new Field("ContactName"));
+
+            string statement = select.ToString(DbConnectionType);
+
+            Assert.AreEqual(Expected, statement);
+        }
+        [TestMethod]
         public void FluentGroupBy()
         {
             string statement = SelectCustomer().GroupBy("ContactName").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
+        }
+
+        [TestMethod]
+        public void OperatorGroupBy()
+        {
+            GroupByCollection gb = "ContactNaam";
         }
 
         #endregion

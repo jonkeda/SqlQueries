@@ -21,7 +21,7 @@ namespace SqlQueries.Sqlite
 
                 if (top.Percentage)
                 {
-                    throw new QueryNotImplementedException("Percentage not implemented for SQLite");
+                    throw new QueryBuilderNotImplementedForSqliteException("Percentage not implemented for SQLite");
                 }
             }
         }
@@ -37,6 +37,21 @@ namespace SqlQueries.Sqlite
                 sb.Append(" AS [");
                 sb.Append(table.Alias);
                 sb.Append("]");
+            }
+        }
+
+        protected override void Joins(SqlBuilder sb, JoinCollection joins)
+        {
+            
+            foreach (Join join in joins)
+            {
+                if (join.JoinType == JoinType.Right
+                    || join.JoinType == JoinType.FullOuter)
+                {
+                    throw new QueryBuilderNotImplementedForSqliteException("Percentage not implemented for SQLite");
+                }
+
+                Join(sb, @join);
             }
         }
     }

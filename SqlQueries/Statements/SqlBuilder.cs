@@ -18,10 +18,10 @@ namespace SqlQueries.Statements
             _sb.Append(text);
         }
 
-        public string Statement
-        {
-            get { return _sb.ToString(); }
-        }
+        //public string Statement
+        //{
+        //    get { return _sb.ToString(); }
+        //}
 
         public Type ConnectionType { get; }
 

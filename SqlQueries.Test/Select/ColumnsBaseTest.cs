@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -16,9 +15,9 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
         }
 
         [TestMethod]
@@ -34,8 +33,8 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                From = "TestDatabase.Dbo.Customers c",
-                Columns = "Price"
+                From = { "TestDatabase.Dbo.Customers c" },
+                Columns = { "Price" }
             };
             select.Columns.Add(new Field("c", "Price"));
             select.Columns.Add("[c].[Price] as [p]");

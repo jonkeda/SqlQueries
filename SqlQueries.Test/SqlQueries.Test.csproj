@@ -82,6 +82,9 @@
     <Compile Include="Contexts\IDbContextTest.cs" />
     <Compile Include="Contexts\Orders.cs" />
     <Compile Include="Delete\DeleteBaseTest.cs" />
+    <Compile Include="Exceptions\QueryBuilderNotImplementedForSqliteExceptionTest.cs" />
+    <Compile Include="Exceptions\QueryBuilderNotImplementedExceptionTest.cs" />
+    <Compile Include="Exceptions\QueryBuilderExceptionTest.cs" />
     <Compile Include="Parts\ColumnFieldTest.cs" />
     <Compile Include="Parts\FieldTest.cs" />
     <Compile Include="Parts\TableTest.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Select\AverageBaseTest.cs" />
     <Compile Include="Select\ColumnStarBaseTest.cs" />
     <Compile Include="Select\ColumnsBaseTest.cs" />
+    <Compile Include="Select\Sqlite\JoinTest.cs" />
     <Compile Include="Select\Sqlite\AllTest.cs" />
     <Compile Include="Select\Sqlite\AnyTest.cs" />
     <Compile Include="Select\Sqlite\AverageTest.cs" />
@@ -116,6 +120,7 @@
     <Compile Include="Select\Sqlite\OrderByTest.cs" />
     <Compile Include="Select\Sqlite\SumTest.cs" />
     <Compile Include="Select\Sqlite\WhereTest.cs" />
+    <Compile Include="Select\SqlServer\JoinTest.cs" />
     <Compile Include="Select\SumBaseTest.cs" />
     <Compile Include="Select\CountBaseTest.cs" />
     <Compile Include="Select\DistinctBaseTest.cs" />

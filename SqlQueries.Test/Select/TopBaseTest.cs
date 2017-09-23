@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -17,10 +17,15 @@ namespace SqlQueries.Test.Select
         protected abstract string Expected { get; }
         protected abstract string PercentageExpected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
-            yield return PercentageExpected;
+            return Expected;
+        }
+
+        [TestMethod]
+        public virtual void TestPercentageExpectedSql()
+        {
+            RunSql(PercentageExpected, null);
         }
 
         [TestMethod]
@@ -36,7 +41,7 @@ namespace SqlQueries.Test.Select
         {
             string statement = new SqlQueries.Select
             {
-                From = "TestDatabase.Dbo.Customers",
+                From = {"TestDatabase.Dbo.Customers" },
                 Top = 10
             }.ToString(DbConnectionType);
 
@@ -48,7 +53,7 @@ namespace SqlQueries.Test.Select
         {
             string statement = new SqlQueries.Select
             {
-                From = "TestDatabase.Dbo.Customers",
+                From = {"TestDatabase.Dbo.Customers" },
                 Top = new Top(10, true)
             }.ToString(DbConnectionType);
 

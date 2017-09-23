@@ -16,7 +16,7 @@ namespace SqlQueries.Test.Select.Sqlite
         protected override string PercentageExpected { get; } = "SELECT * FROM [Customers] LIMIT (10) PERCENTAGE";
 
         [TestMethod]
-        [ExpectedException(typeof(QueryNotImplementedException))]
+        [ExpectedException(typeof(QueryBuilderNotImplementedForSqliteException))]
         public override void FluentTopPercentage()
         {
             // not implemented in sqlite
@@ -24,7 +24,7 @@ namespace SqlQueries.Test.Select.Sqlite
         }
 
         [TestMethod]
-        [ExpectedException(typeof(QueryNotImplementedException))]
+        [ExpectedException(typeof(QueryBuilderNotImplementedForSqliteException))]
         public override void PropertiesTopPercentage()
         {
             // not implemented in sqlite
@@ -33,11 +33,9 @@ namespace SqlQueries.Test.Select.Sqlite
 
         [TestMethod]
         [ExpectedException(typeof(SQLiteException))]
-        public override void TestExpectedSqls()
+        public override void TestPercentageExpectedSql()
         {
-            // not implemented in sqlite
-            base.TestExpectedSqls();
+            base.TestPercentageExpectedSql();
         }
-
     }
 }

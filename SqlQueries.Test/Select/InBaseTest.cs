@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -16,9 +15,9 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; } // = @"SELECT * FROM [Customers] WHERE [Country] IN (SELECT [Country] FROM [Suppliers])";
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
         }
 
         [TestMethod]
@@ -36,7 +35,7 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                From = "Customers"
+                From = {"Customers" }
             };
             select.Where.Add(new In { Field = "Country", Select = new SqlQueries.Select("Suppliers", "Country")});
 

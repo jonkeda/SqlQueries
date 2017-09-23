@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -16,11 +15,11 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; } // = "SELECT * FROM [TestDatabase].[Dbo].[Customers] HAVING [City] = @p0 AND [ContactName] <> [CustomerName]";
 
-        public override object[][] Parameters { get; } = {new object[] {"Daan"}};
+        public override object[] Parameters { get; } = {"Daan"};
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
         }
 
         [TestMethod]

@@ -1,10 +1,8 @@
-﻿using SqlQueries.Statements;
-
-namespace SqlQueries.Parts
+﻿namespace SqlQueries.Parts
 {
-    public interface IGroupBy : IQueryBuilder, IFieldContainer
+    public interface IGroupBy : IFieldContainer
     {
-        GroupByCollection GroupBy { get; set; }
+        GroupByCollection GroupBy { get; }
     }
 
 }

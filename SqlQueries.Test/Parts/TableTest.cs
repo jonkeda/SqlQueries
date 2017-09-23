@@ -91,7 +91,7 @@ namespace SqlQueries.Test.Parts
         [ExpectedException(typeof(ArgumentNullException))]
         public void OperatorArgumentNullException()
         {
-            Table table = new Table(null);
+            Table table = (string)null;
 
             Assert.AreEqual("a.b.c d", (string)(Table)null);
         }

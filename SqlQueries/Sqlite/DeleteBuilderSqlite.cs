@@ -14,10 +14,13 @@ namespace SqlQueries.Sqlite
             sb.Append("DELETE");
             sb.Append(" FROM");
             From(sb, builder.From);
-            //if (builder.Top > 0)
-            //{
-            //    sb.Append($@" LIMIT {builder.Top}");
-            //}
+            Top(sb, builder.Top);
+            if (builder.Top?.TopCount > 0
+                && builder.OrderBy?.Count == 0)
+            {
+                throw new QueryBuilderNotImplementedForSqliteException("Delete TOP without order by not implemented.");
+            }
+
             return sb.ToString();
         }
     }

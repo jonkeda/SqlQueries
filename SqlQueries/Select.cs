@@ -35,24 +35,24 @@ namespace SqlQueries
 
         public Top Top { get; set; }
 
-        public TableCollection From { get; set; } = new TableCollection();
+        public TableCollection From { get; } = new TableCollection();
 
-        public ColumnCollection Columns { get; set; } = new ColumnCollection();
+        public ColumnCollection Columns { get; } = new ColumnCollection();
 
-        public OrderByCollection OrderBy { get; set; } = new OrderByCollection();
+        public OrderByCollection OrderBy { get; } = new OrderByCollection();
 
-        public GroupByCollection GroupBy { get; set; } = new GroupByCollection();
+        public GroupByCollection GroupBy { get; } = new GroupByCollection();
 
-        public ConditionCollection Where { get; set; } = new ConditionCollection();
+        public ConditionCollection Where { get; } = new ConditionCollection();
 
-        public ConditionCollection Having { get; set; } = new ConditionCollection();
+        public ConditionCollection Having { get; } = new ConditionCollection();
 
-        public JoinCollection Joins { get; set; } = new JoinCollection();
+        public JoinCollection Joins { get; } = new JoinCollection();
 
         public bool Distinct { get; set; }
 
         private ConditionCollection _conditions;
-        private IFieldCollection _fields;
+        
 
         public void SetCurrent(ConditionCollection conditions)
         {
@@ -71,6 +71,7 @@ namespace SqlQueries
             }
         }
 
+        private IFieldCollection _fields;
         public void SetCurrent(IFieldCollection fields)
         {
             _fields = fields;

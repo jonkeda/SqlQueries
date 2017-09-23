@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Base;
 
@@ -15,9 +14,9 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; } //= "SELECT DISTINCT [City] FROM [TestDatabase].[Dbo].[Customers]";
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
         }
 
         [TestMethod]
@@ -33,8 +32,8 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                From = "[TestDatabase].[Dbo].[Customers]",
-                Columns = "[City]",
+                From = {"[TestDatabase].[Dbo].[Customers]" },
+                Columns = {"[City]" },
                 Distinct = true
             };
 

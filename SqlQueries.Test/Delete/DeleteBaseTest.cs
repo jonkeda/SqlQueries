@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Base;
 
@@ -16,10 +15,16 @@ namespace SqlQueries.Test.Delete
 
         public abstract string TopExpected { get; } //= "DELETE TOP 10 FROM [TestDatabase].[Dbo].[Customers]";
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
-            yield return TopExpected;
+            return Expected;
+            //yield return TopExpected;
+        }
+
+        [TestMethod]
+        public virtual void TestTopExpectedSql()
+        {
+            RunSql(TopExpected, null);
         }
 
 

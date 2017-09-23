@@ -26,8 +26,7 @@ namespace SqlQueries.SqlServer
 
         protected override void From(SqlBuilder sb, TableCollection tables)
         {
-            if (tables == null
-                || tables.Count == 0)
+            if (tables.Count == 0)
             {
                 return;
             }
@@ -99,8 +98,7 @@ namespace SqlQueries.SqlServer
 
         protected override void Columns(SqlBuilder sb, ColumnCollection columns)
         {
-            if (columns == null
-                || columns.Count == 0)
+            if (columns.Count == 0)
             {
                 sb.Append(" *");
             }
@@ -124,10 +122,6 @@ namespace SqlQueries.SqlServer
 
         protected override void OrderBy(SqlBuilder sb, OrderByCollection orderBy)
         {
-            if (orderBy == null)
-            {
-                return;
-            }
             bool first = true;
             foreach (OrderByField orderByField in orderBy)
             {
@@ -150,10 +144,6 @@ namespace SqlQueries.SqlServer
 
         protected override void GroupBy(SqlBuilder sb, GroupByCollection groupBy)
         {
-            if (groupBy == null)
-            {
-                return;
-            }
             bool first = true;
             foreach (GroupByField groupByField in groupBy)
             {
@@ -184,10 +174,6 @@ namespace SqlQueries.SqlServer
 
         protected void Conditions(SqlBuilder sb, ConditionCollection conditions, string statement)
         {
-            if (conditions == null)
-            {
-                return;
-            }
             bool first = true;
             foreach (Condition w in conditions)
             {
@@ -214,32 +200,32 @@ namespace SqlQueries.SqlServer
 
         protected override void Joins(SqlBuilder sb, JoinCollection joins)
         {
-            if (joins == null)
-            {
-                return;
-            }
             foreach (Join join in joins)
             {
-                if (join.JoinType == JoinType.FullOuter)
-                {
-                    sb.Append(" FULL OUTER JOIN");
-                }
-                else if (join.JoinType == JoinType.Inner)
-                {
-                    sb.Append(" INNER JOIN");
-                }
-                else if (join.JoinType == JoinType.Left)
-                {
-                    sb.Append(" LEFT JOIN");
-                }
-                else if (join.JoinType == JoinType.Right)
-                {
-                    sb.Append(" RIGHT JOIN");
-                }
-                Table(sb, join.Table);
-                Conditions(sb, join.On, "ON");
+                Join(sb, @join);
             }
         }
 
+        protected void Join(SqlBuilder sb, Join @join)
+        {
+            if (@join.JoinType == JoinType.FullOuter)
+            {
+                sb.Append(" FULL OUTER JOIN");
+            }
+            else if (@join.JoinType == JoinType.Inner)
+            {
+                sb.Append(" INNER JOIN");
+            }
+            else if (@join.JoinType == JoinType.Left)
+            {
+                sb.Append(" LEFT JOIN");
+            }
+            else if (@join.JoinType == JoinType.Right)
+            {
+                sb.Append(" RIGHT JOIN");
+            }
+            Table(sb, @join.Table);
+            Conditions(sb, @join.On, "ON");
+        }
     }
 }

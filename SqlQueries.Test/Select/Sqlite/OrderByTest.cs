@@ -10,7 +10,7 @@ namespace SqlQueries.Test.Select.Sqlite
         {
         }
 
-        public override string Expected { get; } = "SELECT * FROM [Customers] ORDER BY [CustomerName]";
+        public override string Expected { get; } = "SELECT * FROM [Customers] ORDER BY [CustomerName], [ContactName] DESC";
 
     }
 }

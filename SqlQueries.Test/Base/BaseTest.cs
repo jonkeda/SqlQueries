@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Contexts;
@@ -9,7 +8,7 @@ namespace SqlQueries.Test.Base
     public abstract class BaseTest
     {
         public Type DbConnectionType { get; }
-        public virtual object[][] Parameters { get; } = null;
+        public virtual object[] Parameters { get; } = null;
 
         protected BaseTest(Type dbConnectionType)
         {
@@ -40,10 +39,15 @@ namespace SqlQueries.Test.Base
                 .Select("TestDatabase.Dbo.Orders c");
         }
 
-        protected abstract IEnumerable<string> GetExpectedSql();
+        protected abstract string GetExpectedSql();
 
         [TestMethod]
-        public virtual void TestExpectedSqls()
+        public virtual void TestExpectedSql()
+        {
+            RunSql(GetExpectedSql(), Parameters);
+        }
+
+        protected void RunSql(string sql, object[] parameters)
         {
             if (DbConnectionType == typeof(SQLiteConnection))
             {
@@ -52,20 +56,17 @@ namespace SqlQueries.Test.Base
                     int i = 0;
                     using (DatabaseContext ctx = new DatabaseContext())
                     {
-                        foreach (string sql in GetExpectedSql())
+                        if (parameters != null)
                         {
-                            if (Parameters != null)
-                            {
-                                ctx.Database.ExecuteSqlCommand(sql, Parameters[i]);
-
-                            }
-                            else
-                            {
-                                ctx.Database.ExecuteSqlCommand(sql);
-                            }
-                            i++;
+                            ctx.Database.ExecuteSqlCommand(sql, parameters);
                         }
+                        else
+                        {
+                            ctx.Database.ExecuteSqlCommand(sql);
+                        }
+                        i++;
                     }
+
                 }
             }
         }

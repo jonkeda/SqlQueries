@@ -1,5 +1,4 @@
 ﻿using System.Data.SqlClient;
-using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer

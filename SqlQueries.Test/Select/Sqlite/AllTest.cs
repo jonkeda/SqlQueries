@@ -15,10 +15,10 @@ namespace SqlQueries.Test.Select.Sqlite
 
         [TestMethod]
         [ExpectedException(typeof(SQLiteException))]
-        public override void TestExpectedSqls()
+        public override void TestExpectedSql()
         {
             // not implemented in sqlite
-            base.TestExpectedSqls();
+            base.TestExpectedSql();
         }
     }
 }

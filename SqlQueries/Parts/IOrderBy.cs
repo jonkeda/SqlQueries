@@ -1,9 +1,7 @@
-﻿using SqlQueries.Statements;
-
-namespace SqlQueries.Parts
+﻿namespace SqlQueries.Parts
 {
-    public interface IOrderBy : IQueryBuilder, IFieldContainer
+    public interface IOrderBy : IFieldContainer
     {
-        OrderByCollection OrderBy { get; set; }
+        OrderByCollection OrderBy { get; }
     }
 }

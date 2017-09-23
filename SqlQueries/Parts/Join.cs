@@ -23,7 +23,7 @@ namespace SqlQueries.Parts
 
         public JoinType JoinType { get; set; }
 
-        public ConditionCollection On { get; set; } = new ConditionCollection();
+        public ConditionCollection On { get; } = new ConditionCollection();
     }
     
 }

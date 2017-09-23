@@ -17,11 +17,17 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
-            yield return StarExpected;
+            return Expected;
         }
+
+        [TestMethod]
+        public virtual void TestStarExpectedSql()
+        {
+            RunSql(StarExpected, Parameters);
+        }
+
 
         [TestMethod]
         public void ConstructorColumnStar()
@@ -52,8 +58,8 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                From = "[TestDatabase].[Dbo].[Customers]",
-                Columns = "*"
+                From = {"[TestDatabase].[Dbo].[Customers]" },
+                Columns = {"*" }
             };
 
             string statement = select.ToString(DbConnectionType);
@@ -66,8 +72,8 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
-                From = "[TestDatabase].[Dbo].[Customers] AS [c]",
-                Columns = "c.*"
+                From = {"[TestDatabase].[Dbo].[Customers] AS [c]" },
+                Columns = {"c.*" }
             };
 
             string statement = select.ToString(DbConnectionType);

@@ -14,17 +14,43 @@ namespace SqlQueries.Test.Select
 
         #region Join
 
-        private const string Expected = "SELECT * FROM [DimEmployee] AS [e] INNER JOIN [DimOrder] AS [o] ON [e].[Id] = [o].[EmployeeId]";
+        public abstract string Expected { get; }
 
-        protected override IEnumerable<string> GetExpectedSql()
+        public abstract string ExpectedInner { get; }
+        public abstract string ExpectedRight { get; }
+        public abstract string ExpectedLeft { get; }
+        public abstract string ExpectedFullOuter { get; }
+
+        protected override string GetExpectedSql()
         {
-            yield return Expected;
+            return Expected;
+        }
+
+        [TestMethod]
+        public virtual void TestExpectedInnerSql()
+        {
+            RunSql(ExpectedInner, Parameters);
+        }
+        [TestMethod]
+        public virtual void TestExpectedRightSql()
+        {
+            RunSql(ExpectedRight, Parameters);
+        }
+        [TestMethod]
+        public virtual void TestExpectedLeft()
+        {
+            RunSql(ExpectedLeft, Parameters);
+        }
+        [TestMethod]
+        public virtual void TestExpectedFullOuter()
+        {
+            RunSql(ExpectedFullOuter, Parameters);
         }
 
         [TestMethod]
         public void ConstructorJoin()
         {
-            string statement = new SqlQueries.Select("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString(DbConnectionType);
+            string statement = SelectCustomerAs().Join("Orders o", JoinType.Inner, "c.CustomerID", "o.CustomerID").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -32,11 +58,8 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesJoin()
         {
-            SqlQueries.Select select = new SqlQueries.Select
-            {
-                From = "DimEmployee e"
-            };
-            select.Joins.Add(new Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId"));
+            SqlQueries.Select select = SelectCustomerAs();
+            select.Joins.Add(new Join("Orders o", JoinType.Inner, "c.CustomerID", "o.CustomerID"));
 
             string statement = select.ToString(DbConnectionType);
 
@@ -46,11 +69,92 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentJoin()
         {
-            string statement = new SqlQueries.Select().From("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString(DbConnectionType);
+            string statement = SelectCustomerAs()
+                .Join("Orders o", JoinType.Inner, "c.CustomerID", "o.CustomerID").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
 
+        [TestMethod]
+        public void FluentInnerJoin()
+        {
+            string statement = SelectCustomerAs()
+                .InnerJoin("Orders o", "c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedInner, statement);
+        }
+
+        [TestMethod]
+        public virtual void FluentRightJoin()
+        {
+            string statement = SelectCustomerAs()
+                .RightJoin("Orders o", "c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedRight, statement);
+        }
+        [TestMethod]
+        public void FluentLeftJoin()
+        {
+            string statement = SelectCustomerAs()
+                .LeftJoin("Orders o", "c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedLeft, statement);
+        }
+        [TestMethod]
+        public virtual void FluentFullOuterJoin()
+        {
+            string statement = SelectCustomerAs()
+                .FullOuterJoin("Orders o", "c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedFullOuter, statement);
+        }
+
+
+        [TestMethod]
+        public void FluentInnerJoinOn()
+        {
+            string statement = SelectCustomerAs()
+                .InnerJoin("Orders o")
+                .Equal("c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedInner, statement);
+        }
+
+        [TestMethod]
+        public virtual void FluentRightJoinOn()
+        {
+            string statement = SelectCustomerAs()
+                .RightJoin("Orders o")
+                .Equal("c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedRight, statement);
+        }
+        [TestMethod]
+        public void FluentLeftJoinOn()
+        {
+            string statement = SelectCustomerAs()
+                .LeftJoin("Orders o")
+                .Equal("c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedLeft, statement);
+        }
+        [TestMethod]
+        public virtual void FluentFullOuterJoinOn()
+        {
+            string statement = SelectCustomerAs()
+                .FullOuterJoin("Orders o")
+                .Equal("c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedFullOuter, statement);
+        }
         #endregion
 
     }
