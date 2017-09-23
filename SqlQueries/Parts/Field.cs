@@ -41,7 +41,7 @@ namespace SqlQueries.Parts
 
         public virtual void Write(SqlBuilder sb)
         {
-            sb.Append(" ");
+            //sb.Append(" ");
 
             if (!string.IsNullOrEmpty(TableName))
             {

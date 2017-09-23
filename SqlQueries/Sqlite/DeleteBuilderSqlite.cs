@@ -12,8 +12,7 @@ namespace SqlQueries.Sqlite
 
         protected override string DoCreateSql(SqlBuilder sb, Delete builder)
         {
-            sb.Append("DELETE");
-            sb.Append(" FROM");
+            sb.Append("DELETE FROM ");
             From(sb, builder.From);
             Where(sb, builder.Where);
             OrderBy(sb, builder.OrderBy);

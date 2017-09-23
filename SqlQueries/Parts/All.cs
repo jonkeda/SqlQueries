@@ -22,7 +22,7 @@ namespace SqlQueries.Parts
         {
             fieldWriter(sb, Field);
             AppendOperator(sb, Operator);
-            sb.Append(" ALL (");
+            sb.Append("ALL (");
             Select.CreateSql(sb);
             sb.Append(")");
         }

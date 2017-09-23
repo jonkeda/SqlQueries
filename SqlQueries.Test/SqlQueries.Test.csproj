@@ -106,6 +106,7 @@
     <Compile Include="Select\AverageBaseTest.cs" />
     <Compile Include="Select\ColumnStarBaseTest.cs" />
     <Compile Include="Select\ColumnsBaseTest.cs" />
+    <Compile Include="Select\AndBaseTest.cs" />
     <Compile Include="Select\Sqlite\JoinTest.cs" />
     <Compile Include="Select\Sqlite\AllTest.cs" />
     <Compile Include="Select\Sqlite\AnyTest.cs" />
@@ -131,9 +132,13 @@
     <Compile Include="Select\Sqlite\NotEqualTest.cs" />
     <Compile Include="Select\Sqlite\NotInTest.cs" />
     <Compile Include="Select\Sqlite\OrderByTest.cs" />
+    <Compile Include="Select\Sqlite\AndTest.cs" />
     <Compile Include="Select\Sqlite\SumTest.cs" />
+    <Compile Include="Select\Sqlite\OrTest.cs" />
     <Compile Include="Select\Sqlite\WhereTest.cs" />
     <Compile Include="Select\SqlServer\JoinTest.cs" />
+    <Compile Include="Select\SqlServer\AndTest.cs" />
+    <Compile Include="Select\SqlServer\OrTest.cs" />
     <Compile Include="Select\SumBaseTest.cs" />
     <Compile Include="Select\CountBaseTest.cs" />
     <Compile Include="Select\DistinctBaseTest.cs" />
@@ -180,6 +185,7 @@
     <Compile Include="Select\SqlServer\ExistsTest.cs" />
     <Compile Include="Select\AllBaseTest.cs" />
     <Compile Include="Select\EqualBaseTest.cs" />
+    <Compile Include="Select\OrBaseTest.cs" />
     <Compile Include="Select\WhereBaseTest.cs" />
     <Compile Include="Select\GroupByBaseTest.cs" />
     <Compile Include="Select\OrderByBaseTest.cs" />

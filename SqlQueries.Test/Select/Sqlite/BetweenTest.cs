@@ -10,6 +10,6 @@ namespace SqlQueries.Test.Select.Sqlite
         {
         }
 
-        public override string Expected { get; } = "SELECT * FROM [Customers] WHERE [Country] BETWEEN  @p0 AND  @p1";
+        public override string Expected { get; } = "SELECT * FROM [Customers] WHERE [Country] BETWEEN @p0 AND @p1";
     }
 }

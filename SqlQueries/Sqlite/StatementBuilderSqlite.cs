@@ -33,7 +33,6 @@ namespace SqlQueries.Sqlite
             {
                 throw new QueryBuilderException("Table is not set");
             }
-            sb.Append(" ");
             sb.Append("[");
             sb.Append(table.TableName);
             sb.Append("]");

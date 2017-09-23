@@ -11,6 +11,8 @@ namespace SqlQueries.SqlServer
             Statements.Register(new SelectBuilderSqlServer(ConnectionType));
             Statements.Register(new DeleteBuilderSqlServer(ConnectionType));
             Statements.Register(new TruncateBuilderSqlServer(ConnectionType));
+            Statements.Register(new OrBuilderSqlServer(ConnectionType));
+            Statements.Register(new AndBuilderSqlServer(ConnectionType));
         }
     }
 }

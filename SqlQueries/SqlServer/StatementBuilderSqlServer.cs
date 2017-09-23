@@ -40,7 +40,7 @@ namespace SqlQueries.SqlServer
                 }
                 else
                 {
-                    sb.Append(",");
+                    sb.Append(", ");
                 }
                 Table(sb, table);
             }
@@ -53,8 +53,6 @@ namespace SqlQueries.SqlServer
             {
                 throw new QueryBuilderException("Table not set");
             }
-            sb.Append(" ");
-
             if (!string.IsNullOrEmpty(table.Database))
             {
                 sb.Append("[");
@@ -105,6 +103,7 @@ namespace SqlQueries.SqlServer
             }
             else
             {
+                sb.Append(" ");
                 bool first = true;
                 foreach (ColumnField column in columns)
                 {
@@ -114,7 +113,7 @@ namespace SqlQueries.SqlServer
                     }
                     else
                     {
-                        sb.Append(",");
+                        sb.Append(", ");
                     }
                     Field(sb, column.Field);
                 }
@@ -128,12 +127,12 @@ namespace SqlQueries.SqlServer
             {
                 if (first)
                 {
-                    sb.Append(" ORDER BY");
+                    sb.Append(" ORDER BY ");
                     first = false;
                 }
                 else
                 {
-                    sb.Append(",");
+                    sb.Append(", ");
                 }
                 Field(sb, orderByField.Field);
                 if (orderByField.Descending)
@@ -150,12 +149,12 @@ namespace SqlQueries.SqlServer
             {
                 if (first)
                 {
-                    sb.Append(" GROUP BY");
+                    sb.Append(" GROUP BY ");
                     first = false;
                 }
                 else
                 {
-                    sb.Append(",");
+                    sb.Append(", ");
                 }
                 Field(sb, groupByField.Field);
             }
@@ -176,23 +175,48 @@ namespace SqlQueries.SqlServer
         protected void Conditions(SqlBuilder sb, ConditionCollection conditions, string statement)
         {
             bool first = true;
-            foreach (Condition w in conditions)
+            foreach (ICondition w in conditions)
             {
                 if (first)
                 {
                     sb.Append(" ");
                     sb.Append(statement);
+                    sb.Append(" ");
                     first = false;
                 }
                 else
                 {
                     if (conditions.AndOr == SqlAndOr.And)
                     {
-                        sb.Append(" AND");
+                        sb.Append(" AND ");
                     }
                     else
                     {
-                        sb.Append(" OR");
+                        sb.Append(" OR ");
+                    }
+                }
+                w.Write(sb, Field);
+            }
+        }
+
+        protected void Conditions(SqlBuilder sb, ConditionCollection conditions)
+        {
+            bool first = true;
+            foreach (ICondition w in conditions)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    if (conditions.AndOr == SqlAndOr.And)
+                    {
+                        sb.Append(" AND ");
+                    }
+                    else
+                    {
+                        sb.Append(" OR ");
                     }
                 }
                 w.Write(sb, Field);
@@ -211,19 +235,19 @@ namespace SqlQueries.SqlServer
         {
             if (@join.JoinType == JoinType.FullOuter)
             {
-                sb.Append(" FULL OUTER JOIN");
+                sb.Append(" FULL OUTER JOIN ");
             }
             else if (@join.JoinType == JoinType.Inner)
             {
-                sb.Append(" INNER JOIN");
+                sb.Append(" INNER JOIN ");
             }
             else if (@join.JoinType == JoinType.Left)
             {
-                sb.Append(" LEFT JOIN");
+                sb.Append(" LEFT JOIN ");
             }
             else if (@join.JoinType == JoinType.Right)
             {
-                sb.Append(" RIGHT JOIN");
+                sb.Append(" RIGHT JOIN ");
             }
             Table(sb, @join.Table);
             Conditions(sb, @join.On, "ON");

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="And.cs" />
     <Compile Include="Exceptions\QueryParseException.cs" />
     <Compile Include="Parts\All.cs" />
     <Compile Include="Parts\Any.cs" />
@@ -93,6 +94,8 @@
     <Compile Include="Parts\NotEqual.cs" />
     <Compile Include="Parts\NotEqualToValue.cs" />
     <Compile Include="Parts\NotIn.cs" />
+    <Compile Include="SqlServer\AndBuilderSqlServer.cs" />
+    <Compile Include="Or.cs" />
     <Compile Include="Parts\Sum.cs" />
     <Compile Include="Parts\TableCollection.cs" />
     <Compile Include="Properties\SharedAssemblyInfo.cs" />
@@ -116,6 +119,7 @@
     <Compile Include="Parts\OrderByField.cs" />
     <Compile Include="Parts\Top.cs" />
     <Compile Include="Select.cs" />
+    <Compile Include="SqlServer\OrBuilderSqlServer.cs" />
     <Compile Include="SqlServer\SelectBuilderSqlServer.cs" />
     <Compile Include="Statements\IQueryBuilder.cs" />
     <Compile Include="Parts\ITable.cs" />

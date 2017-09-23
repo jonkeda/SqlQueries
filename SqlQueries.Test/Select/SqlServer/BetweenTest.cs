@@ -10,6 +10,6 @@ namespace SqlQueries.Test.Select.SqlServer
         {
         }
 
-        public override string Expected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] WHERE [Country] BETWEEN  @p0 AND  @p1";
+        public override string Expected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] WHERE [Country] BETWEEN @p0 AND @p1";
     }
 }

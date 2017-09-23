@@ -18,7 +18,7 @@ namespace SqlQueries.Parts
 
         public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
         {
-            sb.Append(" EXISTS(");
+            sb.Append("EXISTS(");
             Select.CreateSql(sb);
             sb.Append(")");
         }

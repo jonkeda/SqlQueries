@@ -59,7 +59,7 @@ namespace SqlQueries
             _conditions = conditions;
         }
 
-        public void Add(Condition condition)
+        public void Add(ICondition condition)
         {
             if (_conditions == null)
             {

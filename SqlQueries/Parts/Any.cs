@@ -20,7 +20,7 @@ namespace SqlQueries.Parts
         {
             fieldWriter(sb, Field);
             AppendOperator(sb, Operator);
-            sb.Append(" ANY (");
+            sb.Append("ANY (");
             Select.CreateSql(sb);
             sb.Append(")");
         }

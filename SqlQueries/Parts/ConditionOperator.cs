@@ -22,22 +22,22 @@ namespace SqlQueries.Parts
             switch (sqlOperator)
             {
                 case SqlOperator.Equal:
-                    sb.Append(" =");
+                    sb.Append(" = ");
                     break;
                 case SqlOperator.NotEqual:
-                    sb.Append(" <>");
+                    sb.Append(" <> ");
                     break;
                 case SqlOperator.GreaterThan:
-                    sb.Append(" >");
+                    sb.Append(" > ");
                     break;
                 case SqlOperator.GreaterOrEqual:
-                    sb.Append(" >=");
+                    sb.Append(" >= ");
                     break;
                 case SqlOperator.LessThan:
-                    sb.Append(" <");
+                    sb.Append(" < ");
                     break;
                 case SqlOperator.LessOrEqual:
-                    sb.Append(" <=");
+                    sb.Append(" <= ");
                     break;
             }
         }

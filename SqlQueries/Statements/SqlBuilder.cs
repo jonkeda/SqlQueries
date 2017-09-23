@@ -27,7 +27,7 @@ namespace SqlQueries.Statements
 
         public void AppendParameter(object wvValue)
         {
-            _sb.Append(" @p");
+            _sb.Append("@p");
             _sb.Append(_count);
             _count++;
         }

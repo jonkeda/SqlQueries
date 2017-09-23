@@ -14,7 +14,7 @@ namespace SqlQueries.SqlServer
         {
             sb.Append("DELETE");
             Top(sb, builder.Top);
-            sb.Append(" FROM");
+            sb.Append(" FROM ");
             From(sb, builder.From);
             Where(sb, builder.Where);
             if (builder.OrderBy.Count > 0)

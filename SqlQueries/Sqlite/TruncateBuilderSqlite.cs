@@ -12,7 +12,7 @@ namespace SqlQueries.Sqlite
         protected override string DoCreateSql(SqlBuilder sb, Truncate builder)
         {
             sb.Append("DELETE");
-            sb.Append(" FROM");
+            sb.Append(" FROM ");
             Table(sb, builder.Table);
             return sb.ToString();
         }

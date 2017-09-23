@@ -4,4 +4,10 @@
     {
         ConditionCollection Where { get; }
     }
+
+    public interface IConditions : IConditionContainer
+    {
+        ConditionCollection Conditions { get; }
+    }
+
 }

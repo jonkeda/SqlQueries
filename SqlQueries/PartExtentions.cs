@@ -525,6 +525,28 @@ namespace SqlQueries
 
         #region Conditions
 
+        #region Or
+
+        public static T Or<T>(this T query, Condition condition, params Condition[] conditions)
+            where T : IConditionContainer
+        {
+            query.Add(new Or(condition, conditions));
+            return query;
+        }
+
+        #endregion
+
+        #region And
+
+        public static T And<T>(this T query, Condition condition, params Condition[] conditions)
+            where T : IConditionContainer
+        {
+            query.Add(new And(condition, conditions));
+            return query;
+        }
+
+        #endregion
+
         #region Equals
 
         public static T Equal<T>(this T query, Field field, Field toField)
@@ -664,7 +686,7 @@ namespace SqlQueries
         public static T In<T>(this T query, Field field, Select select)
             where T : IConditionContainer
         {
-            query.Add(new In(field, select));
+            query.Add(new In(field, @select));
             return query;
         }
 
@@ -675,7 +697,7 @@ namespace SqlQueries
         public static T NotIn<T>(this T query, Field field, Select select)
             where T : IConditionContainer
         {
-            query.Add(new NotIn(field, select));
+            query.Add(new NotIn(field, @select));
             return query;
         }
 
@@ -686,7 +708,7 @@ namespace SqlQueries
         public static T Exists<T>(this T query, Select select)
             where T : IConditionContainer
         {
-            query.Add(new Exists(select));
+            query.Add(new Exists(@select));
             return query;
         }
 
@@ -697,7 +719,7 @@ namespace SqlQueries
         public static T All<T>(this T query, Field field, SqlOperator sqlOperator, Select select)
             where T : IConditionContainer
         {
-            query.Add(new All(field, sqlOperator, select));
+            query.Add(new All(field, sqlOperator, @select));
             return query;
         }
 
@@ -708,7 +730,7 @@ namespace SqlQueries
         public static T Any<T>(this T query, Field field, SqlOperator sqlOperator, Select select)
             where T : IConditionContainer
         {
-            query.Add(new Any(field, sqlOperator, select));
+            query.Add(new Any(field, sqlOperator, @select));
             return query;
         }
 

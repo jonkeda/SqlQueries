@@ -18,7 +18,6 @@ namespace SqlQueries.Parts
 
         public override void Write(SqlBuilder sb)
         {
-            sb.Append(" ");
             sb.Append(_functionName);
             sb.Append("(");
 
