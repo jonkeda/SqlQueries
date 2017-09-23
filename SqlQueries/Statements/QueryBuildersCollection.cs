@@ -6,7 +6,7 @@ namespace SqlQueries.Statements
 {
     public class QueryBuildersCollection : Collection<QueryBuilders>
     {
-        private QueryBuilders Get(Type connectionType)
+        public QueryBuilders Get(Type connectionType)
         {
             return this.FirstOrDefault(t => t.ConnectionType == connectionType);
         }
@@ -16,10 +16,9 @@ namespace SqlQueries.Statements
             QueryBuilders queryBuilders = Get(connectionType);
             if (queryBuilders == null)
             {
-                throw new QueryBuilderException($@"Query builder not registered for: {connectionType.FullName}");
+                throw new QueryBuilderException($@"Query builder not registered for: {connectionType?.FullName}");
             }
             return queryBuilders?.Get(queryBuilderInterfaceType);
         }
-
     }
 }

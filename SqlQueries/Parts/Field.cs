@@ -79,16 +79,6 @@ namespace SqlQueries.Parts
             }
         }
 
-        [DebuggerStepThrough]
-        public static explicit operator string(Field value)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
-            return value.FullName;
-        }
-
         public static implicit operator Field(string value)
         {
             return new Field(value);

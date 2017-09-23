@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
 
 namespace SqlQueries.Statements
 {
@@ -14,6 +16,11 @@ namespace SqlQueries.Statements
         }
 
         public QueryBuilderNotImplementedForSqliteException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
+        [ExcludeFromCodeCoverage]
+        protected QueryBuilderNotImplementedForSqliteException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

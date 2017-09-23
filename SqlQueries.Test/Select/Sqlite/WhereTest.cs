@@ -10,7 +10,7 @@ namespace SqlQueries.Test.Select.Sqlite
         {
         }
 
-        public override string Expected { get; } = "SELECT * FROM [Customers] WHERE [City] = @p0 AND [CustomerName] <> [ContactName]";
+        public override string Expected { get; } = "SELECT * FROM [Customers] WHERE [City] = @p0 AND [CustomerName] = [ContactName]";
 
     }
 }

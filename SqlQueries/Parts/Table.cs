@@ -32,16 +32,6 @@ namespace SqlQueries.Parts
             Alias = match.Groups[4].Value;
         }
 
-        [DebuggerStepThrough]
-        public static explicit operator string(Table value)
-        {
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
-            return value.FullName;
-        }
-
         public static implicit operator Table(string value)
         {
             return new Table(value);

@@ -28,6 +28,10 @@ namespace SqlQueries.Sqlite
 
         protected override void Table(SqlBuilder sb, Table table)
         {
+            if (table == null)
+            {
+                throw new QueryBuilderException("Table is not set");
+            }
             sb.Append(" ");
             sb.Append("[");
             sb.Append(table.TableName);

@@ -26,7 +26,7 @@ namespace SqlQueries.Test.Select
         {
             string statement = SelectCustomer()
                 .Where("City", "Berlin")
-                .WhereField("CustomerName", SqlOperator.NotEqual, "ContactName")
+                .WhereField("CustomerName", SqlOperator.Equal, "ContactName")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -37,7 +37,7 @@ namespace SqlQueries.Test.Select
         {
             SqlQueries.Select select = SelectCustomer();
             select.Where.Add(new EqualToValue("City", "Berlin"));
-            select.Where.Add(new NotEqual("CustomerName", "ContactName"));
+            select.Where.Add(new Equal("CustomerName", "ContactName"));
 
             string statement = select.ToString(DbConnectionType);
 
@@ -49,12 +49,21 @@ namespace SqlQueries.Test.Select
         {
             string statement = SelectCustomer()
                 .Where("City", "Berlin")
-                .WhereField("CustomerName", SqlOperator.NotEqual, "ContactName")
+                .WhereField("CustomerName", SqlOperator.Equal, "ContactName")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
+        [TestMethod]
+        public void FluentWhere2()
+        {
+            string statement = SelectCustomer()
+                .Where("City", "Berlin")
+                .WhereField("CustomerName", "ContactName")
+                .ToString(DbConnectionType);
 
+            Assert.AreEqual(Expected, statement);
+        }
         #endregion
 
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
 namespace SqlQueries.Statements
@@ -18,6 +19,7 @@ namespace SqlQueries.Statements
         {
         }
 
+        [ExcludeFromCodeCoverage]
         protected QueryBuilderNotImplementedException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }

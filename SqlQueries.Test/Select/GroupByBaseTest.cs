@@ -70,7 +70,13 @@ namespace SqlQueries.Test.Select
 
             Assert.AreEqual(Expected, statement);
         }
+        [TestMethod]
+        public void Fluent2GroupBy()
+        {
+            string statement = SelectCustomer().GroupByField(new Field("ContactName")).ToString(DbConnectionType);
 
+            Assert.AreEqual(Expected, statement);
+        }
         [TestMethod]
         public void OperatorGroupBy()
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SqlQueries.Statements;
 using SqlQueries.Test.Base;
 
 namespace SqlQueries.Test.Truncate
@@ -37,6 +38,16 @@ namespace SqlQueries.Test.Truncate
             Assert.AreEqual(Expected, statement);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(QueryBuilderException))]
+        public void Properties2()
+        {
+            string statement = (new SqlQueries.Truncate
+            {
+                Table = null
+            }).ToString(DbConnectionType);
+            
+        }
         [TestMethod]
         public void Fluent()
         {

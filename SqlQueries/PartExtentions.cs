@@ -470,6 +470,13 @@ namespace SqlQueries
             query.SetCurrent(query.OrderBy);
         }
 
+        public static T OrderBy<T>(this T query)
+            where T : IOrderBy
+        {
+            SetCurrentOrderby(query);
+            return query;
+        }
+
         public static T OrderByField<T>(this T query, Field field)
             where T : IOrderBy
         {

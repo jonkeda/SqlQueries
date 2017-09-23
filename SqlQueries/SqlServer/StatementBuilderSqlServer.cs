@@ -16,10 +16,10 @@ namespace SqlQueries.SqlServer
             if (top != null
                 && top.TopCount > 0)
             {
-                sb.Append($@" TOP {top.TopCount}");
+                sb.Append($@" TOP ({top.TopCount})");
                 if (top.Percentage)
                 {
-                    sb.Append($@" PERCENTAGE");
+                    sb.Append($@" PERCENT");
                 }
             }
         }
@@ -28,7 +28,7 @@ namespace SqlQueries.SqlServer
         {
             if (tables.Count == 0)
             {
-                return;
+                throw new QueryBuilderException("From not set");
             }
             bool first = true;
             foreach (Table table in tables)

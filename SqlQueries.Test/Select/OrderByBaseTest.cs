@@ -30,7 +30,7 @@ namespace SqlQueries.Test.Select
 
 
         [TestMethod]
-        public void Constructor2GroupBy()
+        public void Constructor2OrderBy()
         {
             SqlQueries.Select select = new SqlQueries.Select
             {
@@ -60,7 +60,7 @@ namespace SqlQueries.Test.Select
         }
 
         [TestMethod]
-        public void Properties2GroupBy()
+        public void Properties2OrderBy()
         {
             SqlQueries.Select select = SelectCustomer();
             select.OrderBy.Add(new Field("CustomerName"));
@@ -78,10 +78,16 @@ namespace SqlQueries.Test.Select
 
             Assert.AreEqual(Expected, statement);
         }
+        [TestMethod]
+        public void Fluent2OrderBy()
+        {
+            string statement = SelectCustomer().OrderBy("CustomerName").OrderByDescending("ContactName").ToString(DbConnectionType);
 
+            Assert.AreEqual(Expected, statement);
+        }
 
         [TestMethod]
-        public void OperatorGroupBy()
+        public void OperatorOrderBy()
         {
             OrderByCollection gb = "ContactNaam";
         }

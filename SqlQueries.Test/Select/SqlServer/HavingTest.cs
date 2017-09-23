@@ -10,7 +10,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
         }
 
-        public override string Expected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] GROUP BY [City], [ContactName] HAVING [City] = @p0 AND [ContactName] <> [CustomerName]";
+        public override string Expected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] GROUP BY [City], [ContactName] HAVING [City] = @p0 AND [ContactName] = [CustomerName]";
 
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;

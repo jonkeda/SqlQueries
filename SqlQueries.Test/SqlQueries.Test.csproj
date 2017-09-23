@@ -45,6 +45,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.TransactSql.ScriptDom, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.TransactSql.ScriptDom.14.0.3660.1\lib\net40\Microsoft.SqlServer.TransactSql.ScriptDom.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.18\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -82,9 +85,18 @@
     <Compile Include="Contexts\IDbContextTest.cs" />
     <Compile Include="Contexts\Orders.cs" />
     <Compile Include="Delete\DeleteBaseTest.cs" />
+    <Compile Include="Delete\OrderByBaseTest.cs" />
+    <Compile Include="Delete\Sqlite\OrderByTest.cs" />
+    <Compile Include="Delete\SqlServer\OrderByTest.cs" />
+    <Compile Include="Delete\Sqlite\WhereTest.cs" />
+    <Compile Include="Delete\SqlServer\WhereTest.cs" />
+    <Compile Include="Delete\WhereBaseTest.cs" />
+    <Compile Include="Exceptions\QueryBuilderNotImplementedForSqlServerExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderNotImplementedForSqliteExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderNotImplementedExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderExceptionTest.cs" />
+    <Compile Include="Parts\QueryBuilderCollectionTest.cs" />
+    <Compile Include="Parts\QueryBuilderTest.cs" />
     <Compile Include="Parts\ColumnFieldTest.cs" />
     <Compile Include="Parts\FieldTest.cs" />
     <Compile Include="Parts\TableTest.cs" />

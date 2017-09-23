@@ -71,30 +71,5 @@ namespace SqlQueries.Test.Parts
             Assert.AreEqual(alias, table.Alias);
         }
 
-        //[TestMethod]
-        //public void Fluent()
-        //{
-        //    string statement = new SqlQueries.Delete().Table("TestTable").ToString(typeof(SqlConnection));
-
-        //    Assert.AreEqual("DELETE FROM [TestTable]", statement);
-        //}
-
-        [TestMethod]
-        public void Operator()
-        {
-            Table table = new Table("a.b.c d");
-
-            Assert.AreEqual("a.b.c d", (string)table);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void OperatorArgumentNullException()
-        {
-            Table table = (string)null;
-
-            Assert.AreEqual("a.b.c d", (string)(Table)null);
-        }
-
     }
 }

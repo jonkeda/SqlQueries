@@ -10,9 +10,9 @@ namespace SqlQueries.Test.Select.SqlServer
         {
         }
 
-        protected override string Expected { get; } = "SELECT TOP 10 * FROM [TestDatabase].[Dbo].[Customers]";
+        protected override string Expected { get; } = "SELECT TOP (10) * FROM [TestDatabase].[Dbo].[Customers]";
 
         protected override string PercentageExpected { get; } =
-            "SELECT TOP 10 PERCENTAGE * FROM [TestDatabase].[Dbo].[Customers]";
+            "SELECT TOP (10) PERCENT * FROM [TestDatabase].[Dbo].[Customers]";
     }
 }

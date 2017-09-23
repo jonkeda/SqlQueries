@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 
 namespace SqlQueries.Test.Parts
@@ -54,6 +55,12 @@ namespace SqlQueries.Test.Parts
             AssertField("a", "c", "d", table);
         }
 
+        [TestMethod]
+        public void Constructor8()
+        {
+            Field table = new Field(null, null, null);
+
+        }
         private static void AssertField(string database, string tableName, string alias, Field table)
         {
             Assert.AreEqual(database, table.TableName);
@@ -61,12 +68,11 @@ namespace SqlQueries.Test.Parts
             Assert.AreEqual(alias, table.Alias);
         }
 
-        //[TestMethod]
-        //public void Fluent()
-        //{
-        //    string statement = new SqlQueries.Delete().Field("TestField").ToString(typeof(SqlConnection));
+        [TestMethod]
+        public void ConstructorFieldCollection()
+        {
+            FieldCollection c = new FieldCollection();
+        }
 
-        //    Assert.AreEqual("DELETE FROM [TestField]", statement);
-        //}
     }
 }

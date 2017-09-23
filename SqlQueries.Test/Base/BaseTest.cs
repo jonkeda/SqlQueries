@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
+using System.IO;
+using System.Linq;
+using Microsoft.SqlServer.TransactSql.ScriptDom;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SqlQueries.Statements;
 using SqlQueries.Test.Contexts;
 
 namespace SqlQueries.Test.Base
@@ -19,6 +24,12 @@ namespace SqlQueries.Test.Base
         {
             return new SqlQueries
                 .Select("TestDatabase.Dbo.Customers");
+        }
+
+        public SqlQueries.Delete DeleteCustomer()
+        {
+            return new SqlQueries
+                .Delete("TestDatabase.Dbo.Customers");
         }
 
         public SqlQueries.Select SelectCustomerAs()
@@ -67,6 +78,17 @@ namespace SqlQueries.Test.Base
                         i++;
                     }
 
+                }
+            }
+            else
+            {
+                TSql140Parser parser = new TSql140Parser(true, SqlEngineType.Standalone);
+                IList<ParseError> errors;
+                TSqlFragment result = parser.Parse(new StringReader(sql), out errors);
+                ParseError error = errors.FirstOrDefault();
+                if (error != null)
+                {
+                    throw new QueryBuilderException(error.Message);
                 }
             }
         }

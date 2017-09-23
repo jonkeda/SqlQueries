@@ -15,6 +15,12 @@ namespace SqlQueries.SqlServer
             Top(sb, builder.Top);
             sb.Append(" FROM");
             From(sb, builder.From);
+            Where(sb, builder.Where);
+            if (builder.OrderBy.Count > 0)
+            {
+                throw new QueryBuilderNotImplementedForSqlServerException("Delete Order by not implemented.");
+            }
+            OrderBy(sb, builder.OrderBy);
             return sb.ToString();
         }
     }

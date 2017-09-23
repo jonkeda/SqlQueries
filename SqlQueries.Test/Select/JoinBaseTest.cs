@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -16,6 +15,8 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; }
 
+        public abstract string ExpectedAndOr { get; }
+
         public abstract string ExpectedInner { get; }
         public abstract string ExpectedRight { get; }
         public abstract string ExpectedLeft { get; }
@@ -27,10 +28,17 @@ namespace SqlQueries.Test.Select
         }
 
         [TestMethod]
+        public virtual void TestExpectedAndOrSql()
+        {
+            RunSql(ExpectedAndOr, Parameters);
+        }
+
+        [TestMethod]
         public virtual void TestExpectedInnerSql()
         {
             RunSql(ExpectedInner, Parameters);
         }
+
         [TestMethod]
         public virtual void TestExpectedRightSql()
         {
@@ -56,7 +64,7 @@ namespace SqlQueries.Test.Select
         }
 
         [TestMethod]
-        public void PropertiesJoin()
+        public void Properties1Join()
         {
             SqlQueries.Select select = SelectCustomerAs();
             select.Joins.Add(new Join("Orders o", JoinType.Inner, "c.CustomerID", "o.CustomerID"));
@@ -66,6 +74,31 @@ namespace SqlQueries.Test.Select
             Assert.AreEqual(Expected, statement);
         }
 
+        [TestMethod]
+        public void Properties2Join()
+        {
+            SqlQueries.Select select = SelectCustomerAs();
+            select.Joins.Add(new Join {Table = "Orders o", JoinType = JoinType.Inner});
+
+            select.Joins[0].On.Add(new Equal("c.CustomerID", "o.CustomerID"));
+
+            string statement = select.ToString(DbConnectionType);
+
+            Assert.AreEqual(Expected, statement);
+        }
+        [TestMethod]
+        public void Properties3Join()
+        {
+            SqlQueries.Select select = SelectCustomerAs();
+            select.Joins.Add(new Join { Table = "Orders o", JoinType = JoinType.Inner });
+            select.Joins[0].On.Add(new Equal("c.CustomerID", "o.CustomerID"));
+            select.Joins[0].On.AndOr = SqlAndOr.Or;
+            select.Joins[0].On.Add(new Equal("c.CustomerID", "o.CustomerID"));
+
+            string statement = select.ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedAndOr, statement);
+        }
         [TestMethod]
         public void FluentJoin()
         {

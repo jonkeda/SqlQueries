@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SqlQueries.Statements;
 using SqlQueries.Test.Base;
 
 namespace SqlQueries.Test.Select
@@ -62,6 +62,18 @@ namespace SqlQueries.Test.Select
             {
                 From = {"TestDatabase.Dbo.Customers" }
             }.From("TestDatabase.Dbo.Orders").ToString(DbConnectionType);
+
+            Assert.AreEqual(MultipleExpected, statement);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(QueryBuilderException))]
+        public void PropertiesFromIsNull()
+        {
+            string statement = new SqlQueries.Select
+            {
+                
+            }.ToString(DbConnectionType);
 
             Assert.AreEqual(MultipleExpected, statement);
         }

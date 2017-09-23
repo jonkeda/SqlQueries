@@ -11,9 +11,9 @@ namespace SqlQueries.Test.Delete
         {
         }
 
-        public abstract string Expected { get; } //= "DELETE FROM [TestDatabase].[Dbo].[Customers]";
+        public abstract string Expected { get; } 
 
-        public abstract string TopExpected { get; } //= "DELETE TOP 10 FROM [TestDatabase].[Dbo].[Customers]";
+        public abstract string TopExpected { get; } 
 
         protected override string GetExpectedSql()
         {
@@ -48,7 +48,7 @@ namespace SqlQueries.Test.Delete
         }
 
         [TestMethod]
-        public void Fluent()
+        public void Fluent1()
         {
             string statement = new SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType);
 
