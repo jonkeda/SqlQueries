@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Statements;
+using SqlQueries.Exceptions;
 using SqlQueries.Test.Base;
 
 namespace SqlQueries.Test.Truncate

@@ -1,4 +1,5 @@
 using System;
+using SqlQueries.Exceptions;
 using SqlQueries.Parts;
 using SqlQueries.SqlServer;
 using SqlQueries.Statements;

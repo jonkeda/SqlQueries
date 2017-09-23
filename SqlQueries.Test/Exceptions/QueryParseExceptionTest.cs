@@ -5,27 +5,27 @@ using SqlQueries.Exceptions;
 namespace SqlQueries.Test.Exceptions
 {
     [TestClass]
-    public  class QueryBuilderExceptionTest
+    public  class QueryParseExceptionTest
     {
         [TestMethod]
-        [ExpectedException(typeof(QueryBuilderException))]
+        [ExpectedException(typeof(QueryParseException))]
         public void Constructor1()
         {
-            throw new QueryBuilderException();
+            throw new QueryParseException();
         }
 
         [TestMethod]
-        [ExpectedException(typeof(QueryBuilderException))]
+        [ExpectedException(typeof(QueryParseException))]
         public void Constructor2()
         {
-            throw new QueryBuilderException("");
+            throw new QueryParseException("");
         }
 
         [TestMethod]
-        [ExpectedException(typeof(QueryBuilderException))]
+        [ExpectedException(typeof(QueryParseException))]
         public void Constructor3()
         {
-            throw new QueryBuilderException("", new Exception());
+            throw new QueryParseException("", new Exception());
         }
     }
 }

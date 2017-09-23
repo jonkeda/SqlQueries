@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Statements;
+using SqlQueries.Exceptions;
+using SqlQueries.Test.Exceptions;
 
 namespace SqlQueries.Test.Delete.SqlServer
 {
@@ -14,7 +15,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         public override string Expected { get; } = "DELETE FROM [TestDatabase].[Dbo].[Customers] ORDER BY [CustomerName], [ContactName] DESC";
 
         [TestMethod]
-        [ExpectedException(typeof(SqlException))]
+        [ExpectedException(typeof(QueryParseException))]
         public override void TestExpectedSql()
         {
             base.TestExpectedSql();

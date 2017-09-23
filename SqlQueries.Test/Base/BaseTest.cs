@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.SqlServer.TransactSql.ScriptDom;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Statements;
+using SqlQueries.Exceptions;
 using SqlQueries.Test.Contexts;
 
 namespace SqlQueries.Test.Base
@@ -88,7 +88,7 @@ namespace SqlQueries.Test.Base
                 ParseError error = errors.FirstOrDefault();
                 if (error != null)
                 {
-                    throw new QueryBuilderException(error.Message);
+                    throw new QueryParseException(error.Message);
                 }
             }
         }

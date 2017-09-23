@@ -1,6 +1,8 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using SqlQueries.Exceptions;
 
 namespace SqlQueries.Statements
 {
@@ -11,6 +13,7 @@ namespace SqlQueries.Statements
             return this.FirstOrDefault(t => t.ConnectionType == connectionType);
         }
 
+        [ExcludeFromCodeCoverage]
         public StatementBuilder Get(Type connectionType, Type queryBuilderInterfaceType)
         {
             QueryBuilders queryBuilders = Get(connectionType);

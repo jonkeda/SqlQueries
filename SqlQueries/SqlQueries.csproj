@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\QueryParseException.cs" />
     <Compile Include="Parts\All.cs" />
     <Compile Include="Parts\Any.cs" />
     <Compile Include="Parts\Average.cs" />

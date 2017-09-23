@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SqlQueries.Exceptions;
 using SqlQueries.Statements;
 
 namespace SqlQueries.Test.Parts

@@ -1,8 +1,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
+using SqlQueries.Statements;
 
-namespace SqlQueries.Statements
+namespace SqlQueries.Exceptions
 {
     [Serializable]
     public class QueryBuilderNotImplementedForSqlServerException : QueryBuilderNotImplementedException

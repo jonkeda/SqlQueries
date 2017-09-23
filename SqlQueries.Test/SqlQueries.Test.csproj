@@ -91,6 +91,7 @@
     <Compile Include="Delete\Sqlite\WhereTest.cs" />
     <Compile Include="Delete\SqlServer\WhereTest.cs" />
     <Compile Include="Delete\WhereBaseTest.cs" />
+    <Compile Include="Exceptions\QueryParseExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderNotImplementedForSqlServerExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderNotImplementedForSqliteExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderNotImplementedExceptionTest.cs" />

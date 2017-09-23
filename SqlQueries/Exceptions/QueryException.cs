@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
-namespace SqlQueries.Statements
+namespace SqlQueries.Exceptions
 {
     [Serializable]
     public class QueryBuilderException : Exception
