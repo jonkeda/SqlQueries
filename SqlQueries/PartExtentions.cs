@@ -16,6 +16,17 @@ namespace SqlQueries
 
         #endregion
 
+        #region Into
+
+        public static T Into<T>(this T query, Table name)
+            where T : IInto
+        {
+            query.Into = name;
+            return query;
+        }
+
+        #endregion
+
         #region Distinct
 
         public static T Distinct<T>(this T query)

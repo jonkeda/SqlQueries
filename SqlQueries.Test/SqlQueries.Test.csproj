@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="AssemblyInitializer.cs" />
     <Compile Include="Base\BaseTest.cs" />
+    <Compile Include="Contexts\CopyCustomers.cs" />
     <Compile Include="Contexts\DbContextTest.cs" />
     <Compile Include="Contexts\Customers.cs" />
     <Compile Include="Contexts\DatabaseContext.cs" />
@@ -101,6 +102,9 @@
     <Compile Include="Parts\ColumnFieldTest.cs" />
     <Compile Include="Parts\FieldTest.cs" />
     <Compile Include="Parts\TableTest.cs" />
+    <Compile Include="SelectInto\Sqlite\SelectIntoTest.cs" />
+    <Compile Include="SelectInto\SqlServer\SelectIntoTest.cs" />
+    <Compile Include="SelectInto\SelectIntoBaseTest.cs" />
     <Compile Include="Select\BetweenBaseTest.cs" />
     <Compile Include="Select\AnyBaseTest.cs" />
     <Compile Include="Select\AverageBaseTest.cs" />

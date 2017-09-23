@@ -5,5 +5,5 @@
 [assembly: AssemblyCopyright("Copyright © SRT2 2017")]
 [assembly: AssemblyTrademark("")]
 
-[assembly: AssemblyVersion("0.3.0.0")]
-[assembly: AssemblyFileVersion("0.3.0.0")]
+[assembly: AssemblyVersion("0.4.0.0")]
+[assembly: AssemblyFileVersion("0.4.0.0")]

@@ -13,6 +13,7 @@ namespace SqlQueries.SqlServer
             Statements.Register(new TruncateBuilderSqlServer(ConnectionType));
             Statements.Register(new OrBuilderSqlServer(ConnectionType));
             Statements.Register(new AndBuilderSqlServer(ConnectionType));
+            Statements.Register(new SelectIntoBuilderSqlServer(ConnectionType));
         }
     }
 }

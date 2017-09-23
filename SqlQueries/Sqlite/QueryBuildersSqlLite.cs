@@ -12,9 +12,9 @@ namespace SqlQueries.Sqlite
             Statements.Register(new SelectBuilderSqliteServer(ConnectionType));
             Statements.Register(new TruncateBuilderSqlite(ConnectionType));
             Statements.Register(new DeleteBuilderSqlite(ConnectionType));
-
             Statements.Register(new OrBuilderSqlServer(ConnectionType));
             Statements.Register(new AndBuilderSqlServer(ConnectionType));
+            Statements.Register(new SelectIntoBuilderSqliteServer(ConnectionType));
         }
     }
 }

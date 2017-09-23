@@ -63,6 +63,7 @@
     <Compile Include="Parts\IConditionContainer.cs" />
     <Compile Include="Parts\IFieldCollection.cs" />
     <Compile Include="Parts\IFieldContainer.cs" />
+    <Compile Include="Parts\IInto.cs" />
     <Compile Include="Parts\IsNotNull.cs" />
     <Compile Include="Parts\IsNull.cs" />
     <Compile Include="Parts\ConditionOnField.cs" />
@@ -94,6 +95,8 @@
     <Compile Include="Parts\NotEqual.cs" />
     <Compile Include="Parts\NotEqualToValue.cs" />
     <Compile Include="Parts\NotIn.cs" />
+    <Compile Include="SelectInto.cs" />
+    <Compile Include="Sqlite\SelectIntoBuilderSqliteServer.cs" />
     <Compile Include="SqlServer\AndBuilderSqlServer.cs" />
     <Compile Include="Or.cs" />
     <Compile Include="Parts\Sum.cs" />
@@ -120,6 +123,7 @@
     <Compile Include="Parts\Top.cs" />
     <Compile Include="Select.cs" />
     <Compile Include="SqlServer\OrBuilderSqlServer.cs" />
+    <Compile Include="SqlServer\SelectIntoBuilderSqlServer.cs" />
     <Compile Include="SqlServer\SelectBuilderSqlServer.cs" />
     <Compile Include="Statements\IQueryBuilder.cs" />
     <Compile Include="Parts\ITable.cs" />

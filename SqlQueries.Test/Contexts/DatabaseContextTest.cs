@@ -16,6 +16,8 @@ namespace SqlQueries.Test.Contexts
         {
             Customers.DeleteAll(Database);
             Orders.DeleteAll(Database);
+            Suppliers.DeleteAll(Database);
+            CopyCustomers.DeleteAll(Database);
         }
     }
 }
