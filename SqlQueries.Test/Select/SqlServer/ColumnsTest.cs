@@ -1,5 +1,4 @@
 ﻿using System.Data.SqlClient;
-using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -11,7 +10,7 @@ namespace SqlQueries.Test.Select.SqlServer
         {
         }
 
-        public override string ColumnsExpected { get; } = "SELECT [b], [a].[b], [a].[b] AS [c], [b] AS [c] FROM [TestDatabase].[Dbo].[Customers] AS [c]";
+        public override string Expected { get; } = "SELECT [Price], [c].[Price], [c].[Price] AS [p], [Price] AS [p] FROM [TestDatabase].[Dbo].[Customers] AS [c]";
 
     }
 }

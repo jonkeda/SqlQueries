@@ -21,7 +21,7 @@ namespace SqlQueries.Parts
         {
             fieldWriter(sb, Field);
             sb.Append(" LIKE ");
-            sb.AppendParameter(Pattern);
+            sb.Append($"'{Pattern}'");
         }
     }
 }

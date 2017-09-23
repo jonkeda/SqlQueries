@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Delete.SqlServer
+namespace SqlQueries.Test.Delete
 {
     [TestClass]
     public abstract class DeleteBaseTest : BaseTest
@@ -11,16 +12,23 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
         }
 
-        public abstract string DeleteExpected { get; } //= "DELETE FROM [TestDatabase].[Dbo].[Customers]";
+        public abstract string Expected { get; } //= "DELETE FROM [TestDatabase].[Dbo].[Customers]";
 
-        public abstract string DeleteTopExpected { get; } //= "DELETE TOP 10 FROM [TestDatabase].[Dbo].[Customers]";
+        public abstract string TopExpected { get; } //= "DELETE TOP 10 FROM [TestDatabase].[Dbo].[Customers]";
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+            yield return TopExpected;
+        }
+
 
         [TestMethod]
         public void Constructor()
         {
             string statement = new SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType); 
 
-            Assert.AreEqual(DeleteExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -31,7 +39,7 @@ namespace SqlQueries.Test.Delete.SqlServer
                 From = "[TestDatabase].[Dbo].[Customers]"
             }).ToString(DbConnectionType);
 
-            Assert.AreEqual(DeleteExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -39,7 +47,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
             string statement = new SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType);
 
-            Assert.AreEqual(DeleteExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -47,7 +55,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
             string statement = new SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]", 10).ToString(DbConnectionType);
 
-            Assert.AreEqual(DeleteTopExpected, statement);
+            Assert.AreEqual(TopExpected, statement);
         }
 
         [TestMethod]
@@ -55,7 +63,7 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
             string statement = new SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").Top(10).ToString(DbConnectionType);
 
-            Assert.AreEqual(DeleteTopExpected, statement);
+            Assert.AreEqual(TopExpected, statement);
         }
     }
 }

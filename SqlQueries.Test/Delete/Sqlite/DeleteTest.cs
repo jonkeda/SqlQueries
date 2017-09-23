@@ -11,9 +11,9 @@ namespace SqlQueries.Test.Delete.Sqlite
         {
         }
 
-        public override string DeleteExpected { get; } = "DELETE FROM [Customers]";
+        public override string Expected { get; } = "DELETE FROM [Customers]";
 
-        public override string DeleteTopExpected { get; } = "DELETE FROM [TestDatabase].[Dbo].[Customers] LIMIT 10";
+        public override string TopExpected { get; } = "DELETE FROM [Customers] LIMIT 10";
 
         [TestMethod]
         public override void ConstructorTop()

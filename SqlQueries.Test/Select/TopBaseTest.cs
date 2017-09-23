@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,16 +14,21 @@ namespace SqlQueries.Test.Select
 
         #region Top
 
-        protected abstract string TopExpected { get; }
-        protected abstract string TopPercentageExpected { get; }
+        protected abstract string Expected { get; }
+        protected abstract string PercentageExpected { get; }
 
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+            yield return PercentageExpected;
+        }
 
         [TestMethod]
         public void ConstructorTop()
         {
-            string statement = new SqlQueries.Select("TestDatabase.Dbo.Customers", 10).ToString();
+            string statement = new SqlQueries.Select("TestDatabase.Dbo.Customers", 10).ToString(DbConnectionType);
 
-            Assert.AreEqual(TopExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -32,40 +38,56 @@ namespace SqlQueries.Test.Select
             {
                 From = "TestDatabase.Dbo.Customers",
                 Top = 10
-            }.ToString();
+            }.ToString(DbConnectionType);
 
-            Assert.AreEqual(TopExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
-        public void PropertiesTopPercentage()
+        public virtual void PropertiesTopPercentage()
         {
             string statement = new SqlQueries.Select
             {
                 From = "TestDatabase.Dbo.Customers",
                 Top = new Top(10, true)
-            }.ToString();
+            }.ToString(DbConnectionType);
 
-            Assert.AreEqual(TopPercentageExpected, statement);
+            Assert.AreEqual(PercentageExpected, statement);
         }
 
         [TestMethod]
         public void FluentTop()
         {
-            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10).ToString();
+            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10).ToString(DbConnectionType);
 
-            Assert.AreEqual(TopExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
-        public void FluentTopPercentage()
+        public virtual void FluentTopPercentage()
         {
-            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10, true).ToString();
+            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10, true).ToString(DbConnectionType);
 
-            Assert.AreEqual(TopPercentageExpected, statement);
+            Assert.AreEqual(PercentageExpected, statement);
         }
 
         #endregion
 
+
+        [TestMethod]
+        public  void Operator()
+        {
+            Top top = new Top(10, true);
+
+            Assert.AreEqual(10, (int)top);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void OperatorArgumentNullException()
+        {
+            Assert.AreEqual("a.b.c d", (int)((Top)null));
+        }
     }
 }

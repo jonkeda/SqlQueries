@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,14 +14,19 @@ namespace SqlQueries.Test.Select
 
         #region OrderBy
 
-        private const string OrderByExpected = "SELECT * FROM [TestDatabase].[Dbo].[Customers] ORDER BY [CustomerName]";
+        public abstract string Expected { get; } 
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorOrderBy()
         {
-            string statement = SelectCustomer().OrderByField("CustomerName").ToString();
+            string statement = SelectCustomer().OrderByField("CustomerName").ToString(DbConnectionType);
 
-            Assert.AreEqual(OrderByExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -29,17 +35,17 @@ namespace SqlQueries.Test.Select
             SqlQueries.Select select = SelectCustomer();
             select.OrderBy.Add(new OrderByField("CustomerName"));
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(OrderByExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void FluentOrderBy()
         {
-            string statement = SelectCustomer().OrderByField("CustomerName").ToString();
+            string statement = SelectCustomer().OrderByField("CustomerName").ToString(DbConnectionType);
 
-            Assert.AreEqual(OrderByExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

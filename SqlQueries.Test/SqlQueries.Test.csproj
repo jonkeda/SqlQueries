@@ -51,6 +51,10 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.18\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="SQLite.CodeFirst, Version=1.0.0.0, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Binary\SQLite.CodeFirst.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -71,22 +75,58 @@
     </Compile>
     <Compile Include="AssemblyInitializer.cs" />
     <Compile Include="Base\BaseTest.cs" />
+    <Compile Include="Contexts\DbContextTest.cs" />
     <Compile Include="Contexts\Customers.cs" />
     <Compile Include="Contexts\DatabaseContext.cs" />
+    <Compile Include="Contexts\DatabaseContextTest.cs" />
+    <Compile Include="Contexts\IDbContextTest.cs" />
     <Compile Include="Contexts\Orders.cs" />
     <Compile Include="Delete\DeleteBaseTest.cs" />
+    <Compile Include="Parts\ColumnFieldTest.cs" />
     <Compile Include="Parts\FieldTest.cs" />
     <Compile Include="Parts\TableTest.cs" />
     <Compile Include="Select\BetweenBaseTest.cs" />
     <Compile Include="Select\AnyBaseTest.cs" />
+    <Compile Include="Select\AverageBaseTest.cs" />
     <Compile Include="Select\ColumnStarBaseTest.cs" />
     <Compile Include="Select\ColumnsBaseTest.cs" />
+    <Compile Include="Select\Sqlite\AllTest.cs" />
+    <Compile Include="Select\Sqlite\AnyTest.cs" />
+    <Compile Include="Select\Sqlite\AverageTest.cs" />
+    <Compile Include="Select\Sqlite\BetweenTest.cs" />
+    <Compile Include="Select\Sqlite\ColumnsTest.cs" />
+    <Compile Include="Select\Sqlite\CountTest.cs" />
+    <Compile Include="Select\Sqlite\DistinctTest.cs" />
+    <Compile Include="Select\Sqlite\EqualTest.cs" />
+    <Compile Include="Select\Sqlite\ExistsTest.cs" />
+    <Compile Include="Select\Sqlite\GreaterOrEqualTest.cs" />
+    <Compile Include="Select\Sqlite\GreaterThanTest.cs" />
+    <Compile Include="Select\Sqlite\GroupByTest.cs" />
+    <Compile Include="Select\Sqlite\HavingTest.cs" />
+    <Compile Include="Select\Sqlite\InTest.cs" />
+    <Compile Include="Select\Sqlite\IsNotNullTest.cs" />
+    <Compile Include="Select\Sqlite\IsNullTest.cs" />
+    <Compile Include="Select\Sqlite\LessOrEqualTest.cs" />
+    <Compile Include="Select\Sqlite\LessThanTest.cs" />
+    <Compile Include="Select\Sqlite\LikeTest.cs" />
+    <Compile Include="Select\Sqlite\MaximumTest.cs" />
+    <Compile Include="Select\Sqlite\MinimumTest.cs" />
+    <Compile Include="Select\Sqlite\NotEqualTest.cs" />
+    <Compile Include="Select\Sqlite\NotInTest.cs" />
+    <Compile Include="Select\Sqlite\OrderByTest.cs" />
+    <Compile Include="Select\Sqlite\SumTest.cs" />
+    <Compile Include="Select\Sqlite\WhereTest.cs" />
+    <Compile Include="Select\SumBaseTest.cs" />
+    <Compile Include="Select\CountBaseTest.cs" />
     <Compile Include="Select\DistinctBaseTest.cs" />
+    <Compile Include="Select\IsNullBaseTest.cs" />
+    <Compile Include="Select\LikeBaseTest.cs" />
     <Compile Include="Select\GreaterOrEqualBaseTest.cs" />
     <Compile Include="Select\GreaterThanBaseTest.cs" />
-    <Compile Include="Select\IsNotNullBaseTest - Copy.cs" />
     <Compile Include="Select\LessOrEqualBaseTest.cs" />
     <Compile Include="Select\LessThanBaseTest.cs" />
+    <Compile Include="Select\MaximumBaseTest.cs" />
+    <Compile Include="Select\MinimumBaseTest.cs" />
     <Compile Include="Select\NotEqualBaseTest.cs" />
     <Compile Include="Select\ExistsBaseTest.cs" />
     <Compile Include="Select\JoinBaseTest.cs" />
@@ -94,9 +134,11 @@
     <Compile Include="Select\IsNotNullBaseTest.cs" />
     <Compile Include="Select\NotInBaseTest.cs" />
     <Compile Include="Select\HavingBaseTest.cs" />
+    <Compile Include="Select\SqlServer\AverageTest.cs" />
     <Compile Include="Select\SqlServer\BetweenTest.cs" />
     <Compile Include="Select\SqlServer\AnyTest.cs" />
     <Compile Include="Select\SqlServer\ColumnStarTest.cs" />
+    <Compile Include="Select\SqlServer\CountTest.cs" />
     <Compile Include="Select\SqlServer\DistinctTest.cs" />
     <Compile Include="Select\SqlServer\AllTest.cs" />
     <Compile Include="Select\SqlServer\EqualTest.cs" />
@@ -105,6 +147,10 @@
     <Compile Include="Select\SqlServer\IsNotNullTest.cs" />
     <Compile Include="Select\SqlServer\LessOrEqualTest.cs" />
     <Compile Include="Select\SqlServer\LessThanTest.cs" />
+    <Compile Include="Select\SqlServer\LikeTest.cs" />
+    <Compile Include="Select\SqlServer\SumTest.cs" />
+    <Compile Include="Select\SqlServer\MaximumTest.cs" />
+    <Compile Include="Select\SqlServer\MinimumTest.cs" />
     <Compile Include="Select\SqlServer\NotEqualTest.cs" />
     <Compile Include="Select\SqlServer\IsNullTest.cs" />
     <Compile Include="Select\SqlServer\WhereTest.cs" />
@@ -121,15 +167,12 @@
     <Compile Include="Select\OrderByBaseTest.cs" />
     <Compile Include="Select\Sqlite\ColumnStarTest.cs" />
     <Compile Include="Select\SqlServer\ColumnsTest.cs" />
-    <Compile Include="Select\SqlServer\ETest.cs" />
     <Compile Include="Select\Sqlite\TopTest.cs" />
-    <Compile Include="Select\EBaseTest.cs" />
     <Compile Include="Select\TopBaseTest.cs" />
     <Compile Include="Select\FromBaseTest.cs" />
     <Compile Include="Select\Sqlite\FromTest.cs" />
     <Compile Include="Select\SqlServer\TopTest.cs" />
     <Compile Include="Select\SqlServer\FromTest.cs" />
-    <Compile Include="Select\SqlServer\StatementTest.cs" />
     <Compile Include="Delete\Sqlite\DeleteTest.cs" />
     <Compile Include="Delete\SqlServer\DeleteTest.cs" />
     <Compile Include="Truncate\Sqlite\TruncateTest.cs" />
@@ -142,10 +185,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SqlQueries.EntityFramework\SqlQueries.EntityFramework.csproj">
+      <Project>{B6480AFC-B321-450B-B7A5-56030CBFDB32}</Project>
+      <Name>SqlQueries.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SqlQueries\SqlQueries.csproj">
       <Project>{ED6394B2-6768-41FE-AB23-C444D39D50FE}</Project>
       <Name>SqlQueries</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Binary\SQLite.CodeFirst.dll" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

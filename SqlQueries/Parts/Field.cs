@@ -19,9 +19,9 @@ namespace SqlQueries.Parts
 
         public Field(string tableName, string fieldName, string alias)
         {
-            TableName = tableName;
-            FieldName = fieldName;
-            Alias = alias;
+            TableName = tableName?.Trim('[', ']');
+            FieldName = fieldName?.Trim('[', ']');
+            Alias = alias?.Trim('[', ']');
         }
 
         public string FullName { get; }

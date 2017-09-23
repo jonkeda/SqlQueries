@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -6,11 +7,11 @@ namespace SqlQueries.Test.Select.SqlServer
     [TestClass]
     public class DistinctTest : DistinctBaseTest
     {
-        public DistinctTest() : base(typeof(SQLiteConnection))
+        public DistinctTest() : base(typeof(SqlConnection))
         {
         }
 
-        public override string DistinctExpected { get; } = "SELECT DISTINCT [City] FROM [TestDatabase].[Dbo].[Customers]";
+        public override string Expected { get; } = "SELECT DISTINCT [City] FROM [TestDatabase].[Dbo].[Customers]";
 
     }
 }

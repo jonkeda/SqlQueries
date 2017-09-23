@@ -64,7 +64,7 @@ namespace SqlQueries.Test.Parts
         //[TestMethod]
         //public void Fluent()
         //{
-        //    string statement = new SqlQueries.Delete().Field("TestField").ToString(typeof(SQLiteConnection));
+        //    string statement = new SqlQueries.Delete().Field("TestField").ToString(typeof(SqlConnection));
 
         //    Assert.AreEqual("DELETE FROM [TestField]", statement);
         //}

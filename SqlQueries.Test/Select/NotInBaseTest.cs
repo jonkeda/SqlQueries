@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -14,14 +15,17 @@ namespace SqlQueries.Test.Select
         #region Where In
 
         public abstract string Expected { get; } // = @"SELECT * FROM [Customers] WHERE [Country] IN (SELECT [Country] FROM [Suppliers])";
-
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorNotIn()
         {
             string statement = new SqlQueries.Select("Customers")
                 .Where(new NotIn("Country", new SqlQueries.Select("Suppliers", "Country")))
-                .ToString();
+                .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -35,7 +39,7 @@ namespace SqlQueries.Test.Select
             };
             select.Where.Add(new NotIn { Field = "Country", Select = new SqlQueries.Select("Suppliers", "Country")});
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -46,7 +50,7 @@ namespace SqlQueries.Test.Select
             string statement = new SqlQueries.Select()
                 .From("Customers")
                 .NotIn("Country", new SqlQueries.Select("Suppliers", "Country"))
-                .ToString();
+                .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }

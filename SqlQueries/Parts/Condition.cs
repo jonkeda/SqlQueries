@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using SqlQueries.Statements;
 
 namespace SqlQueries.Parts

@@ -51,7 +51,7 @@ namespace SqlQueries.SqlServer
         {
             if (table == null)
             {
-                throw new QueryException("Table not set");
+                throw new QueryBuilderException("Table not set");
             }
             sb.Append(" ");
 

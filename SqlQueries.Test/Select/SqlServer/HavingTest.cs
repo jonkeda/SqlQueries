@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -6,11 +7,11 @@ namespace SqlQueries.Test.Select.SqlServer
     [TestClass]
     public class HavingTest : HavingBaseTest
     {
-        public HavingTest() : base(typeof(SQLiteConnection))
+        public HavingTest() : base(typeof(SqlConnection))
         {
         }
 
-        public override string HavingExpected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] HAVING [City] = @p0 AND [ContactName] <> [CustomerName]";
+        public override string Expected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] GROUP BY [City], [ContactName] HAVING [City] = @p0 AND [ContactName] <> [CustomerName]";
 
     }
 }

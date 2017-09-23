@@ -9,6 +9,6 @@ namespace SqlQueries.Test.Truncate.Sqlite
         public TruncateTest() : base(typeof(SQLiteConnection))
         {
         }
-        public override string TruncateExpected { get; } = "DELETE FROM [Customers]";
+        public override string Expected { get; } = "DELETE FROM [Customers]";
     }
 }

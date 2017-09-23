@@ -27,7 +27,7 @@ namespace SqlQueries.Statements
             var statement = Statements.Get(builderType);
             if (statement == null)
             {
-                throw new QueryException($@"Statement builder does not exist for {builderType.Name}");
+                throw new QueryBuilderException($@"Statement builder does not exist for {builderType.Name}");
             }
             return statement;
         }

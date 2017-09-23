@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,17 +14,21 @@ namespace SqlQueries.Test.Select
 
         #region Where In
 
-        public abstract string InExpected { get; } // = @"SELECT * FROM [Customers] WHERE [Country] IN (SELECT [Country] FROM [Suppliers])";
+        public abstract string Expected { get; } // = @"SELECT * FROM [Customers] WHERE [Country] IN (SELECT [Country] FROM [Suppliers])";
 
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorIn()
         {
             string statement = new SqlQueries.Select("Customers")
                 .Where(new In("Country", new SqlQueries.Select("Suppliers", "Country")))
-                .ToString();
+                .ToString(DbConnectionType);
 
-            Assert.AreEqual(InExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -35,9 +40,9 @@ namespace SqlQueries.Test.Select
             };
             select.Where.Add(new In { Field = "Country", Select = new SqlQueries.Select("Suppliers", "Country")});
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(InExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -46,9 +51,9 @@ namespace SqlQueries.Test.Select
             string statement = new SqlQueries.Select()
                 .From("Customers")
                 .In("Country", new SqlQueries.Select("Suppliers", "Country"))
-                .ToString();
+                .ToString(DbConnectionType);
 
-            Assert.AreEqual(InExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

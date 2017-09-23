@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -6,7 +7,7 @@ namespace SqlQueries.Test.Select.SqlServer
     [TestClass]
     public class BetweenTest : BetweenBaseTest
     {
-        public BetweenTest() : base(typeof(SQLiteConnection))
+        public BetweenTest() : base(typeof(SqlConnection))
         {
         }
 

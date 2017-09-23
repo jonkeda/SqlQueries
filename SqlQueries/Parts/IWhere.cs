@@ -1,6 +1,4 @@
-﻿using SqlQueries.Statements;
-
-namespace SqlQueries.Parts
+﻿namespace SqlQueries.Parts
 {
     public interface IWhere : IConditionContainer
     {

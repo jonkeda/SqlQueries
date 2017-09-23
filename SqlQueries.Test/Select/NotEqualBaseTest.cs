@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,14 +14,21 @@ namespace SqlQueries.Test.Select
 
         #region Where
 
-        public abstract string Expected { get; } 
+        public abstract string Expected { get; }
+        public override object[][] Parameters { get; } = { new object[] { "Berlin" } };
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
+
         [TestMethod]
         public void ConstructorWhere()
         {
             string statement = SelectCustomer()
                     .Where(new NotEqualToValue { Field = "City", Value = "Berlin" })
                     .Where(new NotEqual { Field = "CustomerName", ToField = "ContactName" })
-                .ToString();
+                .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -32,7 +40,7 @@ namespace SqlQueries.Test.Select
             select.Where.Add(new NotEqualToValue("City", "Berlin"));
             select.Where.Add(new NotEqual("CustomerName", "ContactName"));
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -44,7 +52,7 @@ namespace SqlQueries.Test.Select
                 .Where()
                 .NotEqualToValue("City", "Berlin")
                 .NotEqual("CustomerName", "ContactName")
-                .ToString();
+                .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }

@@ -18,6 +18,11 @@ namespace SqlQueries.Sqlite
                 && top.TopCount > 0)
             {
                 sb.Append($@" LIMIT ({top.TopCount})");
+
+                if (top.Percentage)
+                {
+                    throw new QueryNotImplementedException("Percentage not implemented for SQLite");
+                }
             }
         }
 
@@ -27,6 +32,12 @@ namespace SqlQueries.Sqlite
             sb.Append("[");
             sb.Append(table.TableName);
             sb.Append("]");
+            if (!string.IsNullOrEmpty(table.Alias))
+            {
+                sb.Append(" AS [");
+                sb.Append(table.Alias);
+                sb.Append("]");
+            }
         }
     }
 }

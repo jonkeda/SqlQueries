@@ -85,6 +85,7 @@
     <Compile Include="Parts\LessOrEqual.cs" />
     <Compile Include="Parts\LessOrEqualThanValue.cs" />
     <Compile Include="Parts\LessThan.cs" />
+    <Compile Include="Parts\LessThanValue.cs" />
     <Compile Include="Parts\Like.cs" />
     <Compile Include="Parts\Maximum.cs" />
     <Compile Include="Parts\Minimum.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Sqlite\StatementBuilderSqlite.cs" />
     <Compile Include="SqlServer\StatementBuilderSqlServer.cs" />
     <Compile Include="Statements\QueryException.cs" />
+    <Compile Include="Statements\QueryNotImplementedException.cs" />
     <Compile Include="Statements\SqlBuilder.cs" />
     <Compile Include="Statements\StatementBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Base;
 
@@ -15,6 +16,12 @@ namespace SqlQueries.Test.Select
 
         protected abstract string SingleExpected { get; } 
         protected abstract string MultipleExpected { get; }
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return SingleExpected;
+            yield return MultipleExpected;
+        }
 
         [TestMethod]
         public void ConstructorSingle()

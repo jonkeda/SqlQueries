@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Parts;
 using SqlQueries.Test.Base;
 
 namespace SqlQueries.Test.Select
@@ -13,14 +13,19 @@ namespace SqlQueries.Test.Select
 
         #region Distinct
 
-        public abstract string DistinctExpected { get; } //= "SELECT DISTINCT [City] FROM [TestDatabase].[Dbo].[Customers]";
+        public abstract string Expected { get; } //= "SELECT DISTINCT [City] FROM [TestDatabase].[Dbo].[Customers]";
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorDistinct()
         {
-            string statement = SelectCustomer().Distinct().Columns("[City]").ToString();
+            string statement = SelectCustomer().Distinct().Columns("[City]").ToString(DbConnectionType);
 
-            Assert.AreEqual(DistinctExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -33,17 +38,17 @@ namespace SqlQueries.Test.Select
                 Distinct = true
             };
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(DistinctExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void FluentDistinct()
         {
-            string statement = SelectCustomer().Distinct().Columns("[City]").ToString();
+            string statement = SelectCustomer().Distinct().Columns("[City]").ToString(DbConnectionType);
 
-            Assert.AreEqual(DistinctExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

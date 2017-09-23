@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -14,17 +15,21 @@ namespace SqlQueries.Test.Select
 
         #region Where Exist
 
-        public abstract string ExistExpected { get; } //= @"SELECT * FROM [Suppliers] WHERE EXISTS(SELECT [ProductName] FROM [Products])";
+        public abstract string Expected { get; } //= @"SELECT * FROM [Suppliers] WHERE EXISTS(SELECT [ProductName] FROM [Products])";
 
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorExist()
         {
             string statement = SelectCustomer()
                 .Where(new Exists(new SqlQueries.Select("Orders", "CustomerID")))
-                .ToString();
+                .ToString(DbConnectionType);
 
-            Assert.AreEqual(ExistExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -36,9 +41,9 @@ namespace SqlQueries.Test.Select
             };
             select.Where.Add(new Exists {Select = new SqlQueries.Select("Orders", "CustomerID")});
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(ExistExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -46,9 +51,9 @@ namespace SqlQueries.Test.Select
         {
             string statement = SelectCustomer()
                 .Exists(new SqlQueries.Select("Orders", "CustomerID"))
-                .ToString();
+                .ToString(DbConnectionType);
 
-            Assert.AreEqual(ExistExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

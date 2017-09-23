@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -6,7 +7,7 @@ namespace SqlQueries.Test.Select.SqlServer
     [TestClass]
     public class GreaterOrEqualTest : GreaterOrEqualBaseTest
     {
-        public GreaterOrEqualTest() : base(typeof(SQLiteConnection))
+        public GreaterOrEqualTest() : base(typeof(SqlConnection))
         {
         }
 

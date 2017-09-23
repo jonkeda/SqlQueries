@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,34 +14,41 @@ namespace SqlQueries.Test.Select
 
         #region Having
 
-        public abstract string HavingExpected { get; } // = "SELECT * FROM [TestDatabase].[Dbo].[Customers] HAVING [City] = @p0 AND [ContactName] <> [CustomerName]";
+        public abstract string Expected { get; } // = "SELECT * FROM [TestDatabase].[Dbo].[Customers] HAVING [City] = @p0 AND [ContactName] <> [CustomerName]";
+
+        public override object[][] Parameters { get; } = {new object[] {"Daan"}};
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorHaving()
         {
-            string statement = SelectCustomer().Having("City", "Daan").HavingField("ContactName", SqlOperator.NotEqual, "CustomerName").ToString();
+            string statement = SelectCustomer().GroupBy("City, ContactName").Having("City", "Daan").HavingField("ContactName", SqlOperator.NotEqual, "CustomerName").ToString(DbConnectionType);
 
-            Assert.AreEqual(HavingExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void PropertiesHaving()
         {
-            SqlQueries.Select select = SelectCustomer();
+            SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
             select.Having.Add(new HavingValue("City", "Daan"));
             select.Having.Add(new HavingField("ContactName", SqlOperator.NotEqual, "CustomerName"));
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(HavingExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void FluentHaving()
         {
-            string statement = SelectCustomer().Having("City", "Daan").HavingField("ContactName", SqlOperator.NotEqual, "CustomerName").ToString();
+            string statement = SelectCustomer().GroupBy("City, ContactName").Having("City", "Daan").HavingField("ContactName", SqlOperator.NotEqual, "CustomerName").ToString(DbConnectionType);
 
-            Assert.AreEqual(HavingExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

@@ -12,5 +12,10 @@ namespace SqlQueries.Test.Contexts
         }
 
         public DbSet<Customers> Customers { get; set; }
+
+        public DbSet<Orders> Orders { get; set; }
+
+        public DbSet<Suppliers> Suppliers { get; set; }
+
     }
 }

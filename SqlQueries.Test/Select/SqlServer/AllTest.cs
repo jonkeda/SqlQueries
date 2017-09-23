@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -6,7 +7,7 @@ namespace SqlQueries.Test.Select.SqlServer
     [TestClass]
     public class AllTest : AllBaseTest
     {
-        public AllTest() : base(typeof(SQLiteConnection))
+        public AllTest() : base(typeof(SqlConnection))
         {
         }
 

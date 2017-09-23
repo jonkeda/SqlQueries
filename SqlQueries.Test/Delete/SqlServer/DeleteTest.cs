@@ -10,9 +10,9 @@ namespace SqlQueries.Test.Delete.SqlServer
         {
         }
 
-        public override string DeleteExpected { get; } = "DELETE FROM [TestDatabase].[Dbo].[Customers]";
+        public override string Expected { get; } = "DELETE FROM [TestDatabase].[Dbo].[Customers]";
 
-        public override string DeleteTopExpected { get; } = "DELETE TOP 10 FROM [TestDatabase].[Dbo].[Customers]";
+        public override string TopExpected { get; } = "DELETE TOP 10 FROM [TestDatabase].[Dbo].[Customers]";
 
     }
 }

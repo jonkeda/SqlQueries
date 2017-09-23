@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Base;
 
@@ -11,14 +12,19 @@ namespace SqlQueries.Test.Truncate
         {
         }
 
-        public abstract string TruncateExpected { get; } // = "TRUNCATE TABLE [Db].[schem].[TestTable]";
+        public abstract string Expected { get; } // = "TRUNCATE TABLE [Db].[schem].[TestTable]";
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void Constructor()
         {
             string statement = new SqlQueries.Truncate("TestDatabase.Dbo.Customers").ToString(DbConnectionType); 
 
-            Assert.AreEqual(TruncateExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -29,7 +35,7 @@ namespace SqlQueries.Test.Truncate
                 Table = "TestDatabase.Dbo.Customers"
             }).ToString(DbConnectionType);
 
-            Assert.AreEqual(TruncateExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -37,7 +43,7 @@ namespace SqlQueries.Test.Truncate
         {
             string statement = new SqlQueries.Truncate().Table("TestDatabase.Dbo.Customers").ToString(DbConnectionType);
 
-            Assert.AreEqual(TruncateExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
     }

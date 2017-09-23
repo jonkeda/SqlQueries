@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,7 +14,13 @@ namespace SqlQueries.Test.Select
 
         #region Where
 
-        public abstract string WhereExpected { get; } //= "SELECT * FROM [DimEmployee] WHERE [LastName] = @p0 AND [Number] > [Count] AND [First] IS NULL AND [Second] IS NOT NULL";
+        public abstract string Expected { get; } //= "SELECT * FROM [DimEmployee] WHERE [LastName] = @p0 AND [Number] > [Count] AND [First] IS NULL AND [Second] IS NOT NULL";
+        public override object[][] Parameters { get; } = { new object[] { "Berlin" } };
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorWhere()
@@ -21,9 +28,9 @@ namespace SqlQueries.Test.Select
             string statement = SelectCustomer()
                 .Where("City", "Berlin")
                 .WhereField("CustomerName", SqlOperator.NotEqual, "ContactName")
-                .ToString();
+                .ToString(DbConnectionType);
 
-            Assert.AreEqual(WhereExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -33,9 +40,9 @@ namespace SqlQueries.Test.Select
             select.Where.Add(new EqualToValue("City", "Berlin"));
             select.Where.Add(new NotEqual("CustomerName", "ContactName"));
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(WhereExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -44,9 +51,9 @@ namespace SqlQueries.Test.Select
             string statement = SelectCustomer()
                 .Where("City", "Berlin")
                 .WhereField("CustomerName", SqlOperator.NotEqual, "ContactName")
-                .ToString();
+                .ToString(DbConnectionType);
 
-            Assert.AreEqual(WhereExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

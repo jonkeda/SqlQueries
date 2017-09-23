@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,14 +14,19 @@ namespace SqlQueries.Test.Select
 
         #region Columns
 
-        public abstract string ColumnsExpected { get; } // = "SELECT [b], [a].[b], [a].[b] AS [c], [b] AS [c] FROM [DimEmployee] AS [e]";
+        public abstract string Expected { get; }
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorColumns()
         {
-            string statement = SelectCustomerAs().Columns("[b], [a].[b], [a].[b] as [c], [b] AS [c]").ToString(DbConnectionType);
+            string statement = SelectCustomerAs().Columns("[Price], [c].[Price], [c].[Price] as [p], [Price] AS [p]").ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnsExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -29,22 +35,25 @@ namespace SqlQueries.Test.Select
             SqlQueries.Select select = new SqlQueries.Select
             {
                 From = "TestDatabase.Dbo.Customers c",
-                Columns = "[b], [a].[b], [a].[b] as [c]"
+                Columns = "Price"
             };
-            select.Columns.Add("[b] as [c]");
+            select.Columns.Add(new Field("c", "Price"));
+            select.Columns.Add("[c].[Price] as [p]");
+            select.Columns.Add("[Price] as [p]");
+
 
             string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnsExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void FluentColumns()
         {
             string statement = SelectCustomerAs()
-                .Columns("[b], [a].[b], [a].[b] as [c], [b] as [c]").ToString(DbConnectionType);
+                .Columns("[Price], [c].[Price], [c].[Price] as [p], [Price] as [p]").ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnsExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

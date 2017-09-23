@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -15,13 +16,19 @@ namespace SqlQueries.Test.Select
 
         public abstract string Expected { get; } //= "SELECT * FROM [DimEmployee] WHERE [LastName] = @p0 AND [Number] > [Count] AND [First] IS NULL AND [Second] IS NOT NULL";
 
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
+
+
         [TestMethod]
         public void ConstructorWhere()
         {
             SqlQueries.Select select = SelectCustomer();
             select.Where.Add(new All("Country", SqlOperator.Equal, new SqlQueries.Select("Suppliers", "Country")));
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -35,7 +42,7 @@ namespace SqlQueries.Test.Select
                 Operator = SqlOperator.Equal,
                 Select =  new SqlQueries.Select("Suppliers", "Country")});
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -46,7 +53,7 @@ namespace SqlQueries.Test.Select
             string statement = SelectCustomer()
                 .Where()
                 .All("Country", SqlOperator.Equal, new SqlQueries.Select("Suppliers", "Country"))
-                .ToString();
+                .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }

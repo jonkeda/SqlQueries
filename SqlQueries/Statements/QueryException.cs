@@ -4,21 +4,21 @@ using System.Runtime.Serialization;
 namespace SqlQueries.Statements
 {
     [Serializable]
-    public class QueryException : Exception
+    public class QueryBuilderException : Exception
     {
-        public QueryException()
+        public QueryBuilderException()
         {
         }
 
-        public QueryException(string message) : base(message)
+        public QueryBuilderException(string message) : base(message)
         {
         }
 
-        public QueryException(string message, Exception innerException) : base(message, innerException)
+        public QueryBuilderException(string message, Exception innerException) : base(message, innerException)
         {
         }
 
-        protected QueryException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected QueryBuilderException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

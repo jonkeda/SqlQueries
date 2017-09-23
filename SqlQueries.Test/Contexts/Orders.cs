@@ -12,5 +12,11 @@ namespace SqlQueries.Test.Contexts
         public string CustomerId { get; set; }
 
         public string OrderDate { get; set; }
+
+        public int Price { get; set; }
+
+        public int TotalAmount { get; set; }
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Parts;
 using SqlQueries.Test.Base;
@@ -13,14 +14,19 @@ namespace SqlQueries.Test.Select
 
         #region Join
 
-        private const string JoinExpected = "SELECT * FROM [DimEmployee] AS [e] INNER JOIN [DimOrder] AS [o] ON [e].[Id] = [o].[EmployeeId]";
+        private const string Expected = "SELECT * FROM [DimEmployee] AS [e] INNER JOIN [DimOrder] AS [o] ON [e].[Id] = [o].[EmployeeId]";
+
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+        }
 
         [TestMethod]
         public void ConstructorJoin()
         {
-            string statement = new SqlQueries.Select("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString();
+            string statement = new SqlQueries.Select("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString(DbConnectionType);
 
-            Assert.AreEqual(JoinExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -32,17 +38,17 @@ namespace SqlQueries.Test.Select
             };
             select.Joins.Add(new Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId"));
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(JoinExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void FluentJoin()
         {
-            string statement = new SqlQueries.Select().From("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString();
+            string statement = new SqlQueries.Select().From("DimEmployee e").Join("DimOrder o", JoinType.Inner, "e.Id", "o.EmployeeId").ToString(DbConnectionType);
 
-            Assert.AreEqual(JoinExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         #endregion

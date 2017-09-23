@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Truncate.SqlServer
@@ -11,6 +10,6 @@ namespace SqlQueries.Test.Truncate.SqlServer
         {
         }
 
-        public override string TruncateExpected { get; } = "TRUNCATE TABLE [TestDatabase].[Dbo].[Customers]";
+        public override string Expected { get; } = "TRUNCATE TABLE [TestDatabase].[Dbo].[Customers]";
     }
 }

@@ -10,8 +10,8 @@ namespace SqlQueries.Test.Select.Sqlite
         {
         }
 
-        public override string ColumnStarExpected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers]";
+        public override string Expected { get; } = "SELECT * FROM [Customers]";
 
-        public override string ColumnTableStarExpected { get; } = "SELECT [c].* FROM [TestDatabase].[Dbo].[Customers] AS [c]";
+        public override string StarExpected { get; } = "SELECT [c].* FROM [Customers] AS [c]";
     }
 }

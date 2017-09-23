@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SqlQueries.Test.Select.SqlServer
@@ -6,10 +7,10 @@ namespace SqlQueries.Test.Select.SqlServer
     [TestClass]
     public class GroupByTest : GroupByBaseTest
     {
-        public GroupByTest() : base(typeof(SQLiteConnection))
+        public GroupByTest() : base(typeof(SqlConnection))
         {
         }
 
-        public override string GroupByExpected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] GROUP BY [ContactName]";
+        public override string Expected { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] GROUP BY [ContactName]";
     }
 }

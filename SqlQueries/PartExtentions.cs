@@ -53,11 +53,22 @@ namespace SqlQueries
             query.SetCurrent(query.Columns);
         }
 
-        public static T Column<T>(this T query, Field field)
+        public static T Column<T>(this T query, Field field, params Field[] fields)
             where T : IColumns
         {
             SetCurrentColumns(query);
             query.Columns.Add(new ColumnField(field));
+            foreach (Field aField in fields)
+            {
+                query.Columns.Add(new ColumnField(aField));
+            }
+            return query;
+        }
+
+        public static T Columns<T>(this T query)
+            where T : IColumns
+        {
+            SetCurrentColumns(query);
             return query;
         }
 
@@ -379,6 +390,14 @@ namespace SqlQueries
         {
             SetCurrentGroupBy(query);
             query.GroupBy.Add(new GroupByField(fields));
+            return query;
+        }
+
+        public static T GroupBy<T>(this T query, GroupByField field)
+            where T : IGroupBy
+        {
+            SetCurrentGroupBy(query);
+            query.GroupBy.Add(field);
             return query;
         }
 

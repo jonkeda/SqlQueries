@@ -1,5 +1,6 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SqlQueries.Statements;
 
 namespace SqlQueries.Test.Select.Sqlite
 {
@@ -10,9 +11,33 @@ namespace SqlQueries.Test.Select.Sqlite
         {
         }
 
-        protected override string TopExpected { get; } = "SELECT TOP 10 * FROM [TestDatabase].[Dbo].[Customers]";
+        protected override string Expected { get; } = "SELECT * FROM [Customers] LIMIT (10)";
 
-        protected override string TopPercentageExpected { get; } =
-            "SELECT TOP 10 PERCENTAGE * FROM [TestDatabase].[Dbo].[Customers]";
+        protected override string PercentageExpected { get; } = "SELECT * FROM [Customers] LIMIT (10) PERCENTAGE";
+
+        [TestMethod]
+        [ExpectedException(typeof(QueryNotImplementedException))]
+        public override void FluentTopPercentage()
+        {
+            // not implemented in sqlite
+            base.FluentTopPercentage();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(QueryNotImplementedException))]
+        public override void PropertiesTopPercentage()
+        {
+            // not implemented in sqlite
+            base.PropertiesTopPercentage();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(SQLiteException))]
+        public override void TestExpectedSqls()
+        {
+            // not implemented in sqlite
+            base.TestExpectedSqls();
+        }
+
     }
 }

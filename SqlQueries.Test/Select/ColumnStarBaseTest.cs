@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Test.Base;
 
@@ -12,25 +13,38 @@ namespace SqlQueries.Test.Select
 
         #region Column Star
 
-        public abstract string ColumnTableStarExpected { get; }
+        public abstract string StarExpected { get; }
 
-        public abstract string ColumnStarExpected { get; }
+        public abstract string Expected { get; }
 
+        protected override IEnumerable<string> GetExpectedSql()
+        {
+            yield return Expected;
+            yield return StarExpected;
+        }
 
         [TestMethod]
         public void ConstructorColumnStar()
         {
-            string statement = SelectCustomer().Column("*").ToString();
+            string statement = SelectCustomer().Column("*").ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnStarExpected, statement);
+            Assert.AreEqual(Expected, statement);
+        }
+
+        [TestMethod]
+        public void ConstructorColumnStar2()
+        {
+            string statement = SelectCustomer().ToString(DbConnectionType);
+
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void ConstructorColumnTableStar()
         {
-            string statement = SelectCustomerAs().Column("c.*").ToString();
+            string statement = SelectCustomerAs().Column("c.*").ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnTableStarExpected, statement);
+            Assert.AreEqual(StarExpected, statement);
         }
 
         [TestMethod]
@@ -42,9 +56,9 @@ namespace SqlQueries.Test.Select
                 Columns = "*"
             };
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnStarExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
@@ -56,25 +70,25 @@ namespace SqlQueries.Test.Select
                 Columns = "c.*"
             };
 
-            string statement = select.ToString();
+            string statement = select.ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnTableStarExpected, statement);
+            Assert.AreEqual(StarExpected, statement);
         }
 
         [TestMethod]
         public void FluentColumnStar()
         {
-            string statement = SelectCustomer().Column("*").ToString();
+            string statement = SelectCustomer().Column("*").ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnStarExpected, statement);
+            Assert.AreEqual(Expected, statement);
         }
 
         [TestMethod]
         public void FluentColumnTableStar()
         {
-            string statement = SelectCustomerAs().Column("c.*").ToString();
+            string statement = SelectCustomerAs().Column("c.*").ToString(DbConnectionType);
 
-            Assert.AreEqual(ColumnTableStarExpected, statement);
+            Assert.AreEqual(StarExpected, statement);
         }
 
         #endregion
