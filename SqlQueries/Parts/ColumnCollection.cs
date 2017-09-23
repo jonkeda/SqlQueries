@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 
 namespace SqlQueries.Parts
@@ -24,6 +25,14 @@ namespace SqlQueries.Parts
         public void Add(Field field)
         {
             Add(new ColumnField(field));
+        }
+
+        public void AddFields(ColumnCollection fields)
+        {
+            foreach (ColumnField field in fields)
+            {
+                Add(field);
+            }
         }
     }
 }

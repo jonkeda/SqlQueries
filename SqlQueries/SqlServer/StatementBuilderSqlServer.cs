@@ -99,11 +99,10 @@ namespace SqlQueries.SqlServer
         {
             if (columns.Count == 0)
             {
-                sb.Append(" *");
+                sb.Append("*");
             }
             else
             {
-                sb.Append(" ");
                 bool first = true;
                 foreach (ColumnField column in columns)
                 {

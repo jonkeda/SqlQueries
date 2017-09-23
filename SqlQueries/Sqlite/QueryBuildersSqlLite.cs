@@ -15,6 +15,7 @@ namespace SqlQueries.Sqlite
             Statements.Register(new OrBuilderSqlServer(ConnectionType));
             Statements.Register(new AndBuilderSqlServer(ConnectionType));
             Statements.Register(new SelectIntoBuilderSqliteServer(ConnectionType));
+            Statements.Register(new InsertIntoSelectBuilderSqlite(ConnectionType));
         }
     }
 }

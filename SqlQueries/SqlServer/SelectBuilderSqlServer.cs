@@ -14,6 +14,7 @@ namespace SqlQueries.SqlServer
             sb.Append("SELECT");
             Top(sb, builder.Top);
             Distinct(sb, builder.Distinct);
+            sb.Append(" ");
             Columns(sb, builder.Columns);
             sb.Append(" FROM ");
             From(sb, builder.From);

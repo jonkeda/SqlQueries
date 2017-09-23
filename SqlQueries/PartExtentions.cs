@@ -27,6 +27,17 @@ namespace SqlQueries
 
         #endregion
 
+        #region Select
+
+        public static T Select<T>(this T query, Select select)
+            where T : ISelect
+        {
+            query.Select = select;
+            return query;
+        }
+
+        #endregion
+
         #region Distinct
 
         public static T Distinct<T>(this T query)

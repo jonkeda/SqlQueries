@@ -14,6 +14,7 @@ namespace SqlQueries.Sqlite
             sb.Append("SELECT");
             
             Distinct(sb, builder.Distinct);
+            sb.Append(" ");
             Columns(sb, builder.Columns);
             sb.Append(" FROM ");
             From(sb, builder.From);

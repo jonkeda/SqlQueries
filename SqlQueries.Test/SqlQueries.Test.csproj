@@ -102,6 +102,9 @@
     <Compile Include="Parts\ColumnFieldTest.cs" />
     <Compile Include="Parts\FieldTest.cs" />
     <Compile Include="Parts\TableTest.cs" />
+    <Compile Include="InsertIntoSelect\SelectIntoBaseTest.cs" />
+    <Compile Include="InsertIntoSelect\Sqlite\SelectIntoTest.cs" />
+    <Compile Include="InsertIntoSelect\SqlServer\SelectIntoTest.cs" />
     <Compile Include="SelectInto\Sqlite\SelectIntoTest.cs" />
     <Compile Include="SelectInto\SqlServer\SelectIntoTest.cs" />
     <Compile Include="SelectInto\SelectIntoBaseTest.cs" />
