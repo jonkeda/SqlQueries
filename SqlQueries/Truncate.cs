@@ -1,5 +1,6 @@
-using SqlQueries.Parts;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
 
 namespace SqlQueries
 {
@@ -16,5 +17,9 @@ namespace SqlQueries
 
         public Table Table { get; set; }
 
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.Truncate(this);
+        }
     }
 }

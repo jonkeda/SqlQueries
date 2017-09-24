@@ -1,7 +1,5 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.SqlServer;
-using SqlQueries.Statements;
 
 namespace SqlQueries.Test.Parts
 {
@@ -32,14 +30,5 @@ namespace SqlQueries.Test.Parts
 
             sSelect.CreateSql(typeof(SqlConnection));
         }
-
-        [TestMethod]
-        public void CreateSql3Test()
-        {
-            SqlQueries.Select sSelect = new SqlQueries.Select("x");
-            SqlBuilder sb = new SqlBuilderSqlServer(typeof(SqlConnection));
-            sSelect.CreateSql(sb);
-        }
-
     }
 }

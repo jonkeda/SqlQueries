@@ -1,4 +1,8 @@
-﻿using SqlQueries.Parts;
+﻿using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
+using SqlQueries.Conditions;
+using SqlQueries.Functions;
 
 namespace SqlQueries
 {

@@ -1,9 +1,11 @@
-using SqlQueries.Parts;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
+using SqlQueries.Functions;
 
 namespace SqlQueries
 {
-    public class Select : QueryBuilder, 
+    public class Select : TableSource, 
         IFrom, 
         ITop, 
         IColumns,
@@ -87,6 +89,11 @@ namespace SqlQueries
             {
                 _fields.Add(field);
             }
+        }
+
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.Select(this);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
 
 namespace SqlQueries.Test.Exceptions
 {

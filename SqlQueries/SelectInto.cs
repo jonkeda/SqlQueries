@@ -1,4 +1,6 @@
-using SqlQueries.Parts;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
 
 namespace SqlQueries
 {
@@ -23,5 +25,11 @@ namespace SqlQueries
         }
 
         public Table Into { get; set; }
+
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.SelectInto(this);
+        }
+
     }
 }

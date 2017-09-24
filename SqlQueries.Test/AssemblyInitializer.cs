@@ -1,7 +1,6 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Sqlite;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
 
 namespace SqlQueries.Test
 {
@@ -11,7 +10,7 @@ namespace SqlQueries.Test
         [AssemblyInitialize]
         public static void AssemblyInit(TestContext context)
         {
-            QueryBuilders.Builders.Add(new QueryBuildersSqlite(typeof(SQLiteConnection)));
+            SqlBuilder.Register<SQLiteConnection, SqlBuilderSqlite>();
         }
     }
 }

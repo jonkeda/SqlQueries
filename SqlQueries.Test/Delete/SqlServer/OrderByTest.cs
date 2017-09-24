@@ -1,7 +1,6 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SqlQueries.Exceptions;
-using SqlQueries.Test.Exceptions;
 
 namespace SqlQueries.Test.Delete.SqlServer
 {

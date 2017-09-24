@@ -1,5 +1,7 @@
-using SqlQueries.Parts;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
+using SqlQueries.Functions;
 
 namespace SqlQueries
 {
@@ -41,5 +43,9 @@ namespace SqlQueries
         }
 
         public ColumnCollection Columns { get; } = new ColumnCollection();
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.InsertIntoSelect(this);
+        }
     }
 }

@@ -1,5 +1,7 @@
-using SqlQueries.Parts;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
+using SqlQueries.Functions;
 
 namespace SqlQueries
 {
@@ -63,6 +65,11 @@ namespace SqlQueries
             {
                 _fields.Add(field);
             }
+        }
+
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.Delete(this);
         }
     }
 }

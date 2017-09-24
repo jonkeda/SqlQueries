@@ -1,6 +1,5 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Exceptions;
 
 namespace SqlQueries.Test.InsertIntoSelect.Sqlite
 {

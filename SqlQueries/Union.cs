@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using SqlQueries.Parts;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
 
 namespace SqlQueries
 {
@@ -27,6 +28,11 @@ namespace SqlQueries
         public void Add(Select @select)
         {
             Selects.Add(select);
+        }
+
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.Union(this);
         }
     }
 }

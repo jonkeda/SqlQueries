@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Parts;
+using SqlQueries.Builders.Parts;
+using SqlQueries.Functions;
 using SqlQueries.Test.Base;
 
 namespace SqlQueries.Test.Delete

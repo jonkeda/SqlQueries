@@ -98,7 +98,6 @@
     <Compile Include="Exceptions\QueryBuilderNotImplementedForSqliteExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderNotImplementedExceptionTest.cs" />
     <Compile Include="Exceptions\QueryBuilderExceptionTest.cs" />
-    <Compile Include="Parts\QueryBuilderCollectionTest.cs" />
     <Compile Include="Parts\QueryBuilderTest.cs" />
     <Compile Include="Parts\ColumnFieldTest.cs" />
     <Compile Include="Parts\FieldTest.cs" />

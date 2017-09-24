@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
 
 namespace SqlQueries.Exceptions
 {

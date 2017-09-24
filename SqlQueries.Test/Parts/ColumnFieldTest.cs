@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Parts;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Parts;
+using SqlQueries.Functions;
 
 namespace SqlQueries.Test.Parts
 {

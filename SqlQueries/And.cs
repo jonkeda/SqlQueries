@@ -1,7 +1,7 @@
-using System;
 using System.Diagnostics.CodeAnalysis;
-using SqlQueries.Parts;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
+using SqlQueries.Builders.Interfaces;
+using SqlQueries.Builders.Parts;
 
 namespace SqlQueries
 {
@@ -37,5 +37,10 @@ namespace SqlQueries
         }
 
         public ConditionCollection Conditions { get; } = new ConditionCollection();
+
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.And(this);
+        }
     }
 }

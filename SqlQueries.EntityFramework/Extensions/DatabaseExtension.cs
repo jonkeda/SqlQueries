@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using SqlQueries.Statements;
+using SqlQueries.Builders;
 
 namespace SqlQueries.EntityFramework.Extensions
 {
