@@ -85,6 +85,7 @@
     <Compile Include="Contexts\DatabaseContextTest.cs" />
     <Compile Include="Contexts\IDbContextTest.cs" />
     <Compile Include="Contexts\Orders.cs" />
+    <Compile Include="Contexts\Suppliers.cs" />
     <Compile Include="Delete\DeleteBaseTest.cs" />
     <Compile Include="Delete\OrderByBaseTest.cs" />
     <Compile Include="Delete\Sqlite\OrderByTest.cs" />
@@ -206,6 +207,9 @@
     <Compile Include="Select\SqlServer\FromTest.cs" />
     <Compile Include="Delete\Sqlite\DeleteTest.cs" />
     <Compile Include="Delete\SqlServer\DeleteTest.cs" />
+    <Compile Include="Union\Sqlite\UnionTest.cs" />
+    <Compile Include="Union\SqlServer\UnionTest.cs" />
+    <Compile Include="Union\UnionBaseTest.cs" />
     <Compile Include="Truncate\Sqlite\TruncateTest.cs" />
     <Compile Include="Truncate\SqlServer\TruncateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

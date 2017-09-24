@@ -11,7 +11,7 @@ namespace SqlQueries.Test
         [AssemblyInitialize]
         public static void AssemblyInit(TestContext context)
         {
-            QueryBuilders.Builders.Add(new QueryBuildersSqlLite(typeof(SQLiteConnection)));
+            QueryBuilders.Builders.Add(new QueryBuildersSqlite(typeof(SQLiteConnection)));
         }
     }
 }

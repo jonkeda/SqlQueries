@@ -24,14 +24,4 @@ namespace SqlQueries.Test.Contexts
 
         public int TotalAmount { get; set; }
     }
-
-    public class Suppliers
-    {
-        [Key, Column("SupplierID")]
-        public int SupplierId { get; set; }
-
-        public string SupplierName { get; set; }
-
-        public string Country { get; set; }
-    }
 }

@@ -4,9 +4,9 @@ using SqlQueries.Statements;
 
 namespace SqlQueries.Sqlite
 {
-    public class QueryBuildersSqlLite : QueryBuilders
+    public class QueryBuildersSqlite : QueryBuilders
     {
-        public QueryBuildersSqlLite(Type connectionType)
+        public QueryBuildersSqlite(Type connectionType)
             : base(connectionType)
         {
             Statements.Register(new SelectBuilderSqliteServer(ConnectionType));
@@ -16,6 +16,8 @@ namespace SqlQueries.Sqlite
             Statements.Register(new AndBuilderSqlServer(ConnectionType));
             Statements.Register(new SelectIntoBuilderSqliteServer(ConnectionType));
             Statements.Register(new InsertIntoSelectBuilderSqlite(ConnectionType));
+            Statements.Register(new UnionBuilderSqlite(ConnectionType));
+
         }
     }
 }

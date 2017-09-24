@@ -46,6 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="And.cs" />
+    <Compile Include="Parts\ISelectContainer.cs" />
+    <Compile Include="Sqlite\UnionBuilderSqlServer.cs" />
+    <Compile Include="SqlServer\UnionBuilderSqlServer.cs" />
+    <Compile Include="Union.cs" />
     <Compile Include="Exceptions\QueryParseException.cs" />
     <Compile Include="Parts\All.cs" />
     <Compile Include="Parts\Any.cs" />
@@ -82,6 +86,7 @@
     <Compile Include="Parts\IJoins.cs" />
     <Compile Include="Parts\IJoinOnCondition.cs" />
     <Compile Include="Parts\In.cs" />
+    <Compile Include="Parts\IUnion.cs" />
     <Compile Include="Parts\IWhere.cs" />
     <Compile Include="Parts\Join.cs" />
     <Compile Include="Parts\JoinCollection.cs" />
@@ -97,6 +102,7 @@
     <Compile Include="Parts\NotEqualToValue.cs" />
     <Compile Include="Parts\NotIn.cs" />
     <Compile Include="InsertIntoSelect.cs" />
+    <Compile Include="Parts\SelectCollection.cs" />
     <Compile Include="SelectInto.cs" />
     <Compile Include="Sqlite\SelectIntoBuilderSqliteServer.cs" />
     <Compile Include="Sqlite\InsertIntoSelectBuilderSqlite.cs" />
