@@ -5,6 +5,6 @@ namespace SqlQueries.Parts
 {
     public interface ICondition
     {
-        void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter);
+        void Write(SqlBuilder sb);
     }
 }

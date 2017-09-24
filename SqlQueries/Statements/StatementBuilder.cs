@@ -1,5 +1,4 @@
 using System;
-using SqlQueries.Parts;
 
 namespace SqlQueries.Statements
 {
@@ -14,8 +13,11 @@ namespace SqlQueries.Statements
 
         public string CreateSql(QueryBuilder queryBuilder)
         {
-            return CreateSql(new SqlBuilder(ConnectionType), queryBuilder);
+            return CreateSql(CreateSqlBuilder(), queryBuilder);
         }
+
+        public abstract SqlBuilder CreateSqlBuilder();
+
         public abstract string CreateSql(SqlBuilder sb, QueryBuilder queryBuilder);
     }
 
@@ -32,27 +34,5 @@ namespace SqlQueries.Statements
         }
 
         protected abstract string DoCreateSql(SqlBuilder sb, T builder);
-
-        protected abstract void Table(SqlBuilder sb, Table table);
-
-        protected abstract void Top(SqlBuilder sb, Top top);
-
-        protected abstract void Columns(SqlBuilder sb, ColumnCollection columns);
-
-        protected abstract void OrderBy(SqlBuilder sb, OrderByCollection orderby);
-
-        protected abstract void Field(SqlBuilder sb, Field field);
-
-        protected abstract void GroupBy(SqlBuilder sb, GroupByCollection groupBy);
-
-        protected abstract void Where(SqlBuilder sb, ConditionCollection @where);
-
-        protected abstract void Having(SqlBuilder sb, ConditionCollection having);
-
-        protected abstract void Joins(SqlBuilder sb, JoinCollection joins);
-
-        protected abstract void From(SqlBuilder sb, TableCollection tables);
-
-        protected abstract void Distinct(SqlBuilder sb, bool distinct);
     }
 }

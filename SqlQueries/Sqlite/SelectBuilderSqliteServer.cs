@@ -12,18 +12,18 @@ namespace SqlQueries.Sqlite
         protected override string DoCreateSql(SqlBuilder sb, Select builder)
         {
             sb.Append("SELECT");
-            
-            Distinct(sb, builder.Distinct);
+
+            sb.Distinct(builder.Distinct);
             sb.Append(" ");
-            Columns(sb, builder.Columns);
+            sb.Columns(builder.Columns);
             sb.Append(" FROM ");
-            From(sb, builder.From);
-            Joins(sb, builder.Joins);
-            Where(sb, builder.Where);
-            GroupBy(sb, builder.GroupBy);
-            Having(sb, builder.Having);
-            OrderBy(sb, builder.OrderBy);
-            Top(sb, builder.Top);
+            sb.From(builder.From);
+            sb.Joins(builder.Joins);
+            sb.Where(builder.Where);
+            sb.GroupBy(builder.GroupBy);
+            sb.Having(builder.Having);
+            sb.OrderBy(builder.OrderBy);
+            sb.Top(builder.Top);
             return sb.ToString();
         }
     }

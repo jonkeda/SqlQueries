@@ -19,9 +19,9 @@ namespace SqlQueries.Parts
             ToValue = toValue;
         }
 
-        public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
+        public override void Write(SqlBuilder sb)
         {
-            fieldWriter(sb, Field);
+            sb.Field(Field);
             sb.Append(" BETWEEN ");
             sb.AppendParameter(FromValue);
             sb.Append(" AND ");

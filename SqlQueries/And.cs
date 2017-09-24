@@ -20,7 +20,7 @@ namespace SqlQueries
                 Conditions.Add(c);
             }
         }
-        public void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
+        public void Write(SqlBuilder sb)
         {
             CreateSql(sb);
         }

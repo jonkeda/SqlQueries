@@ -16,7 +16,7 @@ namespace SqlQueries.Parts
             Select = @select;
         }
 
-        public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
+        public override void Write(SqlBuilder sb)
         {
             sb.Append("EXISTS(");
             Select.CreateSql(sb);

@@ -12,7 +12,7 @@ namespace SqlQueries.SqlServer
         protected override string DoCreateSql(SqlBuilder sb, And builder)
         {
             sb.Append("(");
-            Conditions(sb, builder.Conditions);
+            sb.Conditions(builder.Conditions);
             sb.Append(")");
             return sb.ToString();
         }

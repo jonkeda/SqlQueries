@@ -17,9 +17,9 @@ namespace SqlQueries.Parts
             Pattern = pattern;
         }
 
-        public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
+        public override void Write(SqlBuilder sb)
         {
-            fieldWriter(sb, Field);
+            sb.Field(Field);
             sb.Append(" LIKE ");
             sb.Append($"'{Pattern}'");
         }

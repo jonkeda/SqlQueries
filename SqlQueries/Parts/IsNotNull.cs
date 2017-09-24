@@ -13,9 +13,9 @@ namespace SqlQueries.Parts
         {
         }
 
-        public override void Write(SqlBuilder sb, Action<SqlBuilder, Field> fieldWriter)
+        public override void Write(SqlBuilder sb)
         {
-            fieldWriter(sb, Field);
+            sb.Field(Field);
             sb.Append(" IS NOT NULL");
         }
     }

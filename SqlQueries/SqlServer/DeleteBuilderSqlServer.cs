@@ -13,15 +13,15 @@ namespace SqlQueries.SqlServer
         protected override string DoCreateSql(SqlBuilder sb, Delete builder)
         {
             sb.Append("DELETE");
-            Top(sb, builder.Top);
+            sb.Top(builder.Top);
             sb.Append(" FROM ");
-            From(sb, builder.From);
-            Where(sb, builder.Where);
+            sb.From(builder.From);
+            sb.Where(builder.Where);
             if (builder.OrderBy.Count > 0)
             {
                 throw new QueryBuilderNotImplementedForSqlServerException("Delete Order by not implemented.");
             }
-            OrderBy(sb, builder.OrderBy);
+            sb.OrderBy(builder.OrderBy);
             return sb.ToString();
         }
     }

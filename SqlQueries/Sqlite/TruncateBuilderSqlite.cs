@@ -13,7 +13,7 @@ namespace SqlQueries.Sqlite
         {
             sb.Append("DELETE");
             sb.Append(" FROM ");
-            Table(sb, builder.Table);
+            sb.Table(builder.Table);
             return sb.ToString();
         }
     }

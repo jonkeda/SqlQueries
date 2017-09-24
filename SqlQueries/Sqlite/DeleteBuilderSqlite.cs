@@ -13,10 +13,10 @@ namespace SqlQueries.Sqlite
         protected override string DoCreateSql(SqlBuilder sb, Delete builder)
         {
             sb.Append("DELETE FROM ");
-            From(sb, builder.From);
-            Where(sb, builder.Where);
-            OrderBy(sb, builder.OrderBy);
-            Top(sb, builder.Top);
+            sb.From(builder.From);
+            sb.Where(builder.Where);
+            sb.OrderBy(builder.OrderBy);
+            sb.Top(builder.Top);
 
             if (builder.Top?.TopCount > 0)
             {

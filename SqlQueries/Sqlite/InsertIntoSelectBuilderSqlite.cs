@@ -12,11 +12,11 @@ namespace SqlQueries.Sqlite
         protected override string DoCreateSql(SqlBuilder sb, InsertIntoSelect builder)
         {
             sb.Append("INSERT INTO ");
-            Table(sb, builder.Into);
+            sb.Table(builder.Into);
             if (builder.Columns.Count > 0)
             {
                 sb.Append(" (");
-                Columns(sb, builder.Columns);
+                sb.Columns(builder.Columns);
                 sb.Append(")");
             }
             sb.Append(" ");
