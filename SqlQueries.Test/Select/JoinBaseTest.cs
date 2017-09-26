@@ -202,7 +202,7 @@ namespace Srt2.SqlQueries.Test.Select
         public void FluentInnerSelectJoin()
         {
             string statement = SelectCustomerAs()
-                .InnerJoin(new SelectSource(new Srt2.SqlQueries.Select("Orders o").Columns("o.CustomerID"), "o"), "c.CustomerID", "o.CustomerID")
+                .InnerJoin(new SelectSource(new Srt2.SqlQueries.Select("[TestDatabase].[Dbo].Orders o").Columns("o.CustomerID"), "o"), "c.CustomerID", "o.CustomerID")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(ExpectedInnerSelect, statement);
