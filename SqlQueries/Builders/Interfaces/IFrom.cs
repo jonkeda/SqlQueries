@@ -4,6 +4,6 @@ namespace SqlQueries.Builders.Interfaces
 {
     public interface IFrom : IQueryBuilder
     {
-        TableCollection From { get; }
+        TableSourceCollection From { get; }
     }
 }

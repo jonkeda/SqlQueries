@@ -18,6 +18,8 @@ namespace SqlQueries.Test.Select.Sqlite
         public override string ExpectedLeft { get; } = "SELECT * FROM [Customers] AS [c] LEFT JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]";
         public override string ExpectedFullOuter { get; } = "SELECT * FROM [Customers] AS [c] FULL OUTER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]";
 
+        public override string ExpectedInnerSelect { get; } = "SELECT * FROM [Customers] AS [c] INNER JOIN (SELECT [o].[CustomerID] FROM [Orders] AS [o]) AS [o] ON [c].[CustomerID] = [o].[CustomerID]";
+
         [TestMethod]
         [ExpectedException(typeof(SQLiteException))]
         public override void TestExpectedFullOuter()

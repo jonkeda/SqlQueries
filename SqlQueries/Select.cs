@@ -5,7 +5,9 @@ using SqlQueries.Functions;
 
 namespace SqlQueries
 {
-    public class Select : TableSource, 
+
+
+    public class Select : QueryBuilder, 
         IFrom, 
         ITop, 
         IColumns,
@@ -37,7 +39,7 @@ namespace SqlQueries
 
         public Top Top { get; set; }
 
-        public TableCollection From { get; } = new TableCollection();
+        public TableSourceCollection From { get; } = new TableSourceCollection();
 
         public ColumnCollection Columns { get; } = new ColumnCollection();
 

@@ -9,20 +9,20 @@ namespace SqlQueries.Builders.Parts
         {
         }
 
-        public Join(Table table, JoinType joinType)
+        public Join(TableSource table, JoinType joinType)
         {
             Table = table;
             JoinType = joinType;
         }
 
-        public Join(Table table, JoinType joinType, Field fromField, Field toField)
+        public Join(TableSource table, JoinType joinType, Field fromField, Field toField)
         {
             Table = table;
             JoinType = joinType;
             On.Add(new Equal(fromField, toField)); 
         }
 
-        public Table Table { get; set; }
+        public TableSource Table { get; set; }
 
         public JoinType JoinType { get; set; }
 

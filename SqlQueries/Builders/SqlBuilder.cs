@@ -132,13 +132,27 @@ namespace SqlQueries.Builders
 
         #region Parts
 
+        public virtual void TableSource(TableSource table)
+        {
+            if (table is Select)
+            {
+                Append("(");
+                table.CreateSql(this);
+                Append(")");
+            }
+            else
+            {
+                table.CreateSql(this);
+            }
+        }
+
         public abstract void Table(Table table);
 
         public abstract void Top(Top top);
 
         public abstract void Joins(JoinCollection joins);
 
-        public virtual void From(TableCollection tables)
+        public virtual void From(TableSourceCollection tables)
         {
             if (tables.Count == 0)
             {
@@ -317,7 +331,7 @@ namespace SqlQueries.Builders
             {
                 Append(" RIGHT JOIN ");
             }
-            Table(@join.Table);
+            TableSource(@join.Table);
             Conditions(@join.On, "ON");
         }
 

@@ -246,7 +246,7 @@ namespace SqlQueries
 
         #region From
 
-        public static T From<T>(this T query, Table name)
+        public static T From<T>(this T query, TableSource name)
             where T : IFrom
         {
             query.From.Add(name);
@@ -265,7 +265,7 @@ namespace SqlQueries
             query.SetCurrent(join.On);
         }
 
-        public static T Join<T>(this T query, Table table, JoinType joinType)
+        public static T Join<T>(this T query, TableSource table, JoinType joinType)
             where T : IJoins
         {
             Join join = new Join(table, joinType);
@@ -274,7 +274,7 @@ namespace SqlQueries
             return query;
         }
 
-        public static T Join<T>(this T query, Table table, JoinType joinType, Field fromField, Field toField)
+        public static T Join<T>(this T query, TableSource table, JoinType joinType, Field fromField, Field toField)
             where T : IJoins
         {
             Join join = new Join(table, joinType, fromField, toField);
@@ -287,13 +287,13 @@ namespace SqlQueries
 
         #region InnerJoin
 
-        public static T InnerJoin<T>(this T query, Table table)
+        public static T InnerJoin<T>(this T query, TableSource table)
             where T : IJoins
         {
             return Join(query, table, JoinType.Inner);
         }
 
-        public static T InnerJoin<T>(this T query, Table table, Field fromField, Field toField)
+        public static T InnerJoin<T>(this T query, TableSource table, Field fromField, Field toField)
             where T : IJoins
         {
             return Join(query, table, JoinType.Inner, fromField, toField);
@@ -303,13 +303,13 @@ namespace SqlQueries
 
         #region FullOuterJoin
 
-        public static T FullOuterJoin<T>(this T query, Table table)
+        public static T FullOuterJoin<T>(this T query, TableSource table)
             where T : IJoins
         {
             return Join(query, table, JoinType.FullOuter);
         }
 
-        public static T FullOuterJoin<T>(this T query, Table table, Field fromField, Field toField)
+        public static T FullOuterJoin<T>(this T query, TableSource table, Field fromField, Field toField)
             where T : IJoins
         {
             return Join(query, table, JoinType.FullOuter, fromField, toField);
@@ -319,13 +319,13 @@ namespace SqlQueries
 
         #region RightJoin
 
-        public static T RightJoin<T>(this T query, Table table)
+        public static T RightJoin<T>(this T query, TableSource table)
             where T : IJoins
         {
             return Join(query, table, JoinType.Right);
         }
 
-        public static T RightJoin<T>(this T query, Table table, Field fromField, Field toField)
+        public static T RightJoin<T>(this T query, TableSource table, Field fromField, Field toField)
             where T : IJoins
         {
             return Join(query, table, JoinType.Right, fromField, toField);
@@ -335,13 +335,13 @@ namespace SqlQueries
 
         #region LeftJoin
 
-        public static T LeftJoin<T>(this T query, Table table)
+        public static T LeftJoin<T>(this T query, TableSource table)
             where T : IJoins
         {
             return Join(query, table, JoinType.Left);
         }
 
-        public static T LeftJoin<T>(this T query, Table table, Field fromField, Field toField)
+        public static T LeftJoin<T>(this T query, TableSource table, Field fromField, Field toField)
             where T : IJoins
         {
             return Join(query, table, JoinType.Left, fromField, toField);

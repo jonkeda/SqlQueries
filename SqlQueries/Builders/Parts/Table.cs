@@ -1,8 +1,9 @@
 using System.Text.RegularExpressions;
+using SqlQueries.Builders.Interfaces;
 
 namespace SqlQueries.Builders.Parts
 {
-    public class Table : TableSource
+    public class Table : TableSource, IAlias
     {
         public Table(string fullName)
         {
@@ -37,7 +38,7 @@ namespace SqlQueries.Builders.Parts
 
         public override void CreateSql(SqlBuilder sb)
         {
-            
+            sb.Table(this);
         }
     }
 }

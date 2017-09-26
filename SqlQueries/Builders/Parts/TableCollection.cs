@@ -2,22 +2,22 @@ using System.Collections.ObjectModel;
 
 namespace SqlQueries.Builders.Parts
 {
-    public class TableCollection : Collection<Table>
+    public class TableSourceCollection : Collection<TableSource>
     {
 
-        public TableCollection()
+        public TableSourceCollection()
         {
         }
 
-        public TableCollection(Table table)
+        public TableSourceCollection(Table table)
         {
             Add(table);
         }
 
 
-        public static implicit operator TableCollection(string value)
+        public static implicit operator TableSourceCollection(string value)
         {
-            return new TableCollection(new Table(value));
+            return new TableSourceCollection(new Table(value));
         }
     }
 }

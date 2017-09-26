@@ -19,5 +19,7 @@ namespace SqlQueries.Test.Select.SqlServer
         public override string ExpectedLeft { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] AS [c] LEFT JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]";
         public override string ExpectedFullOuter { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] AS [c] FULL OUTER JOIN [Orders] AS [o] ON [c].[CustomerID] = [o].[CustomerID]";
 
+        public override string ExpectedInnerSelect { get; } = "SELECT * FROM [TestDatabase].[Dbo].[Customers] AS [c] INNER JOIN (SELECT [o].[CustomerID] FROM [TestDatabase].[Dbo].[Orders] AS [o]) AS [o] ON [c].[CustomerID] = [o].[CustomerID]";
+
     }
 }

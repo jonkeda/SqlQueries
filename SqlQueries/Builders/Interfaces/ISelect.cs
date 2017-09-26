@@ -4,4 +4,10 @@
     {
         Select Select { get; set; }
     }
+
+    public interface IAlias : IQueryBuilder
+    {
+        string Alias { get; }
+    }
+
 }

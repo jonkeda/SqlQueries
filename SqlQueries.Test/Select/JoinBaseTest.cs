@@ -22,6 +22,7 @@ namespace SqlQueries.Test.Select
         public abstract string ExpectedRight { get; }
         public abstract string ExpectedLeft { get; }
         public abstract string ExpectedFullOuter { get; }
+        public abstract string ExpectedInnerSelect { get; }
 
         protected override string GetExpectedSql()
         {
@@ -54,6 +55,12 @@ namespace SqlQueries.Test.Select
         public virtual void TestExpectedFullOuter()
         {
             RunSql(ExpectedFullOuter, Parameters);
+        }
+
+        [TestMethod]
+        public virtual void TestExpectedInnerSelect()
+        {
+            RunSql(ExpectedInnerSelect, Parameters);
         }
 
         [TestMethod]
@@ -189,6 +196,19 @@ namespace SqlQueries.Test.Select
 
             Assert.AreEqual(ExpectedFullOuter, statement);
         }
+
+
+        [TestMethod]
+        public void FluentInnerSelectJoin()
+        {
+            string statement = SelectCustomerAs()
+                .InnerJoin(new SelectSource(new SqlQueries.Select("Orders o").Columns("o.CustomerID"), "o"), "c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedInnerSelect, statement);
+        }
+
+
         #endregion
 
     }

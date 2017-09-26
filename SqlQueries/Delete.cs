@@ -23,7 +23,7 @@ namespace SqlQueries
 
         public Top Top { get; set; }
 
-        public TableCollection From { get; set; } = new TableCollection();
+        public TableSourceCollection From { get; set; } = new TableSourceCollection();
 
         public ConditionCollection Where { get; } = new ConditionCollection();
 
