@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Parts
+namespace Srt2.SqlQueries.Test.Parts
 {
     [TestClass]
     public class QueryBuilderTest
@@ -9,7 +9,7 @@ namespace SqlQueries.Test.Parts
         [TestMethod]
         public void ToStringTest()
         {
-            SqlQueries.Select sSelect = new SqlQueries.Select("x");
+            Srt2.SqlQueries.Select sSelect = new Srt2.SqlQueries.Select("x");
 
             var x =  sSelect.ToString();
         }
@@ -17,7 +17,7 @@ namespace SqlQueries.Test.Parts
         [TestMethod]
         public void CreateSql1Test()
         {
-            SqlQueries.Select sSelect = new SqlQueries.Select("x");
+            Srt2.SqlQueries.Select sSelect = new Srt2.SqlQueries.Select("x");
 
             sSelect.CreateSql(new SqlConnection());
         }
@@ -26,7 +26,7 @@ namespace SqlQueries.Test.Parts
         [TestMethod]
         public void CreateSql2Test()
         {
-            SqlQueries.Select sSelect = new SqlQueries.Select("x");
+            Srt2.SqlQueries.Select sSelect = new Srt2.SqlQueries.Select("x");
 
             sSelect.CreateSql(typeof(SqlConnection));
         }

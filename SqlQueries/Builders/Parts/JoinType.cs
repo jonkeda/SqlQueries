@@ -1,4 +1,4 @@
-namespace SqlQueries.Builders.Parts
+namespace Srt2.SqlQueries.Builders.Parts
 {
     public enum JoinType
     {

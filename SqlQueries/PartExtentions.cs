@@ -1,10 +1,10 @@
-﻿using SqlQueries.Builders;
-using SqlQueries.Builders.Interfaces;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Conditions;
-using SqlQueries.Functions;
+﻿using Srt2.SqlQueries.Builders;
+using Srt2.SqlQueries.Builders.Interfaces;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Functions;
 
-namespace SqlQueries
+namespace Srt2.SqlQueries
 {
     public static class PartExtentions
     {

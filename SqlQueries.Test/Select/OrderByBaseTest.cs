@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Functions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Functions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class OrderByBaseTest : BaseTest
     {
@@ -33,7 +33,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Constructor2OrderBy()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = { "[TestDatabase].[Dbo].[Customers]" },
                 OrderBy = { "CustomerName" }
@@ -47,7 +47,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesOrderBy()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.OrderBy.Add(new OrderByField("CustomerName"));
             select.OrderBy.Add(new OrderByField
             {
@@ -63,7 +63,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties2OrderBy()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.OrderBy.Add(new Field("CustomerName"));
             select.OrderBy.Add(new OrderByField("ContactName", true));
 

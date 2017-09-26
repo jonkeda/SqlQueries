@@ -1,4 +1,4 @@
-﻿namespace SqlQueries
+﻿namespace Srt2.SqlQueries
 {
     public enum SqlOperator
     {

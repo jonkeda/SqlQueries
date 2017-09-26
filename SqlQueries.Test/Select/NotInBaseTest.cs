@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class NotInBaseTest : BaseTest
     {
@@ -22,8 +22,8 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void ConstructorNotIn()
         {
-            string statement = new SqlQueries.Select("Customers")
-                .Where(new NotIn("Country", new SqlQueries.Select("Suppliers", "Country")))
+            string statement = new Srt2.SqlQueries.Select("Customers")
+                .Where(new NotIn("Country", new Srt2.SqlQueries.Select("Suppliers", "Country")))
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -32,11 +32,11 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesNotIn()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = {"Customers" }
             };
-            select.Where.Add(new NotIn { Field = "Country", Select = new SqlQueries.Select("Suppliers", "Country")});
+            select.Where.Add(new NotIn { Field = "Country", Select = new Srt2.SqlQueries.Select("Suppliers", "Country")});
 
             string statement = select.ToString(DbConnectionType);
 
@@ -46,9 +46,9 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentNotIn()
         {
-            string statement = new SqlQueries.Select()
+            string statement = new Srt2.SqlQueries.Select()
                 .From("Customers")
-                .NotIn("Country", new SqlQueries.Select("Suppliers", "Country"))
+                .NotIn("Country", new Srt2.SqlQueries.Select("Suppliers", "Country"))
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);

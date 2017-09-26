@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class BetweenBaseTest : BaseTest
     {
@@ -25,7 +25,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void ConstructorWhere()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.Where.Add(new Between("Country", "Luxemburg", "Nederland"));
 
             string statement = select.ToString(DbConnectionType);
@@ -36,7 +36,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesWhere()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.Where.Add(new Between
             { Field = "Country",
                 FromValue = "Luxemburg",

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SqlQueries.Test.Contexts
+namespace Srt2.SqlQueries.Test.Contexts
 {
     public class Customers
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Union
+namespace Srt2.SqlQueries.Test.Union
 {
     [TestClass]
     public abstract class UnionBaseTest : BaseTest
@@ -21,9 +21,9 @@ namespace SqlQueries.Test.Union
         [TestMethod]
         public void Constructor1()
         {
-            string statement = new SqlQueries.Union(
-                new SqlQueries.Select("[TestDatabase].[Dbo].[Customers]").Columns("City"), 
-                new SqlQueries.Select("[TestDatabase].[Dbo].[Suppliers]").Columns("City"))
+            string statement = new Srt2.SqlQueries.Union(
+                new Srt2.SqlQueries.Select("[TestDatabase].[Dbo].[Customers]").Columns("City"), 
+                new Srt2.SqlQueries.Select("[TestDatabase].[Dbo].[Suppliers]").Columns("City"))
                 .ToString(DbConnectionType); 
 
             Assert.AreEqual(Expected, statement);
@@ -32,9 +32,9 @@ namespace SqlQueries.Test.Union
         [TestMethod]
         public void Constructor2()
         {
-            var union = new SqlQueries.Union();
-            union.Add(new SqlQueries.Select("[TestDatabase].[Dbo].[Customers]").Columns("City"));
-            union.Selects.Add(new SqlQueries.Select("[TestDatabase].[Dbo].[Suppliers]").Columns("City"));
+            var union = new Srt2.SqlQueries.Union();
+            union.Add(new Srt2.SqlQueries.Select("[TestDatabase].[Dbo].[Customers]").Columns("City"));
+            union.Selects.Add(new Srt2.SqlQueries.Select("[TestDatabase].[Dbo].[Suppliers]").Columns("City"));
             string statement = union.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);

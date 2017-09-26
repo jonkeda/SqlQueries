@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace SqlQueries.Builders.Parts
+namespace Srt2.SqlQueries.Builders.Parts
 {
     public class Top
     {

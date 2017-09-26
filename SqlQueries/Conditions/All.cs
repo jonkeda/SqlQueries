@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
-using SqlQueries.Builders;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Functions;
+using Srt2.SqlQueries.Builders;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Functions;
 
-namespace SqlQueries.Conditions
+namespace Srt2.SqlQueries.Conditions
 {
     [DebuggerDisplay("Field: {Field.FullName} Operator: {Operator} Select: {Select: }")]
     public class All : ConditionOperator

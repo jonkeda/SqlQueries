@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Functions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Functions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class GroupByBaseTest : BaseTest
     {
@@ -32,7 +32,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Constructor2GroupBy()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = { "[TestDatabase].[Dbo].[Customers]" },
                 GroupBy = { "ContactName" }
@@ -46,7 +46,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesGroupBy()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.GroupBy.Add(new GroupByField("ContactName"));
 
             string statement = select.ToString(DbConnectionType);
@@ -57,7 +57,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties2GroupBy()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.GroupBy.Add(new Field("ContactName"));
 
             string statement = select.ToString(DbConnectionType);

@@ -1,6 +1,6 @@
-using SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Builders.Parts;
 
-namespace SqlQueries.Builders
+namespace Srt2.SqlQueries.Builders
 {
     public abstract class TableSource : QueryBuilder
     {

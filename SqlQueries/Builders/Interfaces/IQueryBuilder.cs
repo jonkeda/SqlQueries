@@ -1,4 +1,4 @@
-﻿namespace SqlQueries.Builders.Interfaces
+﻿namespace Srt2.SqlQueries.Builders.Interfaces
 {
     public interface IQueryBuilder
     {

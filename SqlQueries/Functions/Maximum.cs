@@ -1,7 +1,6 @@
-using SqlQueries.Builders;
-using SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Builders.Parts;
 
-namespace SqlQueries.Functions
+namespace Srt2.SqlQueries.Functions
 {
     public class Maximum : Function
     {

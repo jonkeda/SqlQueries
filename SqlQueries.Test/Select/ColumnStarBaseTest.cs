@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class ColumnStarBaseTest : BaseTest
     {
@@ -55,7 +55,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesColumnStar()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = {"[TestDatabase].[Dbo].[Customers]" },
                 Columns = {"*" }
@@ -69,7 +69,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesColumnTableStar()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = {"[TestDatabase].[Dbo].[Customers] AS [c]" },
                 Columns = {"c.*" }

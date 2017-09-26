@@ -1,6 +1,6 @@
-﻿using SqlQueries.Functions;
+﻿using Srt2.SqlQueries.Functions;
 
-namespace SqlQueries.Builders.Interfaces
+namespace Srt2.SqlQueries.Builders.Interfaces
 {
     public interface IFieldContainer : IQueryBuilder
     {

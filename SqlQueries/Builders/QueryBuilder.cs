@@ -2,7 +2,7 @@ using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace SqlQueries.Builders
+namespace Srt2.SqlQueries.Builders
 {
     public abstract class QueryBuilder
     {

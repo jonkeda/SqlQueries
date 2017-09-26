@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.InsertIntoSelect
+namespace Srt2.SqlQueries.Test.InsertIntoSelect
 {
     [TestClass]
     public abstract class InsertIntoSelectBaseTest : BaseTest
@@ -30,7 +30,7 @@ namespace SqlQueries.Test.InsertIntoSelect
         [TestMethod]
         public virtual void Constructor1()
         {
-            string statement = new SqlQueries.InsertIntoSelect("TestDatabase.Dbo.CopyCustomers", "[CustomerName], [ContactName]", 
+            string statement = new Srt2.SqlQueries.InsertIntoSelect("TestDatabase.Dbo.CopyCustomers", "[CustomerName], [ContactName]", 
                 SelectCustomer().Columns("[CustomerName], [ContactName]"))
                 .ToString(DbConnectionType);
 
@@ -40,7 +40,7 @@ namespace SqlQueries.Test.InsertIntoSelect
         [TestMethod]
         public virtual void Constructor2()
         {
-            string statement = new SqlQueries.InsertIntoSelect("TestDatabase.Dbo.CopyCustomers", "[CustomerName], [ContactName]")
+            string statement = new Srt2.SqlQueries.InsertIntoSelect("TestDatabase.Dbo.CopyCustomers", "[CustomerName], [ContactName]")
                 .Select(SelectCustomer().Columns("[CustomerName], [ContactName]"))
                 .ToString(DbConnectionType);
 
@@ -50,7 +50,7 @@ namespace SqlQueries.Test.InsertIntoSelect
         [TestMethod]
         public virtual void Constructor3()
         {
-            string statement = new SqlQueries.InsertIntoSelect("TestDatabase.Dbo.CopyCustomers")
+            string statement = new Srt2.SqlQueries.InsertIntoSelect("TestDatabase.Dbo.CopyCustomers")
                 .Columns("[CustomerName], [ContactName]")
                 .Select(SelectCustomer().Columns("[CustomerName], [ContactName]"))
                 .ToString(DbConnectionType);
@@ -61,7 +61,7 @@ namespace SqlQueries.Test.InsertIntoSelect
         [TestMethod]
         public virtual void Constructor4()
         {
-            string statement = new SqlQueries.InsertIntoSelect()
+            string statement = new Srt2.SqlQueries.InsertIntoSelect()
                 .Select(SelectCustomer().Columns("[CustomerName], [ContactName]"))
                 .Columns("[CustomerName], [ContactName]")
                 .Into("TestDatabase.Dbo.CopyCustomers")
@@ -73,7 +73,7 @@ namespace SqlQueries.Test.InsertIntoSelect
         [TestMethod]
         public virtual void Constructor5()
         {
-            var select = new SqlQueries.InsertIntoSelect()
+            var select = new Srt2.SqlQueries.InsertIntoSelect()
                 .Select(SelectCustomer().Columns("[CustomerName], [ContactName]"))
                 .Into("TestDatabase.Dbo.CopyCustomers");
 
@@ -88,7 +88,7 @@ namespace SqlQueries.Test.InsertIntoSelect
         [TestMethod]
         public virtual void ConstructorStar1()
         {
-            string statement = new SqlQueries.InsertIntoSelect()
+            string statement = new Srt2.SqlQueries.InsertIntoSelect()
                 .Select(SelectCustomer())
                 .Into("TestDatabase.Dbo.CopyCustomers")
                 .ToString(DbConnectionType);

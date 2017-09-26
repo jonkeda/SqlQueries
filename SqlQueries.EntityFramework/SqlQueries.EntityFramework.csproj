@@ -7,7 +7,7 @@
     <ProjectGuid>{B6480AFC-B321-450B-B7A5-56030CBFDB32}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SqlQueries.EntityFramework</RootNamespace>
+    <RootNamespace>Srt2.SqlQueries.EntityFramework</RootNamespace>
     <AssemblyName>SqlQueries.EntityFramework</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

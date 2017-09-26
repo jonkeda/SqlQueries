@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
-using SqlQueries.Builders.Interfaces;
+using Srt2.SqlQueries.Builders.Interfaces;
 
-namespace SqlQueries.Builders.Parts
+namespace Srt2.SqlQueries.Builders.Parts
 {
     public class ConditionCollection : Collection<ICondition>
     {

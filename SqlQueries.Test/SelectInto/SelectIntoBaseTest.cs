@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.SelectInto
+namespace Srt2.SqlQueries.Test.SelectInto
 {
     [TestClass]
     public abstract class SelectIntoBaseTest : BaseTest
@@ -21,7 +21,7 @@ namespace SqlQueries.Test.SelectInto
         [TestMethod]
         public virtual void Constructor1()
         {
-            string statement = new SqlQueries.SelectInto("TestDatabase.Dbo.Customers", "[CustomerName], [ContactName]", "TestDatabase.Dbo.CopyCustomers")
+            string statement = new Srt2.SqlQueries.SelectInto("TestDatabase.Dbo.Customers", "[CustomerName], [ContactName]", "TestDatabase.Dbo.CopyCustomers")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -30,7 +30,7 @@ namespace SqlQueries.Test.SelectInto
         [TestMethod]
         public virtual void Constructor2()
         {
-            string statement = new SqlQueries.SelectInto("TestDatabase.Dbo.Customers", "[CustomerName], [ContactName]")
+            string statement = new Srt2.SqlQueries.SelectInto("TestDatabase.Dbo.Customers", "[CustomerName], [ContactName]")
                 .Into("TestDatabase.Dbo.CopyCustomers")
                 .ToString(DbConnectionType);
 
@@ -40,7 +40,7 @@ namespace SqlQueries.Test.SelectInto
         [TestMethod]
         public virtual void Constructor3()
         {
-            string statement = new SqlQueries.SelectInto("TestDatabase.Dbo.Customers")
+            string statement = new Srt2.SqlQueries.SelectInto("TestDatabase.Dbo.Customers")
                 .Columns("[CustomerName], [ContactName]")
                 .Into("TestDatabase.Dbo.CopyCustomers")
                 .ToString(DbConnectionType);
@@ -51,7 +51,7 @@ namespace SqlQueries.Test.SelectInto
         [TestMethod]
         public virtual void Constructor4()
         {
-            string statement = new SqlQueries.SelectInto()
+            string statement = new Srt2.SqlQueries.SelectInto()
                 .From("TestDatabase.Dbo.Customers")
                 .Columns("[CustomerName], [ContactName]")
                 .Into("TestDatabase.Dbo.CopyCustomers")

@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Union.SqlServer
+namespace Srt2.SqlQueries.Test.Union.SqlServer
 {
     [TestClass]
     public class UnionTest : UnionBaseTest

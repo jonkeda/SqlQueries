@@ -1,7 +1,7 @@
-using SqlQueries.Builders.Parts;
-using SqlQueries.Exceptions;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Exceptions;
 
-namespace SqlQueries.Builders
+namespace Srt2.SqlQueries.Builders
 {
     public class SqlBuilderSqlite : SqlBuilder
     {

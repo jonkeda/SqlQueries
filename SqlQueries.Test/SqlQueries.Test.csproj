@@ -7,7 +7,7 @@
     <ProjectGuid>{904FC47C-3DBA-4053-B00D-E99D84CE7A00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SqlQueries.Test</RootNamespace>
+    <RootNamespace>Srt2.SqlQueries.Test</RootNamespace>
     <AssemblyName>SqlQueries.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

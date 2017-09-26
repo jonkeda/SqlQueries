@@ -1,7 +1,7 @@
-﻿using SqlQueries.Builders.Interfaces;
-using SqlQueries.Functions;
+﻿using Srt2.SqlQueries.Builders.Interfaces;
+using Srt2.SqlQueries.Functions;
 
-namespace SqlQueries.Builders.Parts
+namespace Srt2.SqlQueries.Builders.Parts
 {
     public class HavingValue : ConditionOnValue, IHavingCondition
     {

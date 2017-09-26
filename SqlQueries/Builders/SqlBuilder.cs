@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
-using SqlQueries.Builders.Interfaces;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Exceptions;
-using SqlQueries.Functions;
+using Srt2.SqlQueries.Builders.Interfaces;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Exceptions;
+using Srt2.SqlQueries.Functions;
 
-namespace SqlQueries.Builders
+namespace Srt2.SqlQueries.Builders
 {
     public abstract class SqlBuilder
     {
@@ -134,16 +134,7 @@ namespace SqlQueries.Builders
 
         public virtual void TableSource(TableSource table)
         {
-            if (table is Select)
-            {
-                Append("(");
-                table.CreateSql(this);
-                Append(")");
-            }
-            else
-            {
-                table.CreateSql(this);
-            }
+            table.CreateSql(this);
         }
 
         public abstract void Table(Table table);

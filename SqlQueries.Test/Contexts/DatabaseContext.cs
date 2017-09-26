@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace SqlQueries.Test.Contexts
+namespace Srt2.SqlQueries.Test.Contexts
 {
     public class DatabaseContext : DbContext
     {

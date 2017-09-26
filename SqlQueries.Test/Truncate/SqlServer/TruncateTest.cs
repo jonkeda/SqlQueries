@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Truncate.SqlServer
+namespace Srt2.SqlQueries.Test.Truncate.SqlServer
 {
     [TestClass]
     public class TruncateTest : TruncateBaseTest

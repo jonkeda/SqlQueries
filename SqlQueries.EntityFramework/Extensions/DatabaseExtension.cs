@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
-using SqlQueries.Builders;
+using Srt2.SqlQueries.Builders;
 
-namespace SqlQueries.EntityFramework.Extensions
+namespace Srt2.SqlQueries.EntityFramework.Extensions
 {
     public static class DatabaseExtension
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace SqlQueries.EntityFramework.Extensions
+namespace Srt2.SqlQueries.EntityFramework.Extensions
 {
     public static class DbSetExtension
     {

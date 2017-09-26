@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class TopBaseTest : BaseTest
     {
@@ -30,7 +30,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void ConstructorTop()
         {
-            string statement = new SqlQueries.Select("TestDatabase.Dbo.Customers", 10).ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Select("TestDatabase.Dbo.Customers", 10).ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -38,7 +38,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesTop()
         {
-            string statement = new SqlQueries.Select
+            string statement = new Srt2.SqlQueries.Select
             {
                 From = {"TestDatabase.Dbo.Customers" },
                 Top = 10
@@ -50,7 +50,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public virtual void PropertiesTopPercentage()
         {
-            string statement = new SqlQueries.Select
+            string statement = new Srt2.SqlQueries.Select
             {
                 From = {"TestDatabase.Dbo.Customers" },
                 Top = new Top(10, true)
@@ -62,7 +62,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentTop()
         {
-            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10).ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10).ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -70,7 +70,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public virtual void FluentTopPercentage()
         {
-            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10, true).ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Select().From("TestDatabase.Dbo.Customers").Top(10, true).ToString(DbConnectionType);
 
             Assert.AreEqual(PercentageExpected, statement);
         }

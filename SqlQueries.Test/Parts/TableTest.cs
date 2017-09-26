@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Builders.Parts;
 
-namespace SqlQueries.Test.Parts
+namespace Srt2.SqlQueries.Test.Parts
 {
     [TestClass]
     public class TableTest

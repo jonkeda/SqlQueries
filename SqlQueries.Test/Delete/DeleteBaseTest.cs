@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Delete
+namespace Srt2.SqlQueries.Test.Delete
 {
     [TestClass]
     public abstract class DeleteBaseTest : BaseTest
@@ -31,7 +31,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public void Constructor()
         {
-            string statement = new SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType); 
+            string statement = new Srt2.SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType); 
 
             Assert.AreEqual(Expected, statement);
         }
@@ -39,7 +39,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public void Properties()
         {
-            string statement = (new SqlQueries.Delete
+            string statement = (new Srt2.SqlQueries.Delete
             {
                 From = "[TestDatabase].[Dbo].[Customers]"
             }).ToString(DbConnectionType);
@@ -50,7 +50,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public void Fluent1()
         {
-            string statement = new SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -58,7 +58,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public virtual void ConstructorTop()
         {
-            string statement = new SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]", 10).ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]", 10).ToString(DbConnectionType);
 
             Assert.AreEqual(TopExpected, statement);
         }
@@ -66,7 +66,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public virtual void FluentTop()
         {
-            string statement = new SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").Top(10).ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").Top(10).ToString(DbConnectionType);
 
             Assert.AreEqual(TopExpected, statement);
         }

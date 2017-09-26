@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class IsNullBaseTest : BaseTest
     {
@@ -23,7 +23,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void ConstructorIsNull()
         {
-            string statement = new SqlQueries.Select("Customers")
+            string statement = new Srt2.SqlQueries.Select("Customers")
                 .Where(new IsNull("Country"))
                 .ToString(DbConnectionType);
 
@@ -33,7 +33,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesIsNull()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = {"Customers" }
             };
@@ -47,7 +47,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentIsNull()
         {
-            string statement = new SqlQueries.Select()
+            string statement = new Srt2.SqlQueries.Select()
                 .From("Customers")
                 .IsNull("Country")
                 .ToString(DbConnectionType);

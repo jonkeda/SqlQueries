@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Functions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Functions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Delete
+namespace Srt2.SqlQueries.Test.Delete
 {
     public abstract class OrderByBaseTest : BaseTest
     {
@@ -31,7 +31,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public virtual void Constructor2OrderBy()
         {
-            SqlQueries.Delete select = new SqlQueries.Delete
+            Srt2.SqlQueries.Delete select = new Srt2.SqlQueries.Delete
             {
                 From = { "[TestDatabase].[Dbo].[Customers]" },
                 OrderBy = { "CustomerName" }
@@ -45,7 +45,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public virtual void Properties1OrderBy()
         {
-            SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Delete select = DeleteCustomer();
             select.OrderBy.Add(new OrderByField("CustomerName"));
             select.OrderBy.Add(new OrderByField
             {
@@ -61,7 +61,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public virtual void Properties2OrderBy()
         {
-            SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Delete select = DeleteCustomer();
             select.OrderBy.Add(new Field("CustomerName"));
             select.OrderBy.Add(new OrderByField("ContactName", true));
 
@@ -73,7 +73,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public virtual void Properties3OrderBy()
         {
-            SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Delete select = DeleteCustomer();
             select.Add(new Field("CustomerName"));
             select.OrderBy.Add(new OrderByField("ContactName", true));
 

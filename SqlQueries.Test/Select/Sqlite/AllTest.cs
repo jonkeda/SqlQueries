@@ -1,7 +1,7 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Select.Sqlite
+namespace Srt2.SqlQueries.Test.Select.Sqlite
 {
     [TestClass]
     public class AllTest : AllBaseTest

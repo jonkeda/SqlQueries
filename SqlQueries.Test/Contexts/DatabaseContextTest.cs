@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
-using SqlQueries.EntityFramework.Extensions;
 using SQLite.CodeFirst;
+using Srt2.SqlQueries.EntityFramework.Extensions;
 
-namespace SqlQueries.Test.Contexts
+namespace Srt2.SqlQueries.Test.Contexts
 {
     public class DatabaseContextTest : DatabaseContext, IDbContextTest
     {

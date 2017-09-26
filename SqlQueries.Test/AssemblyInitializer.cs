@@ -1,8 +1,8 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders;
+using Srt2.SqlQueries.Builders;
 
-namespace SqlQueries.Test
+namespace Srt2.SqlQueries.Test
 {
     [TestClass]
     public sealed class AssemblyInitializer

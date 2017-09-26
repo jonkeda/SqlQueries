@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Delete
+namespace Srt2.SqlQueries.Test.Delete
 {
     public abstract class WhereBaseTest : BaseTest
     {
@@ -24,7 +24,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public void ConstructorWhere()
         {
-            string statement = new SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]")
+            string statement = new Srt2.SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]")
                 .Where("City", "Berlin")
                 .WhereField("CustomerName", SqlOperator.Equal, "ContactName")
                 .ToString(DbConnectionType);
@@ -35,7 +35,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public void Properties1Where()
         {
-            SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Delete select = DeleteCustomer();
             select.Where.Add(new EqualToValue("City", "Berlin"));
             select.Where.Add(new Equal("CustomerName", "ContactName"));
 
@@ -47,7 +47,7 @@ namespace SqlQueries.Test.Delete
         [TestMethod]
         public void Properties2Where()
         {
-            SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Delete select = DeleteCustomer();
             select.Add(new EqualToValue("City", "Berlin"));
             select.Add(new Equal("CustomerName", "ContactName"));
 

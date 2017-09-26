@@ -7,7 +7,7 @@
     <ProjectGuid>{ED6394B2-6768-41FE-AB23-C444D39D50FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SqlQueries</RootNamespace>
+    <RootNamespace>Srt2.SqlQueries</RootNamespace>
     <AssemblyName>SqlQueries</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

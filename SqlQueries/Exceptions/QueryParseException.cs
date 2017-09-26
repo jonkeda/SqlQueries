@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
-namespace SqlQueries.Exceptions
+namespace Srt2.SqlQueries.Exceptions
 {
     [Serializable]
     public class QueryParseException : Exception

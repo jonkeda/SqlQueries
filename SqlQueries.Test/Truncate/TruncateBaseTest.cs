@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Exceptions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Exceptions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Truncate
+namespace Srt2.SqlQueries.Test.Truncate
 {
     [TestClass]
     public abstract class TruncateBaseTest : BaseTest
@@ -22,7 +22,7 @@ namespace SqlQueries.Test.Truncate
         [TestMethod]
         public void Constructor()
         {
-            string statement = new SqlQueries.Truncate("TestDatabase.Dbo.Customers").ToString(DbConnectionType); 
+            string statement = new Srt2.SqlQueries.Truncate("TestDatabase.Dbo.Customers").ToString(DbConnectionType); 
 
             Assert.AreEqual(Expected, statement);
         }
@@ -30,7 +30,7 @@ namespace SqlQueries.Test.Truncate
         [TestMethod]
         public void Properties()
         {
-            string statement = (new SqlQueries.Truncate
+            string statement = (new Srt2.SqlQueries.Truncate
             {
                 Table = "TestDatabase.Dbo.Customers"
             }).ToString(DbConnectionType);
@@ -42,7 +42,7 @@ namespace SqlQueries.Test.Truncate
         [ExpectedException(typeof(QueryBuilderException))]
         public void Properties2()
         {
-            string statement = (new SqlQueries.Truncate
+            string statement = (new Srt2.SqlQueries.Truncate
             {
                 Table = null
             }).ToString(DbConnectionType);
@@ -51,7 +51,7 @@ namespace SqlQueries.Test.Truncate
         [TestMethod]
         public void Fluent()
         {
-            string statement = new SqlQueries.Truncate().Table("TestDatabase.Dbo.Customers").ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Truncate().Table("TestDatabase.Dbo.Customers").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }

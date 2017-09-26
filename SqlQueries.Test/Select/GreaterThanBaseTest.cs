@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class GreaterThanBaseTest : BaseTest
     {
@@ -35,7 +35,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesWhere()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.Where.Add(new GreaterThanValue("City", "Berlin"));
             select.Where.Add(new GreaterThan("CustomerName", "ContactName"));
 

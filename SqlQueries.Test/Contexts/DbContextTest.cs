@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Data.SQLite;
 
-namespace SqlQueries.Test.Contexts
+namespace Srt2.SqlQueries.Test.Contexts
 {
     public class DbContextTest : IDisposable
     {

@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Select.SqlServer
+namespace Srt2.SqlQueries.Test.Select.SqlServer
 {
     [TestClass]
     public class OrderByTest : OrderByBaseTest

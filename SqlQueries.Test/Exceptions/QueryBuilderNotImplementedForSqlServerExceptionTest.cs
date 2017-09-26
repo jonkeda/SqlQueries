@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Exceptions;
+using Srt2.SqlQueries.Exceptions;
 
-namespace SqlQueries.Test.Exceptions
+namespace Srt2.SqlQueries.Test.Exceptions
 {
     [TestClass]
     public  class QueryBuilderNotImplementedForSqlServerExceptionTest

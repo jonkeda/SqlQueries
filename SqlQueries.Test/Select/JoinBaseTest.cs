@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class JoinBaseTest : BaseTest
     {
@@ -74,7 +74,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties1Join()
         {
-            SqlQueries.Select select = SelectCustomerAs();
+            Srt2.SqlQueries.Select select = SelectCustomerAs();
             select.Joins.Add(new Join("Orders o", JoinType.Inner, "c.CustomerID", "o.CustomerID"));
 
             string statement = select.ToString(DbConnectionType);
@@ -85,7 +85,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties2Join()
         {
-            SqlQueries.Select select = SelectCustomerAs();
+            Srt2.SqlQueries.Select select = SelectCustomerAs();
             select.Joins.Add(new Join {Table = "Orders o", JoinType = JoinType.Inner});
 
             select.Joins[0].On.Add(new Equal("c.CustomerID", "o.CustomerID"));
@@ -97,7 +97,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties3Join()
         {
-            SqlQueries.Select select = SelectCustomerAs();
+            Srt2.SqlQueries.Select select = SelectCustomerAs();
             select.Joins.Add(new Join { Table = "Orders o", JoinType = JoinType.Inner });
             select.Joins[0].On.Add(new Equal("c.CustomerID", "o.CustomerID"));
             select.Joins[0].On.AndOr = SqlAndOr.Or;
@@ -202,7 +202,7 @@ namespace SqlQueries.Test.Select
         public void FluentInnerSelectJoin()
         {
             string statement = SelectCustomerAs()
-                .InnerJoin(new SelectSource(new SqlQueries.Select("Orders o").Columns("o.CustomerID"), "o"), "c.CustomerID", "o.CustomerID")
+                .InnerJoin(new SelectSource(new Srt2.SqlQueries.Select("Orders o").Columns("o.CustomerID"), "o"), "c.CustomerID", "o.CustomerID")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(ExpectedInnerSelect, statement);

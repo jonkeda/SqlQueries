@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Functions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Functions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class MinimumBaseTest : BaseTest
     {
@@ -31,7 +31,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesColumns()
         {
-            SqlQueries.Select select = SelectCustomerAs();
+            Srt2.SqlQueries.Select select = SelectCustomerAs();
             select.Columns.Add(new Minimum("TotalAmount"));
             select.Columns.Add(new Minimum("c", "TotalAmount"));
             select.Columns.Add(new Minimum("c", "Price", "p"));

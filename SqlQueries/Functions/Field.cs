@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using SqlQueries.Builders;
+using Srt2.SqlQueries.Builders;
 
-namespace SqlQueries.Functions
+namespace Srt2.SqlQueries.Functions
 {
     public class Field
     {

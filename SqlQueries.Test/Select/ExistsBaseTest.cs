@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class ExistsBaseTest : BaseTest
     {
@@ -25,7 +25,7 @@ namespace SqlQueries.Test.Select
         public void ConstructorExist()
         {
             string statement = SelectCustomer()
-                .Where(new Exists(new SqlQueries.Select("Orders", "CustomerID")))
+                .Where(new Exists(new Srt2.SqlQueries.Select("Orders", "CustomerID")))
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -34,11 +34,11 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesExist()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = { "[TestDatabase].[Dbo].[Customers]" }
             };
-            select.Where.Add(new Exists {Select = new SqlQueries.Select("Orders", "CustomerID")});
+            select.Where.Add(new Exists {Select = new Srt2.SqlQueries.Select("Orders", "CustomerID")});
 
             string statement = select.ToString(DbConnectionType);
 
@@ -49,7 +49,7 @@ namespace SqlQueries.Test.Select
         public void FluentExist()
         {
             string statement = SelectCustomer()
-                .Exists(new SqlQueries.Select("Orders", "CustomerID"))
+                .Exists(new Srt2.SqlQueries.Select("Orders", "CustomerID"))
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);

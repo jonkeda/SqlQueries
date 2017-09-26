@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Builders.Parts;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Builders.Parts;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class HavingBaseTest : BaseTest
     {
@@ -33,7 +33,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties1Having()
         {
-            SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
+            Srt2.SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
             select.Having.Add(new HavingValue("City", "Daan"));
             select.Having.Add(new HavingField("ContactName", SqlOperator.Equal, "CustomerName"));
 
@@ -45,7 +45,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties2Having()
         {
-            SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
+            Srt2.SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
             select.Having.Add(new HavingValue() {Field = "City", Value = "Daan"});
             select.Having.Add(new HavingField { Field = "ContactName", Operator = SqlOperator.Equal, ToField = "CustomerName" });
 
@@ -57,7 +57,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void Properties3Having()
         {
-            SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
+            Srt2.SqlQueries.Select select = SelectCustomer().GroupBy("City, ContactName");
             select.Having.Add(new HavingValue("City", "Daan"));
             select.Having.Add(new HavingField("ContactName", "CustomerName"));
 

@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 using Microsoft.SqlServer.TransactSql.ScriptDom;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Exceptions;
-using SqlQueries.Test.Contexts;
+using Srt2.SqlQueries.Exceptions;
+using Srt2.SqlQueries.Test.Contexts;
 
-namespace SqlQueries.Test.Base
+namespace Srt2.SqlQueries.Test.Base
 {
     public abstract class BaseTest
     {
@@ -20,34 +20,29 @@ namespace SqlQueries.Test.Base
             DbConnectionType = dbConnectionType;
         }
 
-        public SqlQueries.Select SelectCustomer()
+        public Srt2.SqlQueries.Select SelectCustomer()
         {
-            return new SqlQueries
-                .Select("TestDatabase.Dbo.Customers");
+            return new Srt2.SqlQueries.Select("TestDatabase.Dbo.Customers");
         }
 
-        public SqlQueries.Delete DeleteCustomer()
+        public Srt2.SqlQueries.Delete DeleteCustomer()
         {
-            return new SqlQueries
-                .Delete("TestDatabase.Dbo.Customers");
+            return new Srt2.SqlQueries.Delete("TestDatabase.Dbo.Customers");
         }
 
-        public SqlQueries.Select SelectCustomerAs()
+        public Srt2.SqlQueries.Select SelectCustomerAs()
         {
-            return new SqlQueries
-                .Select("TestDatabase.Dbo.Customers c");
+            return new Srt2.SqlQueries.Select("TestDatabase.Dbo.Customers c");
         }
 
-        public SqlQueries.Select SelectOrder()
+        public Srt2.SqlQueries.Select SelectOrder()
         {
-            return new SqlQueries
-                .Select("TestDatabase.Dbo.Orders");
+            return new Srt2.SqlQueries.Select("TestDatabase.Dbo.Orders");
         }
 
-        public SqlQueries.Select SelectOrderAs()
+        public Srt2.SqlQueries.Select SelectOrderAs()
         {
-            return new SqlQueries
-                .Select("TestDatabase.Dbo.Orders c");
+            return new Srt2.SqlQueries.Select("TestDatabase.Dbo.Orders c");
         }
 
         protected abstract string GetExpectedSql();

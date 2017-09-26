@@ -1,7 +1,7 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Delete.Sqlite
+namespace Srt2.SqlQueries.Test.Delete.Sqlite
 {
     [TestClass]
     public class WhereTest : WhereBaseTest

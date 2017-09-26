@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.InsertIntoSelect.SqlServer
+namespace Srt2.SqlQueries.Test.InsertIntoSelect.SqlServer
 {
     [TestClass]
     public class InsertIntoSelectTest : InsertIntoSelectBaseTest

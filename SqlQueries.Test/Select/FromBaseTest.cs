@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Exceptions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Exceptions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     [TestClass]
     public abstract class FromBaseTest : BaseTest
@@ -47,7 +47,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesSingle()
         {
-            string statement = new SqlQueries.Select
+            string statement = new Srt2.SqlQueries.Select
             {
                 From = {"TestDatabase.Dbo.Customers" }
             }.ToString(DbConnectionType);
@@ -58,7 +58,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesMultiple()
         {
-            string statement = new SqlQueries.Select
+            string statement = new Srt2.SqlQueries.Select
             {
                 From = {"TestDatabase.Dbo.Customers" }
             }.From("TestDatabase.Dbo.Orders").ToString(DbConnectionType);
@@ -70,7 +70,7 @@ namespace SqlQueries.Test.Select
         [ExpectedException(typeof(QueryBuilderException))]
         public void PropertiesFromIsNull()
         {
-            string statement = new SqlQueries.Select
+            string statement = new Srt2.SqlQueries.Select
             {
                 
             }.ToString(DbConnectionType);
@@ -81,7 +81,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentSingle()
         {
-            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Select().From("TestDatabase.Dbo.Customers").ToString(DbConnectionType);
 
             Assert.AreEqual(SingleExpected, statement);
         }
@@ -89,7 +89,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void FluentMultiple()
         {
-            string statement = new SqlQueries.Select().From("TestDatabase.Dbo.Customers").From("TestDatabase.Dbo.Orders").ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Select().From("TestDatabase.Dbo.Customers").From("TestDatabase.Dbo.Orders").ToString(DbConnectionType);
 
             Assert.AreEqual(MultipleExpected, statement);
         }

@@ -1,8 +1,8 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Exceptions;
+using Srt2.SqlQueries.Exceptions;
 
-namespace SqlQueries.Test.Delete.Sqlite
+namespace Srt2.SqlQueries.Test.Delete.Sqlite
 {
     [TestClass]
     public class OrderByTest : OrderByBaseTest

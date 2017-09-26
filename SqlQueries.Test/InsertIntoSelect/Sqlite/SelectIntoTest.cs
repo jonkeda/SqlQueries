@@ -1,7 +1,7 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.InsertIntoSelect.Sqlite
+namespace Srt2.SqlQueries.Test.InsertIntoSelect.Sqlite
 {
     [TestClass]
     public class InsertIntoSelectTest : InsertIntoSelectBaseTest

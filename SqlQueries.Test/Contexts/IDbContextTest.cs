@@ -1,4 +1,4 @@
-﻿namespace SqlQueries.Test.Contexts
+﻿namespace Srt2.SqlQueries.Test.Contexts
 {
     public interface IDbContextTest
     {

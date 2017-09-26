@@ -1,6 +1,6 @@
-﻿using SqlQueries.Builders.Parts;
+﻿using Srt2.SqlQueries.Builders.Parts;
 
-namespace SqlQueries.Builders.Interfaces
+namespace Srt2.SqlQueries.Builders.Interfaces
 {
     public interface IInto : IQueryBuilder
     {

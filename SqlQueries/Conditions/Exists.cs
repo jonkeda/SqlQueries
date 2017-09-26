@@ -1,7 +1,7 @@
-﻿using SqlQueries.Builders;
-using SqlQueries.Builders.Parts;
+﻿using Srt2.SqlQueries.Builders;
+using Srt2.SqlQueries.Builders.Parts;
 
-namespace SqlQueries.Conditions
+namespace Srt2.SqlQueries.Conditions
 {
     public class Exists : Condition
     {

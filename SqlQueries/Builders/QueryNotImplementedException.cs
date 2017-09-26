@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
-namespace SqlQueries.Builders
+namespace Srt2.SqlQueries.Builders
 {
     [Serializable]
     public class QueryBuilderNotImplementedException : Exception

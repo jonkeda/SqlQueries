@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Conditions;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Conditions;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class AllBaseTest : BaseTest
     {
@@ -24,8 +24,8 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void ConstructorWhere()
         {
-            SqlQueries.Select select = SelectCustomer();
-            select.Where.Add(new All("Country", SqlOperator.Equal, new SqlQueries.Select("Suppliers", "Country")));
+            Srt2.SqlQueries.Select select = SelectCustomer();
+            select.Where.Add(new All("Country", SqlOperator.Equal, new Srt2.SqlQueries.Select("Suppliers", "Country")));
 
             string statement = select.ToString(DbConnectionType);
 
@@ -35,11 +35,11 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesWhere()
         {
-            SqlQueries.Select select = SelectCustomer();
+            Srt2.SqlQueries.Select select = SelectCustomer();
             select.Where.Add(new All
             { Field = "Country",
                 Operator = SqlOperator.Equal,
-                Select =  new SqlQueries.Select("Suppliers", "Country")});
+                Select =  new Srt2.SqlQueries.Select("Suppliers", "Country")});
 
             string statement = select.ToString(DbConnectionType);
 
@@ -51,7 +51,7 @@ namespace SqlQueries.Test.Select
         {
             string statement = SelectCustomer()
                 .Where()
-                .All("Country", SqlOperator.Equal, new SqlQueries.Select("Suppliers", "Country"))
+                .All("Country", SqlOperator.Equal, new Srt2.SqlQueries.Select("Suppliers", "Country"))
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);

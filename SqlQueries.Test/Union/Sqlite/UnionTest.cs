@@ -1,7 +1,7 @@
 ﻿using System.Data.SQLite;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SqlQueries.Test.Union.Sqlite
+namespace Srt2.SqlQueries.Test.Union.Sqlite
 {
     [TestClass]
     public class UnionTest : UnionBaseTest

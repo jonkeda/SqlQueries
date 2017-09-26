@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SqlQueries.Test.Base;
+using Srt2.SqlQueries.Test.Base;
 
-namespace SqlQueries.Test.Select
+namespace Srt2.SqlQueries.Test.Select
 {
     public abstract class DistinctBaseTest : BaseTest
     {
@@ -30,7 +30,7 @@ namespace SqlQueries.Test.Select
         [TestMethod]
         public void PropertiesDistinct()
         {
-            SqlQueries.Select select = new SqlQueries.Select
+            Srt2.SqlQueries.Select select = new Srt2.SqlQueries.Select
             {
                 From = {"[TestDatabase].[Dbo].[Customers]" },
                 Columns = {"[City]" },
