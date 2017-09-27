@@ -1,0 +1,1002 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Select
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Select
+   ">
+    <meta name="generator" content="docfx 2.24.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Srt2.SqlQueries.Select">
+  
+  
+  <h1 id="Srt2_SqlQueries_Select" data-uid="Srt2.SqlQueries.Select" class="text-break">Class Select
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Srt2.SqlQueries.Builders.QueryBuilder.html">QueryBuilder</a></div>
+    <div class="level2"><span class="xref">Select</span></div>
+      <div class="level3"><a class="xref" href="Srt2.SqlQueries.SelectInto.html">SelectInto</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IFrom.html">IFrom</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.ITop.html">ITop</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IColumns.html">IColumns</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IOrderBy.html">IOrderBy</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IGroupBy.html">IGroupBy</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IFieldContainer.html">IFieldContainer</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IWhere.html">IWhere</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IHaving.html">IHaving</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IJoins.html">IJoins</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IConditionContainer.html">IConditionContainer</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IDistinct.html">IDistinct</a></div>
+    <div><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IQueryBuilder.html">IQueryBuilder</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.QueryBuilder.html#Srt2_SqlQueries_Builders_QueryBuilder_CreateSql_System_Data_Common_DbConnection_">QueryBuilder.CreateSql(DbConnection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.QueryBuilder.html#Srt2_SqlQueries_Builders_QueryBuilder_CreateSql_System_Type_">QueryBuilder.CreateSql(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.QueryBuilder.html#Srt2_SqlQueries_Builders_QueryBuilder_ToString">QueryBuilder.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.QueryBuilder.html#Srt2_SqlQueries_Builders_QueryBuilder_ToString_System_Type_">QueryBuilder.ToString(Type)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Srt2.SqlQueries.html">Srt2.SqlQueries</a></h6>
+  <h6><strong>Assembly</strong>: SqlQueries.dll</h6>
+  <h5 id="Srt2_SqlQueries_Select_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Select : QueryBuilder, IFrom, ITop, IColumns, IOrderBy, IGroupBy, IFieldContainer, IWhere, IHaving, IJoins, IConditionContainer, IDistinct, IQueryBuilder</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select__ctor.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L21">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select__ctor_" data-uid="Srt2.SqlQueries.Select.#ctor*"></a>
+  <h4 id="Srt2_SqlQueries_Select__ctor" data-uid="Srt2.SqlQueries.Select.#ctor">Select()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select__ctor_Srt2_SqlQueries_Builders_Parts_Table_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.%23ctor(Srt2.SqlQueries.Builders.Parts.Table)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L25">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select__ctor_" data-uid="Srt2.SqlQueries.Select.#ctor*"></a>
+  <h4 id="Srt2_SqlQueries_Select__ctor_Srt2_SqlQueries_Builders_Parts_Table_" data-uid="Srt2.SqlQueries.Select.#ctor(Srt2.SqlQueries.Builders.Parts.Table)">Select(Table)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select(Table tableName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.Table.html">Table</a></td>
+        <td><span class="parametername">tableName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select__ctor_Srt2_SqlQueries_Builders_Parts_Table_Srt2_SqlQueries_Builders_Parts_ColumnCollection_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.%23ctor(Srt2.SqlQueries.Builders.Parts.Table%2CSrt2.SqlQueries.Builders.Parts.ColumnCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L35">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select__ctor_" data-uid="Srt2.SqlQueries.Select.#ctor*"></a>
+  <h4 id="Srt2_SqlQueries_Select__ctor_Srt2_SqlQueries_Builders_Parts_Table_Srt2_SqlQueries_Builders_Parts_ColumnCollection_" data-uid="Srt2.SqlQueries.Select.#ctor(Srt2.SqlQueries.Builders.Parts.Table,Srt2.SqlQueries.Builders.Parts.ColumnCollection)">Select(Table, ColumnCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select(Table tableName, ColumnCollection fields)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.Table.html">Table</a></td>
+        <td><span class="parametername">tableName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.ColumnCollection.html">ColumnCollection</a></td>
+        <td><span class="parametername">fields</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select__ctor_Srt2_SqlQueries_Builders_Parts_Table_System_Int32_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.%23ctor(Srt2.SqlQueries.Builders.Parts.Table%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L30">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select__ctor_" data-uid="Srt2.SqlQueries.Select.#ctor*"></a>
+  <h4 id="Srt2_SqlQueries_Select__ctor_Srt2_SqlQueries_Builders_Parts_Table_System_Int32_" data-uid="Srt2.SqlQueries.Select.#ctor(Srt2.SqlQueries.Builders.Parts.Table,System.Int32)">Select(Table, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select(Table tableName, int top)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.Table.html">Table</a></td>
+        <td><span class="parametername">tableName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">top</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Columns.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Columns%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L44">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Columns_" data-uid="Srt2.SqlQueries.Select.Columns*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Columns" data-uid="Srt2.SqlQueries.Select.Columns">Columns</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ColumnCollection Columns { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.ColumnCollection.html">ColumnCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Distinct.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Distinct%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L56">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Distinct_" data-uid="Srt2.SqlQueries.Select.Distinct*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Distinct" data-uid="Srt2.SqlQueries.Select.Distinct">Distinct</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Distinct { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_From.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.From%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L42">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_From_" data-uid="Srt2.SqlQueries.Select.From*"></a>
+  <h4 id="Srt2_SqlQueries_Select_From" data-uid="Srt2.SqlQueries.Select.From">From</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TableSourceCollection From { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.TableSourceCollection.html">TableSourceCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_GroupBy.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.GroupBy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L48">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_GroupBy_" data-uid="Srt2.SqlQueries.Select.GroupBy*"></a>
+  <h4 id="Srt2_SqlQueries_Select_GroupBy" data-uid="Srt2.SqlQueries.Select.GroupBy">GroupBy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GroupByCollection GroupBy { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.GroupByCollection.html">GroupByCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Having.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Having%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L52">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Having_" data-uid="Srt2.SqlQueries.Select.Having*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Having" data-uid="Srt2.SqlQueries.Select.Having">Having</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConditionCollection Having { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.ConditionCollection.html">ConditionCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Joins.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Joins%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L54">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Joins_" data-uid="Srt2.SqlQueries.Select.Joins*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Joins" data-uid="Srt2.SqlQueries.Select.Joins">Joins</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JoinCollection Joins { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.JoinCollection.html">JoinCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_OrderBy.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.OrderBy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L46">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_OrderBy_" data-uid="Srt2.SqlQueries.Select.OrderBy*"></a>
+  <h4 id="Srt2_SqlQueries_Select_OrderBy" data-uid="Srt2.SqlQueries.Select.OrderBy">OrderBy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OrderByCollection OrderBy { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.OrderByCollection.html">OrderByCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Top.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Top%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L40">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Top_" data-uid="Srt2.SqlQueries.Select.Top*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Top" data-uid="Srt2.SqlQueries.Select.Top">Top</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Top Top { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.Top.html">Top</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Where.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Where%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L50">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Where_" data-uid="Srt2.SqlQueries.Select.Where*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Where" data-uid="Srt2.SqlQueries.Select.Where">Where</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConditionCollection Where { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.ConditionCollection.html">ConditionCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Add_Srt2_SqlQueries_Builders_Interfaces_ICondition_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Add(Srt2.SqlQueries.Builders.Interfaces.ICondition)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L66">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Add_" data-uid="Srt2.SqlQueries.Select.Add*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Add_Srt2_SqlQueries_Builders_Interfaces_ICondition_" data-uid="Srt2.SqlQueries.Select.Add(Srt2.SqlQueries.Builders.Interfaces.ICondition)">Add(ICondition)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ICondition condition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.ICondition.html">ICondition</a></td>
+        <td><span class="parametername">condition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_Add_Srt2_SqlQueries_Functions_Field_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.Add(Srt2.SqlQueries.Functions.Field)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L84">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_Add_" data-uid="Srt2.SqlQueries.Select.Add*"></a>
+  <h4 id="Srt2_SqlQueries_Select_Add_Srt2_SqlQueries_Functions_Field_" data-uid="Srt2.SqlQueries.Select.Add(Srt2.SqlQueries.Functions.Field)">Add(Field)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Field field)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Functions.Field.html">Field</a></td>
+        <td><span class="parametername">field</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_CreateSql_Srt2_SqlQueries_Builders_SqlBuilder_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.CreateSql(Srt2.SqlQueries.Builders.SqlBuilder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L96">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_CreateSql_" data-uid="Srt2.SqlQueries.Select.CreateSql*"></a>
+  <h4 id="Srt2_SqlQueries_Select_CreateSql_Srt2_SqlQueries_Builders_SqlBuilder_" data-uid="Srt2.SqlQueries.Select.CreateSql(Srt2.SqlQueries.Builders.SqlBuilder)">CreateSql(SqlBuilder)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void CreateSql(SqlBuilder sb)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html">SqlBuilder</a></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.QueryBuilder.html#Srt2_SqlQueries_Builders_QueryBuilder_CreateSql_Srt2_SqlQueries_Builders_SqlBuilder_">QueryBuilder.CreateSql(SqlBuilder)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_SetCurrent_Srt2_SqlQueries_Builders_Interfaces_IFieldCollection_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.SetCurrent(Srt2.SqlQueries.Builders.Interfaces.IFieldCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L79">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_SetCurrent_" data-uid="Srt2.SqlQueries.Select.SetCurrent*"></a>
+  <h4 id="Srt2_SqlQueries_Select_SetCurrent_Srt2_SqlQueries_Builders_Interfaces_IFieldCollection_" data-uid="Srt2.SqlQueries.Select.SetCurrent(Srt2.SqlQueries.Builders.Interfaces.IFieldCollection)">SetCurrent(IFieldCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCurrent(IFieldCollection fields)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IFieldCollection.html">IFieldCollection</a></td>
+        <td><span class="parametername">fields</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select_SetCurrent_Srt2_SqlQueries_Builders_Parts_ConditionCollection_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select.SetCurrent(Srt2.SqlQueries.Builders.Parts.ConditionCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L61">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Select_SetCurrent_" data-uid="Srt2.SqlQueries.Select.SetCurrent*"></a>
+  <h4 id="Srt2_SqlQueries_Select_SetCurrent_Srt2_SqlQueries_Builders_Parts_ConditionCollection_" data-uid="Srt2.SqlQueries.Select.SetCurrent(Srt2.SqlQueries.Builders.Parts.ConditionCollection)">SetCurrent(ConditionCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCurrent(ConditionCollection conditions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.ConditionCollection.html">ConditionCollection</a></td>
+        <td><span class="parametername">conditions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IFrom.html">IFrom</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.ITop.html">ITop</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IColumns.html">IColumns</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IOrderBy.html">IOrderBy</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IGroupBy.html">IGroupBy</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IFieldContainer.html">IFieldContainer</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IWhere.html">IWhere</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IHaving.html">IHaving</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IJoins.html">IJoins</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IConditionContainer.html">IConditionContainer</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IDistinct.html">IDistinct</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.Interfaces.IQueryBuilder.html">IQueryBuilder</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Distinct__1___0_">PartExtentions.Distinct&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Top__1___0_Srt2_SqlQueries_Builders_Parts_Top_">PartExtentions.Top&lt;T&gt;(T, Top)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Top__1___0_System_Int32_System_Boolean_">PartExtentions.Top&lt;T&gt;(T, Int32, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Column__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field___">PartExtentions.Column&lt;T&gt;(T, Field, Field[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Columns__1___0_">PartExtentions.Columns&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Columns__1___0_Srt2_SqlQueries_Builders_Parts_FieldCollection_">PartExtentions.Columns&lt;T&gt;(T, FieldCollection)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Average__1___0_Srt2_SqlQueries_Functions_Average_">PartExtentions.Average&lt;T&gt;(T, Average)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Average__1___0_System_String_System_String_">PartExtentions.Average&lt;T&gt;(T, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Average__1___0_System_String_System_String_System_String_">PartExtentions.Average&lt;T&gt;(T, String, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Minimum__1___0_Srt2_SqlQueries_Functions_Minimum_">PartExtentions.Minimum&lt;T&gt;(T, Minimum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Minimum__1___0_System_String_System_String_">PartExtentions.Minimum&lt;T&gt;(T, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Minimum__1___0_System_String_System_String_System_String_">PartExtentions.Minimum&lt;T&gt;(T, String, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Maximum__1___0_Srt2_SqlQueries_Functions_Maximum_">PartExtentions.Maximum&lt;T&gt;(T, Maximum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Maximum__1___0_System_String_System_String_">PartExtentions.Maximum&lt;T&gt;(T, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Maximum__1___0_System_String_System_String_System_String_">PartExtentions.Maximum&lt;T&gt;(T, String, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Sum__1___0_Srt2_SqlQueries_Functions_Sum_">PartExtentions.Sum&lt;T&gt;(T, Sum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Sum__1___0_System_String_System_String_">PartExtentions.Sum&lt;T&gt;(T, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Sum__1___0_System_String_System_String_System_String_">PartExtentions.Sum&lt;T&gt;(T, String, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Count__1___0_">PartExtentions.Count&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Count__1___0_Srt2_SqlQueries_Functions_Count_">PartExtentions.Count&lt;T&gt;(T, Count)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Count__1___0_System_String_System_String_">PartExtentions.Count&lt;T&gt;(T, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Count__1___0_System_String_System_String_System_String_">PartExtentions.Count&lt;T&gt;(T, String, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_From__1___0_Srt2_SqlQueries_Builders_TableSource_">PartExtentions.From&lt;T&gt;(T, TableSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Join__1___0_Srt2_SqlQueries_Builders_TableSource_Srt2_SqlQueries_Builders_Parts_JoinType_">PartExtentions.Join&lt;T&gt;(T, TableSource, JoinType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Join__1___0_Srt2_SqlQueries_Builders_TableSource_Srt2_SqlQueries_Builders_Parts_JoinType_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.Join&lt;T&gt;(T, TableSource, JoinType, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_InnerJoin__1___0_Srt2_SqlQueries_Builders_TableSource_">PartExtentions.InnerJoin&lt;T&gt;(T, TableSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_InnerJoin__1___0_Srt2_SqlQueries_Builders_TableSource_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.InnerJoin&lt;T&gt;(T, TableSource, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_FullOuterJoin__1___0_Srt2_SqlQueries_Builders_TableSource_">PartExtentions.FullOuterJoin&lt;T&gt;(T, TableSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_FullOuterJoin__1___0_Srt2_SqlQueries_Builders_TableSource_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.FullOuterJoin&lt;T&gt;(T, TableSource, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_RightJoin__1___0_Srt2_SqlQueries_Builders_TableSource_">PartExtentions.RightJoin&lt;T&gt;(T, TableSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_RightJoin__1___0_Srt2_SqlQueries_Builders_TableSource_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.RightJoin&lt;T&gt;(T, TableSource, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_LeftJoin__1___0_Srt2_SqlQueries_Builders_TableSource_">PartExtentions.LeftJoin&lt;T&gt;(T, TableSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_LeftJoin__1___0_Srt2_SqlQueries_Builders_TableSource_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.LeftJoin&lt;T&gt;(T, TableSource, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Where__1___0_">PartExtentions.Where&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Where__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_SqlOperator_System_Object_">PartExtentions.Where&lt;T&gt;(T, Field, SqlOperator, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Where__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.Where&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_WhereField__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_SqlOperator_Srt2_SqlQueries_Functions_Field_">PartExtentions.WhereField&lt;T&gt;(T, Field, SqlOperator, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Where__1___0_Srt2_SqlQueries_Builders_Parts_Condition_">PartExtentions.Where&lt;T&gt;(T, Condition)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_WhereField__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.WhereField&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GroupByField__1___0_Srt2_SqlQueries_Functions_Field_">PartExtentions.GroupByField&lt;T&gt;(T, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GroupBy__1___0_Srt2_SqlQueries_Builders_Parts_GroupByField_">PartExtentions.GroupBy&lt;T&gt;(T, GroupByField)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GroupBy__1___0_Srt2_SqlQueries_Builders_Parts_FieldCollection_">PartExtentions.GroupBy&lt;T&gt;(T, FieldCollection)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Having__1___0_">PartExtentions.Having&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Having__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_SqlOperator_System_Object_">PartExtentions.Having&lt;T&gt;(T, Field, SqlOperator, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Having__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.Having&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_HavingField__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_SqlOperator_Srt2_SqlQueries_Functions_Field_">PartExtentions.HavingField&lt;T&gt;(T, Field, SqlOperator, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_HavingField__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.HavingField&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_OrderBy__1___0_">PartExtentions.OrderBy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_OrderByField__1___0_Srt2_SqlQueries_Functions_Field_">PartExtentions.OrderByField&lt;T&gt;(T, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_OrderByFieldDescending__1___0_Srt2_SqlQueries_Functions_Field_">PartExtentions.OrderByFieldDescending&lt;T&gt;(T, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_OrderBy__1___0_Srt2_SqlQueries_Builders_Parts_FieldCollection_">PartExtentions.OrderBy&lt;T&gt;(T, FieldCollection)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_OrderByDescending__1___0_Srt2_SqlQueries_Builders_Parts_FieldCollection_">PartExtentions.OrderByDescending&lt;T&gt;(T, FieldCollection)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Or__1___0_Srt2_SqlQueries_Builders_Parts_Condition_Srt2_SqlQueries_Builders_Parts_Condition___">PartExtentions.Or&lt;T&gt;(T, Condition, Condition[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_And__1___0_Srt2_SqlQueries_Builders_Parts_Condition_Srt2_SqlQueries_Builders_Parts_Condition___">PartExtentions.And&lt;T&gt;(T, Condition, Condition[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Equal__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.Equal&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_EqualToValue__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.EqualToValue&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_NotEqual__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.NotEqual&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_NotEqualToValue__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.NotEqualToValue&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GreaterThan__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.GreaterThan&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GreaterThanValue__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.GreaterThanValue&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GreaterOrEqual__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.GreaterOrEqual&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_GreaterOrEqualThanValue__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.GreaterOrEqualThanValue&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_LessThan__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.LessThan&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_LessThanValue__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.LessThanValue&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_LessOrEqual__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Functions_Field_">PartExtentions.LessOrEqual&lt;T&gt;(T, Field, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_LessOrEqualThanValue__1___0_Srt2_SqlQueries_Functions_Field_System_Object_">PartExtentions.LessOrEqualThanValue&lt;T&gt;(T, Field, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_IsNull__1___0_Srt2_SqlQueries_Functions_Field_">PartExtentions.IsNull&lt;T&gt;(T, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_IsNotNull__1___0_Srt2_SqlQueries_Functions_Field_">PartExtentions.IsNotNull&lt;T&gt;(T, Field)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_In__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Select_">PartExtentions.In&lt;T&gt;(T, Field, Select)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_NotIn__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_Select_">PartExtentions.NotIn&lt;T&gt;(T, Field, Select)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Exists__1___0_Srt2_SqlQueries_Select_">PartExtentions.Exists&lt;T&gt;(T, Select)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_All__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_SqlOperator_Srt2_SqlQueries_Select_">PartExtentions.All&lt;T&gt;(T, Field, SqlOperator, Select)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Any__1___0_Srt2_SqlQueries_Functions_Field_Srt2_SqlQueries_SqlOperator_Srt2_SqlQueries_Select_">PartExtentions.Any&lt;T&gt;(T, Field, SqlOperator, Select)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Like__1___0_Srt2_SqlQueries_Functions_Field_System_String_">PartExtentions.Like&lt;T&gt;(T, Field, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Between__1___0_Srt2_SqlQueries_Functions_Field_System_Object_System_Object_">PartExtentions.Between&lt;T&gt;(T, Field, Object, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Select.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Select%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Select.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

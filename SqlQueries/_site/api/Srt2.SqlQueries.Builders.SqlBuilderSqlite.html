@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SqlBuilderSqlite
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SqlBuilderSqlite
+   ">
+    <meta name="generator" content="docfx 2.24.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite">
+  
+  
+  <h1 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite" class="text-break">Class SqlBuilderSqlite
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html">SqlBuilder</a></div>
+    <div class="level2"><span class="xref">SqlBuilderSqlite</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Append_System_String_">SqlBuilder.Append(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_AppendParameter_System_Object_">SqlBuilder.AppendParameter(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Or_Srt2_SqlQueries_Or_">SqlBuilder.Or(Or)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_And_Srt2_SqlQueries_And_">SqlBuilder.And(And)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_InsertIntoSelect_Srt2_SqlQueries_InsertIntoSelect_">SqlBuilder.InsertIntoSelect(InsertIntoSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Union_Srt2_SqlQueries_Union_">SqlBuilder.Union(Union)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_TableSource_Srt2_SqlQueries_Builders_TableSource_">SqlBuilder.TableSource(TableSource)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_From_Srt2_SqlQueries_Builders_Parts_TableSourceCollection_">SqlBuilder.From(TableSourceCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Field_Srt2_SqlQueries_Functions_Field_">SqlBuilder.Field(Field)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Distinct_System_Boolean_">SqlBuilder.Distinct(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Columns_Srt2_SqlQueries_Builders_Parts_ColumnCollection_">SqlBuilder.Columns(ColumnCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_OrderBy_Srt2_SqlQueries_Builders_Parts_OrderByCollection_">SqlBuilder.OrderBy(OrderByCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_GroupBy_Srt2_SqlQueries_Builders_Parts_GroupByCollection_">SqlBuilder.GroupBy(GroupByCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Where_Srt2_SqlQueries_Builders_Parts_ConditionCollection_">SqlBuilder.Where(ConditionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Having_Srt2_SqlQueries_Builders_Parts_ConditionCollection_">SqlBuilder.Having(ConditionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Conditions_Srt2_SqlQueries_Builders_Parts_ConditionCollection_System_String_">SqlBuilder.Conditions(ConditionCollection, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Conditions_Srt2_SqlQueries_Builders_Parts_ConditionCollection_">SqlBuilder.Conditions(ConditionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Join_Srt2_SqlQueries_Builders_Parts_Join_">SqlBuilder.Join(Join)</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_ToString">SqlBuilder.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Register__2">SqlBuilder.Register&lt;TC, T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Get_System_Type_">SqlBuilder.Get(Type)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Srt2.SqlQueries.Builders.html">Srt2.SqlQueries.Builders</a></h6>
+  <h6><strong>Assembly</strong>: SqlQueries.dll</h6>
+  <h5 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SqlBuilderSqlite : SqlBuilder</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_Delete_Srt2_SqlQueries_Delete_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.Delete(Srt2.SqlQueries.Delete)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L11">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Delete_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Delete*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Delete_Srt2_SqlQueries_Delete_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Delete(Srt2.SqlQueries.Delete)">Delete(Delete)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Delete(Delete builder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Delete.html">Delete</a></td>
+        <td><span class="parametername">builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Delete_Srt2_SqlQueries_Delete_">SqlBuilder.Delete(Delete)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_Joins_Srt2_SqlQueries_Builders_Parts_JoinCollection_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.Joins(Srt2.SqlQueries.Builders.Parts.JoinCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L93">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Joins_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Joins*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Joins_Srt2_SqlQueries_Builders_Parts_JoinCollection_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Joins(Srt2.SqlQueries.Builders.Parts.JoinCollection)">Joins(JoinCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Joins(JoinCollection joins)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.JoinCollection.html">JoinCollection</a></td>
+        <td><span class="parametername">joins</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Joins_Srt2_SqlQueries_Builders_Parts_JoinCollection_">SqlBuilder.Joins(JoinCollection)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_Select_Srt2_SqlQueries_Select_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.Select(Srt2.SqlQueries.Select)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L30">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Select_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Select*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Select_Srt2_SqlQueries_Select_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Select(Srt2.SqlQueries.Select)">Select(Select)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Select(Select builder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Select.html">Select</a></td>
+        <td><span class="parametername">builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Select_Srt2_SqlQueries_Select_">SqlBuilder.Select(Select)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_SelectInto_Srt2_SqlQueries_SelectInto_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.SelectInto(Srt2.SqlQueries.SelectInto)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L46">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_SelectInto_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.SelectInto*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_SelectInto_Srt2_SqlQueries_SelectInto_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.SelectInto(Srt2.SqlQueries.SelectInto)">SelectInto(SelectInto)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SelectInto(SelectInto builder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.SelectInto.html">SelectInto</a></td>
+        <td><span class="parametername">builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_SelectInto_Srt2_SqlQueries_SelectInto_">SqlBuilder.SelectInto(SelectInto)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_Table_Srt2_SqlQueries_Builders_Parts_Table_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.Table(Srt2.SqlQueries.Builders.Parts.Table)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L76">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Table_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Table*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Table_Srt2_SqlQueries_Builders_Parts_Table_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Table(Srt2.SqlQueries.Builders.Parts.Table)">Table(Table)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Table(Table table)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.Table.html">Table</a></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Table_Srt2_SqlQueries_Builders_Parts_Table_">SqlBuilder.Table(Table)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_Top_Srt2_SqlQueries_Builders_Parts_Top_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.Top(Srt2.SqlQueries.Builders.Parts.Top)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L62">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Top_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Top*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Top_Srt2_SqlQueries_Builders_Parts_Top_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Top(Srt2.SqlQueries.Builders.Parts.Top)">Top(Top)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Top(Top top)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Builders.Parts.Top.html">Top</a></td>
+        <td><span class="parametername">top</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Top_Srt2_SqlQueries_Builders_Parts_Top_">SqlBuilder.Top(Top)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite_Truncate_Srt2_SqlQueries_Truncate_.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite.Truncate(Srt2.SqlQueries.Truncate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L51">View Source</a>
+  </span>
+  <a id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Truncate_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Truncate*"></a>
+  <h4 id="Srt2_SqlQueries_Builders_SqlBuilderSqlite_Truncate_Srt2_SqlQueries_Truncate_" data-uid="Srt2.SqlQueries.Builders.SqlBuilderSqlite.Truncate(Srt2.SqlQueries.Truncate)">Truncate(Truncate)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Truncate(Truncate builder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Srt2.SqlQueries.Truncate.html">Truncate</a></td>
+        <td><span class="parametername">builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Truncate_Srt2_SqlQueries_Truncate_">SqlBuilder.Truncate(Truncate)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jonkeda/SqlQueries/new/master/apiSpec/new?filename=Srt2_SqlQueries_Builders_SqlBuilderSqlite.md&amp;value=---%0Auid%3A%20Srt2.SqlQueries.Builders.SqlBuilderSqlite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jonkeda/SqlQueries/blob/master/SqlQueries/Builders/SqlBuilderSqlite.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

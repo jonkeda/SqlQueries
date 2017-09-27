@@ -1,0 +1,1351 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Sources/SqlQueries/SqlQueries",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "yDlAp9gcqNVZR8hLL74FFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "oHVxmY6PQ11RlPpmJgzxOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "0yzuuVy+60kUBBdZdYKonA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "vFJjjcsany7ZolXu6qSVNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.And.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.And.html",
+          "hash": "PI+CQQzcg6NRv4QyG7MTYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IAlias.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IAlias.html",
+          "hash": "XJFqzODelksYEqVDyzntVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IColumns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IColumns.html",
+          "hash": "ZLqAxtnZrqzpM+Ix7EIObA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.ICondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.ICondition.html",
+          "hash": "z38Mxp+Bey63beXUHHGlBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IConditionContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IConditionContainer.html",
+          "hash": "/o9cPFasQwGHAgIV/1RbYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IConditions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IConditions.html",
+          "hash": "AnsrW6as5mbDIga2oz77xA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IDistinct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IDistinct.html",
+          "hash": "GKE1j171KIXV9B+qdWMupQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IFieldCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IFieldCollection.html",
+          "hash": "XvvQFE+BEhqnJUY938dnEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IFieldContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IFieldContainer.html",
+          "hash": "Z1rhuPnucvDQiq+R9iyhWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IFrom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IFrom.html",
+          "hash": "1pyuHaFK1iRZwfTeamK0/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IGroupBy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IGroupBy.html",
+          "hash": "pNWWjb4hbURmpORWtGrlHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IHaving.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IHaving.html",
+          "hash": "rlrVSEcsv06CFaqH4Ro5bw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IHavingCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IHavingCondition.html",
+          "hash": "O+O+IpV4r7iGGIg4j95z1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IInto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IInto.html",
+          "hash": "wZxNp5uKSrO+0slbpsRF8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IJoinOnCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IJoinOnCondition.html",
+          "hash": "NRBBA089/QTs8ly9qUjpXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IJoins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IJoins.html",
+          "hash": "0Q8Uyp+5YnOHFGsbePPQXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IOrderBy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IOrderBy.html",
+          "hash": "WvjTs1zDFO44iy6VcxCmPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IQueryBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IQueryBuilder.html",
+          "hash": "Nh4tRspMwybr+625e8BjaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.ISelect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.ISelect.html",
+          "hash": "/Fmq7tzKTmbSH0NMxFJSbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.ISelectContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.ISelectContainer.html",
+          "hash": "v//+ewjs2uD+HvJIHSdxrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.ITable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.ITable.html",
+          "hash": "gjW9WELxn3MNVhRBQdt90w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.ITop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.ITop.html",
+          "hash": "20YOCFSRLsDlgqxHCW8BHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IUnion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IUnion.html",
+          "hash": "V5VUgDyy1lfbqEv1doCukw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IWhere.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IWhere.html",
+          "hash": "Bv6mxD+q/0zz+3wT0p5zgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.html",
+          "hash": "3LeDT1wlFW23BD3x7L59vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ColumnCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ColumnCollection.html",
+          "hash": "XiVIWsEp9Hnx6LapORa1lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ColumnField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ColumnField.html",
+          "hash": "2gj6Lakzd7Fq6rAr0UwVLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.Condition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.Condition.html",
+          "hash": "dwb4WGrfl/Dglj6Dl7ZpEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ConditionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ConditionCollection.html",
+          "hash": "hWG5Rjrxur0EEt7rUUFVbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ConditionField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ConditionField.html",
+          "hash": "xIbYxuAdFgIAERrFx0mgeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ConditionOnField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ConditionOnField.html",
+          "hash": "ifKBe7ntFvgTXrsUgFcNXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ConditionOnValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ConditionOnValue.html",
+          "hash": "39hln4DqBRxT/TWBhy3whQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.ConditionOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ConditionOperator.html",
+          "hash": "x0JhKpY5S4RM1Y+Ak9C7PQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.FieldCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.FieldCollection.html",
+          "hash": "yjeB0wewYJp0l05HhXWbow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.Function.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.Function.html",
+          "hash": "Mz0cH2nop6rgzZn5up7p5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.GroupByCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.GroupByCollection.html",
+          "hash": "ErzcqM4j+RaADUAMcFEm4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.GroupByField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.GroupByField.html",
+          "hash": "7l1OaMKtVPVfMefppQ+1xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.HavingField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.HavingField.html",
+          "hash": "4WYojvLiAehwycQ90mKOkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.HavingValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.HavingValue.html",
+          "hash": "p0Mn3N7nvXxuIlsho4bQVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.Join.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.Join.html",
+          "hash": "g0HHNZVmwRUoJho8DAv4sw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.JoinCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.JoinCollection.html",
+          "hash": "iwjHowonT6DlrszG/A5YYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.JoinType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.JoinType.html",
+          "hash": "zR3S7iMbAnsAQJD4SfvnMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.OrderByCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.OrderByCollection.html",
+          "hash": "ppmvDADKVmaiGX0PupTUGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.OrderByField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.OrderByField.html",
+          "hash": "LDF12z2SD7fvTPPWUzW6dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.SelectCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.SelectCollection.html",
+          "hash": "SHSmvwImI06XQsMXtLu2yA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.SelectSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.SelectSource.html",
+          "hash": "377ERQ8o9bNxytnzohKGOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.Table.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.Table.html",
+          "hash": "cSwQ2efBwQciGXeOA+x0fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.TableSourceCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.TableSourceCollection.html",
+          "hash": "cjzz0hmbcFeSa+XdYpHqpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.Top.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.Top.html",
+          "hash": "NoPC0eteKYPZnLEO4pyxCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.html",
+          "hash": "p2FHEPCLIwpxVippG4LfJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.QueryBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.QueryBuilder.html",
+          "hash": "3T3bq3/rR2vwr4Hg67EejA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.QueryBuilderNotImplementedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.QueryBuilderNotImplementedException.html",
+          "hash": "CYOH3qFU9UoyhCvUIEV3SA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.SqlBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.SqlBuilder.html",
+          "hash": "x3dxzzFPnA//w/f7KK6Q1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.SqlBuilderSqlServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.SqlBuilderSqlServer.html",
+          "hash": "BWPYzXyU3hhT8iQx2wDmYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.SqlBuilderSqlite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.SqlBuilderSqlite.html",
+          "hash": "p6S9h2BTutmLqChbuXyhmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.TableSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.TableSource.html",
+          "hash": "KJqv6XoMunagAA3cGRWmVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.html",
+          "hash": "nZgabdQNpzIkP5x7pYTQZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.All.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.All.html",
+          "hash": "8oNkr6Xq2FH9v/Nlf6xQYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.Any.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.Any.html",
+          "hash": "0Y9lda0SYnyhlka/sbCjag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.Between.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.Between.html",
+          "hash": "kl5MyRJ3zmssMLn2Qbptog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.Equal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.Equal.html",
+          "hash": "VPYv4mmRdq58b0vbDdOQyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.EqualToValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.EqualToValue.html",
+          "hash": "SY7obDNWuijpmuXQnR815g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.Exists.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.Exists.html",
+          "hash": "Imopq3ZRaK/L3iSI52L2Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.GreaterOrEqual.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.GreaterOrEqual.html",
+          "hash": "dYrhUhqvyFDUpS5zcpZSJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.GreaterOrEqualThanValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.GreaterOrEqualThanValue.html",
+          "hash": "hRYM1MYflrtYegS3ZpXLDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.GreaterThan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.GreaterThan.html",
+          "hash": "lxe88bWIXQP7N0HYVwGUaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.GreaterThanValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.GreaterThanValue.html",
+          "hash": "8xW/dAPSzwekJ+W7zBKYxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.In.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.In.html",
+          "hash": "s+Qg682JfxKEWZQCvmiXxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.IsNotNull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.IsNotNull.html",
+          "hash": "P0N3fC5NRnFgQ4Sy7VrDNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.IsNull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.IsNull.html",
+          "hash": "0um713z7r7EPy4bw6IFWCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.LessOrEqual.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.LessOrEqual.html",
+          "hash": "DwCu6HQN22f50qcG4z7JSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.LessOrEqualThanValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.LessOrEqualThanValue.html",
+          "hash": "JHjxs7aAitH7XltYEKLuOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.LessThan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.LessThan.html",
+          "hash": "VVzRB4JzYIR0wOqh3xA1lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.LessThanValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.LessThanValue.html",
+          "hash": "eEM6TssnfbqQ4FJP/D/6mw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.Like.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.Like.html",
+          "hash": "sAKldAs9O00Ztf8b0zHQHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.NotEqual.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.NotEqual.html",
+          "hash": "MsCjFl1plCFF52Lnixgrqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.NotEqualToValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.NotEqualToValue.html",
+          "hash": "0cbKvguxmL6Zf3ZDweSetg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.NotIn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.NotIn.html",
+          "hash": "kAv3oibMe3TuwfGWOAPVDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Conditions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Conditions.html",
+          "hash": "kYVzAGD1kYagFpdg+FQqQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Delete.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Delete.html",
+          "hash": "TSdZ/4rE4DmVpyasWHjqzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Exceptions.QueryBuilderException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Exceptions.QueryBuilderException.html",
+          "hash": "nk1s93UPF6U6pApT67a1nQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Exceptions.QueryBuilderNotImplementedForSqlServerException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Exceptions.QueryBuilderNotImplementedForSqlServerException.html",
+          "hash": "ln82qkzNQfiYHZoxeZe6KQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Exceptions.QueryBuilderNotImplementedForSqliteException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Exceptions.QueryBuilderNotImplementedForSqliteException.html",
+          "hash": "U3SS1b9bIZHMgjHxp2qOSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Exceptions.QueryParseException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Exceptions.QueryParseException.html",
+          "hash": "vzG7GHgdfWftiSSR4mMz9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Exceptions.html",
+          "hash": "YKbSTsGjrJrDPhPAQNctww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.Average.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.Average.html",
+          "hash": "v4A7J0xamH6vv0BNoufpBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.Count.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.Count.html",
+          "hash": "/xAN4srYNGVZQ/WBQCW9uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.Field.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.Field.html",
+          "hash": "XB/keI9mrlwD8+iXEALRFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.Maximum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.Maximum.html",
+          "hash": "g7xiGVOBkuB+rKD8kTbNTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.Minimum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.Minimum.html",
+          "hash": "EBkT0ygFPCBrCpcZFA3IfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.Sum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.Sum.html",
+          "hash": "dnVfpnIk1p5POfmY0YYWTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Functions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Functions.html",
+          "hash": "BKZR8zucRtJ4PBA4b4VPNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.InsertIntoSelect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.InsertIntoSelect.html",
+          "hash": "W767LgLxPMOsRwnj1ShIdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Or.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Or.html",
+          "hash": "4jvd56OmfrjvMWPRRa8LIg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.PartExtentions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.PartExtentions.html",
+          "hash": "ve8f7dDpvZGd4cqdJfSlbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Select.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Select.html",
+          "hash": "9g/IurF7y8fD2v8VgO5t/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.SelectInto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.SelectInto.html",
+          "hash": "Q2nzF4J23Zy38qc4tI1pXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.SqlAndOr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.SqlAndOr.html",
+          "hash": "JcOXjEFbJF+l1R4Soqbf4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.SqlOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.SqlOperator.html",
+          "hash": "Jrcyid5sOueMP2VLbnSVHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Truncate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Truncate.html",
+          "hash": "ME2trI4kRfNCMh+arF/npg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Union.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Union.html",
+          "hash": "tOXGj3+/MGAjb02oLzV1kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.html",
+          "hash": "SjmVg5WtUJati0DFfRBHyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "4ob9N0tOvz7u1iVZjsGVLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WjcH18DAr6AMBiIztGmgHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
