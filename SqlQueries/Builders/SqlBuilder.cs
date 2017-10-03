@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
@@ -56,6 +57,37 @@ namespace Srt2.SqlQueries.Builders
             }
             OrderBy(builder.OrderBy);
         }
+
+        public virtual void Update(Update builder)
+        {
+            Append("UPDATE ");
+
+            Table(builder.Table);
+
+            Append(" SET ");
+            Updates(builder.Columns);
+            Where(builder.Where);
+        }
+
+        private void Updates(UpdateFieldCollection columns)
+        {
+            bool first = true;
+            foreach (UpdateField column in columns)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    Append(", ");
+                }
+                Field(column.Field);
+                Append(" = ");
+                AppendParameter(column.Value);
+            }
+        }
+
 
         public virtual void InsertIntoSelect(InsertIntoSelect builder)
         {

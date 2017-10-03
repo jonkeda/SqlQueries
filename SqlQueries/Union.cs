@@ -5,6 +5,7 @@ using Srt2.SqlQueries.Builders.Parts;
 
 namespace Srt2.SqlQueries
 {
+
     public class Union : QueryBuilder, IUnion, ISelectContainer
     {
         public Union()

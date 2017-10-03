@@ -50,7 +50,10 @@
   <ItemGroup>
     <Compile Include="And.cs" />
     <Compile Include="Builders\Interfaces\ISelectContainer.cs" />
+    <Compile Include="Builders\Interfaces\IUpdates.cs" />
     <Compile Include="Builders\Parts\SelectSource.cs" />
+    <Compile Include="Builders\Parts\UpdateField.cs" />
+    <Compile Include="Builders\Parts\UpdateFieldCollection.cs" />
     <Compile Include="Builders\TableSource.cs" />
     <Compile Include="Union.cs" />
     <Compile Include="Exceptions\QueryParseException.cs" />
@@ -143,6 +146,7 @@
     <Compile Include="Builders\QueryBuilder.cs" />
     <Compile Include="Builders\Parts\Table.cs" />
     <Compile Include="Truncate.cs" />
+    <Compile Include="Update.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="api\index.md" />
