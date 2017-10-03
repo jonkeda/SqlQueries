@@ -502,6 +502,24 @@ references:
   commentId: Overload:Srt2.SqlQueries.Builders.Interfaces.IUnion.Selects
   fullName: Srt2.SqlQueries.Builders.Interfaces.IUnion.Selects
   nameWithType: IUnion.Selects
+- uid: Srt2.SqlQueries.Builders.Interfaces.IUpdates
+  name: IUpdates
+  href: api/Srt2.SqlQueries.Builders.Interfaces.IUpdates.html
+  commentId: T:Srt2.SqlQueries.Builders.Interfaces.IUpdates
+  fullName: Srt2.SqlQueries.Builders.Interfaces.IUpdates
+  nameWithType: IUpdates
+- uid: Srt2.SqlQueries.Builders.Interfaces.IUpdates.Columns
+  name: Columns
+  href: api/Srt2.SqlQueries.Builders.Interfaces.IUpdates.html#Srt2_SqlQueries_Builders_Interfaces_IUpdates_Columns
+  commentId: P:Srt2.SqlQueries.Builders.Interfaces.IUpdates.Columns
+  fullName: Srt2.SqlQueries.Builders.Interfaces.IUpdates.Columns
+  nameWithType: IUpdates.Columns
+- uid: Srt2.SqlQueries.Builders.Interfaces.IUpdates.Columns*
+  name: Columns
+  href: api/Srt2.SqlQueries.Builders.Interfaces.IUpdates.html#Srt2_SqlQueries_Builders_Interfaces_IUpdates_Columns_
+  commentId: Overload:Srt2.SqlQueries.Builders.Interfaces.IUpdates.Columns
+  fullName: Srt2.SqlQueries.Builders.Interfaces.IUpdates.Columns
+  nameWithType: IUpdates.Columns
 - uid: Srt2.SqlQueries.Builders.Interfaces.IWhere
   name: IWhere
   href: api/Srt2.SqlQueries.Builders.Interfaces.IWhere.html
@@ -1582,6 +1600,72 @@ references:
   commentId: Overload:Srt2.SqlQueries.Builders.Parts.Top.TopCount
   fullName: Srt2.SqlQueries.Builders.Parts.Top.TopCount
   nameWithType: Top.TopCount
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField
+  name: UpdateField
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html
+  commentId: T:Srt2.SqlQueries.Builders.Parts.UpdateField
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField
+  nameWithType: UpdateField
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.#ctor
+  name: UpdateField()
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField__ctor
+  commentId: M:Srt2.SqlQueries.Builders.Parts.UpdateField.#ctor
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.UpdateField()
+  nameWithType: UpdateField.UpdateField()
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.#ctor(Srt2.SqlQueries.Functions.Field,System.Object)
+  name: UpdateField(Field, Object)
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField__ctor_Srt2_SqlQueries_Functions_Field_System_Object_
+  commentId: M:Srt2.SqlQueries.Builders.Parts.UpdateField.#ctor(Srt2.SqlQueries.Functions.Field,System.Object)
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.UpdateField(Srt2.SqlQueries.Functions.Field, System.Object)
+  nameWithType: UpdateField.UpdateField(Field, Object)
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.#ctor*
+  name: UpdateField
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField__ctor_
+  commentId: Overload:Srt2.SqlQueries.Builders.Parts.UpdateField.#ctor
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.UpdateField
+  nameWithType: UpdateField.UpdateField
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.Field
+  name: Field
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField_Field
+  commentId: P:Srt2.SqlQueries.Builders.Parts.UpdateField.Field
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.Field
+  nameWithType: UpdateField.Field
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.Field*
+  name: Field
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField_Field_
+  commentId: Overload:Srt2.SqlQueries.Builders.Parts.UpdateField.Field
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.Field
+  nameWithType: UpdateField.Field
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.Value
+  name: Value
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField_Value
+  commentId: P:Srt2.SqlQueries.Builders.Parts.UpdateField.Value
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.Value
+  nameWithType: UpdateField.Value
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateField.Value*
+  name: Value
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateField.html#Srt2_SqlQueries_Builders_Parts_UpdateField_Value_
+  commentId: Overload:Srt2.SqlQueries.Builders.Parts.UpdateField.Value
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateField.Value
+  nameWithType: UpdateField.Value
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection
+  name: UpdateFieldCollection
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.html
+  commentId: T:Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection
+  nameWithType: UpdateFieldCollection
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.Add(Srt2.SqlQueries.Functions.Field,System.Object)
+  name: Add(Field, Object)
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.html#Srt2_SqlQueries_Builders_Parts_UpdateFieldCollection_Add_Srt2_SqlQueries_Functions_Field_System_Object_
+  commentId: M:Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.Add(Srt2.SqlQueries.Functions.Field,System.Object)
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.Add(Srt2.SqlQueries.Functions.Field, System.Object)
+  nameWithType: UpdateFieldCollection.Add(Field, Object)
+- uid: Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.Add*
+  name: Add
+  href: api/Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.html#Srt2_SqlQueries_Builders_Parts_UpdateFieldCollection_Add_
+  commentId: Overload:Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.Add
+  fullName: Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.Add
+  nameWithType: UpdateFieldCollection.Add
 - uid: Srt2.SqlQueries.Builders.QueryBuilder
   name: QueryBuilder
   href: api/Srt2.SqlQueries.Builders.QueryBuilder.html
@@ -1993,6 +2077,18 @@ references:
   commentId: Overload:Srt2.SqlQueries.Builders.SqlBuilder.Union
   fullName: Srt2.SqlQueries.Builders.SqlBuilder.Union
   nameWithType: SqlBuilder.Union
+- uid: Srt2.SqlQueries.Builders.SqlBuilder.Update(Srt2.SqlQueries.Update)
+  name: Update(Update)
+  href: api/Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Update_Srt2_SqlQueries_Update_
+  commentId: M:Srt2.SqlQueries.Builders.SqlBuilder.Update(Srt2.SqlQueries.Update)
+  fullName: Srt2.SqlQueries.Builders.SqlBuilder.Update(Srt2.SqlQueries.Update)
+  nameWithType: SqlBuilder.Update(Update)
+- uid: Srt2.SqlQueries.Builders.SqlBuilder.Update*
+  name: Update
+  href: api/Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Update_
+  commentId: Overload:Srt2.SqlQueries.Builders.SqlBuilder.Update
+  fullName: Srt2.SqlQueries.Builders.SqlBuilder.Update
+  nameWithType: SqlBuilder.Update
 - uid: Srt2.SqlQueries.Builders.SqlBuilder.Where(Srt2.SqlQueries.Builders.Parts.ConditionCollection)
   name: Where(ConditionCollection)
   href: api/Srt2.SqlQueries.Builders.SqlBuilder.html#Srt2_SqlQueries_Builders_SqlBuilder_Where_Srt2_SqlQueries_Builders_Parts_ConditionCollection_
@@ -5164,3 +5260,81 @@ references:
   commentId: Overload:Srt2.SqlQueries.Union.SetCurrent
   fullName: Srt2.SqlQueries.Union.SetCurrent
   nameWithType: Union.SetCurrent
+- uid: Srt2.SqlQueries.Update
+  name: Update
+  href: api/Srt2.SqlQueries.Update.html
+  commentId: T:Srt2.SqlQueries.Update
+  fullName: Srt2.SqlQueries.Update
+  nameWithType: Update
+- uid: Srt2.SqlQueries.Update.Add(Srt2.SqlQueries.Builders.Interfaces.ICondition)
+  name: Add(ICondition)
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Add_Srt2_SqlQueries_Builders_Interfaces_ICondition_
+  commentId: M:Srt2.SqlQueries.Update.Add(Srt2.SqlQueries.Builders.Interfaces.ICondition)
+  fullName: Srt2.SqlQueries.Update.Add(Srt2.SqlQueries.Builders.Interfaces.ICondition)
+  nameWithType: Update.Add(ICondition)
+- uid: Srt2.SqlQueries.Update.Add*
+  name: Add
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Add_
+  commentId: Overload:Srt2.SqlQueries.Update.Add
+  fullName: Srt2.SqlQueries.Update.Add
+  nameWithType: Update.Add
+- uid: Srt2.SqlQueries.Update.Columns
+  name: Columns
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Columns
+  commentId: P:Srt2.SqlQueries.Update.Columns
+  fullName: Srt2.SqlQueries.Update.Columns
+  nameWithType: Update.Columns
+- uid: Srt2.SqlQueries.Update.Columns*
+  name: Columns
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Columns_
+  commentId: Overload:Srt2.SqlQueries.Update.Columns
+  fullName: Srt2.SqlQueries.Update.Columns
+  nameWithType: Update.Columns
+- uid: Srt2.SqlQueries.Update.CreateSql(Srt2.SqlQueries.Builders.SqlBuilder)
+  name: CreateSql(SqlBuilder)
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_CreateSql_Srt2_SqlQueries_Builders_SqlBuilder_
+  commentId: M:Srt2.SqlQueries.Update.CreateSql(Srt2.SqlQueries.Builders.SqlBuilder)
+  fullName: Srt2.SqlQueries.Update.CreateSql(Srt2.SqlQueries.Builders.SqlBuilder)
+  nameWithType: Update.CreateSql(SqlBuilder)
+- uid: Srt2.SqlQueries.Update.CreateSql*
+  name: CreateSql
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_CreateSql_
+  commentId: Overload:Srt2.SqlQueries.Update.CreateSql
+  fullName: Srt2.SqlQueries.Update.CreateSql
+  nameWithType: Update.CreateSql
+- uid: Srt2.SqlQueries.Update.SetCurrent(Srt2.SqlQueries.Builders.Parts.ConditionCollection)
+  name: SetCurrent(ConditionCollection)
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_SetCurrent_Srt2_SqlQueries_Builders_Parts_ConditionCollection_
+  commentId: M:Srt2.SqlQueries.Update.SetCurrent(Srt2.SqlQueries.Builders.Parts.ConditionCollection)
+  fullName: Srt2.SqlQueries.Update.SetCurrent(Srt2.SqlQueries.Builders.Parts.ConditionCollection)
+  nameWithType: Update.SetCurrent(ConditionCollection)
+- uid: Srt2.SqlQueries.Update.SetCurrent*
+  name: SetCurrent
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_SetCurrent_
+  commentId: Overload:Srt2.SqlQueries.Update.SetCurrent
+  fullName: Srt2.SqlQueries.Update.SetCurrent
+  nameWithType: Update.SetCurrent
+- uid: Srt2.SqlQueries.Update.Table
+  name: Table
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Table
+  commentId: P:Srt2.SqlQueries.Update.Table
+  fullName: Srt2.SqlQueries.Update.Table
+  nameWithType: Update.Table
+- uid: Srt2.SqlQueries.Update.Table*
+  name: Table
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Table_
+  commentId: Overload:Srt2.SqlQueries.Update.Table
+  fullName: Srt2.SqlQueries.Update.Table
+  nameWithType: Update.Table
+- uid: Srt2.SqlQueries.Update.Where
+  name: Where
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Where
+  commentId: P:Srt2.SqlQueries.Update.Where
+  fullName: Srt2.SqlQueries.Update.Where
+  nameWithType: Update.Where
+- uid: Srt2.SqlQueries.Update.Where*
+  name: Where
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Where_
+  commentId: Overload:Srt2.SqlQueries.Update.Where
+  fullName: Srt2.SqlQueries.Update.Where
+  nameWithType: Update.Where

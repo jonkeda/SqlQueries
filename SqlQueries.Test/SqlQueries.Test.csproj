@@ -86,6 +86,12 @@
     <Compile Include="Contexts\IDbContextTest.cs" />
     <Compile Include="Contexts\Orders.cs" />
     <Compile Include="Contexts\Suppliers.cs" />
+    <Compile Include="Update\UpdateBaseTest.cs" />
+    <Compile Include="Update\Sqlite\UpdateTest.cs" />
+    <Compile Include="Update\Sqlite\WhereTest.cs" />
+    <Compile Include="Update\SqlServer\UpdateTest.cs" />
+    <Compile Include="Update\SqlServer\WhereTest.cs" />
+    <Compile Include="Update\WhereBaseTest.cs" />
     <Compile Include="Delete\DeleteBaseTest.cs" />
     <Compile Include="Delete\OrderByBaseTest.cs" />
     <Compile Include="Delete\Sqlite\OrderByTest.cs" />

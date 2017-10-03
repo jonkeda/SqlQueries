@@ -24,7 +24,7 @@
           "hash": "oHVxmY6PQ11RlPpmJgzxOQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "vFJjjcsany7ZolXu6qSVNw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -329,6 +329,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IUpdates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.IUpdates.html",
+          "hash": "hSuWvIrAVoojewOs59VXXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Interfaces.IWhere.yml",
       "output": {
         ".html": {
@@ -345,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.Interfaces.html",
-          "hash": "3LeDT1wlFW23BD3x7L59vw=="
+          "hash": "M8EC1oO7G5Wb2T7p9FV0sA=="
         }
       },
       "is_incremental": false,
@@ -369,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.Parts.ColumnField.html",
-          "hash": "2gj6Lakzd7Fq6rAr0UwVLw=="
+          "hash": "ayNtala+oFXZhhaOMvHBPg=="
         }
       },
       "is_incremental": false,
@@ -641,11 +653,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.UpdateField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.UpdateField.html",
+          "hash": "NUHENU38Jshp2+2fgL4Uow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Builders.Parts.UpdateFieldCollection.html",
+          "hash": "zMAjvt37V/Rxl1e8D+2VsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/Srt2.SqlQueries.Builders.Parts.yml",
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.Parts.html",
-          "hash": "p2FHEPCLIwpxVippG4LfJA=="
+          "hash": "wpBmFta7MYROt9ujxDr8qA=="
         }
       },
       "is_incremental": false,
@@ -657,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.QueryBuilder.html",
-          "hash": "3T3bq3/rR2vwr4Hg67EejA=="
+          "hash": "uEqAzHYYwQPqeQ0trzCzvQ=="
         }
       },
       "is_incremental": false,
@@ -681,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.SqlBuilder.html",
-          "hash": "x3dxzzFPnA//w/f7KK6Q1w=="
+          "hash": "9du+YbJ1vBBYyzIbMwtpgg=="
         }
       },
       "is_incremental": false,
@@ -693,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.SqlBuilderSqlServer.html",
-          "hash": "BWPYzXyU3hhT8iQx2wDmYw=="
+          "hash": "ETWUtKGYCeGotqYN6wxjTw=="
         }
       },
       "is_incremental": false,
@@ -705,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Builders.SqlBuilderSqlite.html",
-          "hash": "p6S9h2BTutmLqChbuXyhmQ=="
+          "hash": "fAoGsyKRPrO2q4hnPUPMMQ=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1293,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.Union.html",
-          "hash": "tOXGj3+/MGAjb02oLzV1kg=="
+          "hash": "Qx8YdaYdZMSVPyNeQh9p+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Srt2.SqlQueries.Update.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Srt2.SqlQueries.Update.html",
+          "hash": "7RCNqD11szAVue81K7Nu7g=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1317,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Srt2.SqlQueries.html",
-          "hash": "SjmVg5WtUJati0DFfRBHyw=="
+          "hash": "sHhxqIydtVlA8TYIKkrIAg=="
         }
       },
       "is_incremental": false,
@@ -1281,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "4ob9N0tOvz7u1iVZjsGVLQ=="
+          "hash": "/S9Iv1IxDB4p5UDFNFNyrg=="
         }
       },
       "is_incremental": false,
@@ -1303,40 +1351,39 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "RestApiDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}
