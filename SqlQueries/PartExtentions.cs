@@ -351,6 +351,17 @@ namespace Srt2.SqlQueries
 
         #endregion
 
+        #region Set
+
+        public static T Set<T>(this T query, Field field, object value)
+            where T : IUpdates
+        {
+            query.Columns.Add(field, value);
+            return query;
+        }
+
+        #endregion
+
         #region Where
 
         private static void SetCurrentWhere<T>(T query)

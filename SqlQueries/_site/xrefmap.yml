@@ -4690,6 +4690,21 @@ references:
   fullName.vb: Srt2.SqlQueries.PartExtentions.Select(Of T)(T, Srt2.SqlQueries.Select)
   nameWithType: PartExtentions.Select<T>(T, Select)
   nameWithType.vb: PartExtentions.Select(Of T)(T, Select)
+- uid: Srt2.SqlQueries.PartExtentions.Set*
+  name: Set
+  href: api/Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Set_
+  commentId: Overload:Srt2.SqlQueries.PartExtentions.Set
+  fullName: Srt2.SqlQueries.PartExtentions.Set
+  nameWithType: PartExtentions.Set
+- uid: Srt2.SqlQueries.PartExtentions.Set``1(``0,Srt2.SqlQueries.Functions.Field,System.Object)
+  name: Set<T>(T, Field, Object)
+  href: api/Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Set__1___0_Srt2_SqlQueries_Functions_Field_System_Object_
+  commentId: M:Srt2.SqlQueries.PartExtentions.Set``1(``0,Srt2.SqlQueries.Functions.Field,System.Object)
+  name.vb: Set(Of T)(T, Field, Object)
+  fullName: Srt2.SqlQueries.PartExtentions.Set<T>(T, Srt2.SqlQueries.Functions.Field, System.Object)
+  fullName.vb: Srt2.SqlQueries.PartExtentions.Set(Of T)(T, Srt2.SqlQueries.Functions.Field, System.Object)
+  nameWithType: PartExtentions.Set<T>(T, Field, Object)
+  nameWithType.vb: PartExtentions.Set(Of T)(T, Field, Object)
 - uid: Srt2.SqlQueries.PartExtentions.Sum*
   name: Sum
   href: api/Srt2.SqlQueries.PartExtentions.html#Srt2_SqlQueries_PartExtentions_Sum_
@@ -5266,6 +5281,24 @@ references:
   commentId: T:Srt2.SqlQueries.Update
   fullName: Srt2.SqlQueries.Update
   nameWithType: Update
+- uid: Srt2.SqlQueries.Update.#ctor
+  name: Update()
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update__ctor
+  commentId: M:Srt2.SqlQueries.Update.#ctor
+  fullName: Srt2.SqlQueries.Update.Update()
+  nameWithType: Update.Update()
+- uid: Srt2.SqlQueries.Update.#ctor(Srt2.SqlQueries.Builders.Parts.Table)
+  name: Update(Table)
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update__ctor_Srt2_SqlQueries_Builders_Parts_Table_
+  commentId: M:Srt2.SqlQueries.Update.#ctor(Srt2.SqlQueries.Builders.Parts.Table)
+  fullName: Srt2.SqlQueries.Update.Update(Srt2.SqlQueries.Builders.Parts.Table)
+  nameWithType: Update.Update(Table)
+- uid: Srt2.SqlQueries.Update.#ctor*
+  name: Update
+  href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update__ctor_
+  commentId: Overload:Srt2.SqlQueries.Update.#ctor
+  fullName: Srt2.SqlQueries.Update.Update
+  nameWithType: Update.Update
 - uid: Srt2.SqlQueries.Update.Add(Srt2.SqlQueries.Builders.Interfaces.ICondition)
   name: Add(ICondition)
   href: api/Srt2.SqlQueries.Update.html#Srt2_SqlQueries_Update_Add_Srt2_SqlQueries_Builders_Interfaces_ICondition_

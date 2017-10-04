@@ -208,6 +208,21 @@ namespace Srt2.SqlQueries.Test.Select
             Assert.AreEqual(ExpectedInnerSelect, statement);
         }
 
+        [TestMethod]
+        public void FluentInnerSelectJoin2()
+        {
+            string statement = SelectCustomerAs()
+                .InnerJoin(new SelectSource() 
+                {
+                    Select = new Srt2.SqlQueries.Select("[TestDatabase].[Dbo].Orders o")
+                    .Columns("o.CustomerID"), Alias = "o"
+                    
+                }, "c.CustomerID", "o.CustomerID")
+                .ToString(DbConnectionType);
+
+            Assert.AreEqual(ExpectedInnerSelect, statement);
+        }
+
 
         #endregion
 

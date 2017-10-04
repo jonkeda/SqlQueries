@@ -6,9 +6,13 @@ namespace Srt2.SqlQueries
 {
     public class Update : QueryBuilder, ITable, IWhere, IUpdates
     {
-        public override void CreateSql(SqlBuilder sb)
+        public Update()
         {
-           
+        }
+
+        public Update(Table tableName)
+        {
+            Table = tableName;
         }
 
         public Table Table { get; set; }
@@ -19,11 +23,16 @@ namespace Srt2.SqlQueries
 
         public void Add(ICondition condition)
         {
-            
+             Where.Add(condition);
         }
 
         public ConditionCollection Where { get; } = new ConditionCollection();
 
         public UpdateFieldCollection Columns { get; } = new UpdateFieldCollection();
+
+        public override void CreateSql(SqlBuilder sb)
+        {
+            sb.Update(this);
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Srt2.SqlQueries.Test.Update.SqlServer
         {
         }
 
-        public override string Expected { get; } = "Update [TestDatabase].[Dbo].[Customers] SET [CustomerName] = @p0 WHERE [City] = @p1 AND [CustomerName] = [ContactName]";
+        public override string Expected { get; } = "UPDATE [TestDatabase].[Dbo].[Customers] SET [CustomerName] = @p0 WHERE [City] = @p1";
 
     }
 }

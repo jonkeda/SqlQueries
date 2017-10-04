@@ -30,6 +30,11 @@ namespace Srt2.SqlQueries.Test.Base
             return new Srt2.SqlQueries.Delete("TestDatabase.Dbo.Customers");
         }
 
+        public Srt2.SqlQueries.Update UpdateCustomer()
+        {
+            return new Srt2.SqlQueries.Update("TestDatabase.Dbo.Customers");
+        }
+
         public Srt2.SqlQueries.Select SelectCustomerAs()
         {
             return new Srt2.SqlQueries.Select("TestDatabase.Dbo.Customers c");

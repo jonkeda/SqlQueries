@@ -14,7 +14,7 @@ namespace Srt2.SqlQueries.Test.Update
         #region Where
 
         public abstract string Expected { get; }
-        public override object[] Parameters { get; } = { "Berlin" };
+        public override object[] Parameters { get; } = { "Berlin", "Boel Namen" };
 
         protected override string GetExpectedSql()
         {
@@ -24,9 +24,8 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void ConstructorWhere()
         {
-            string statement = new Srt2.SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]")
+            string statement = new Srt2.SqlQueries.Update("[TestDatabase].[Dbo].[Customers]").Set("CustomerName", "Boel Namen")
                 .Where("City", "Berlin")
-                .WhereField("CustomerName", SqlOperator.Equal, "ContactName")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -35,10 +34,8 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void Properties1Where()
         {
-            Srt2.SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Update select = UpdateCustomer().Set("CustomerName", "Boel Namen");
             select.Where.Add(new EqualToValue("City", "Berlin"));
-            select.Where.Add(new Equal("CustomerName", "ContactName"));
-
             string statement = select.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -47,9 +44,8 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void Properties2Where()
         {
-            Srt2.SqlQueries.Delete select = DeleteCustomer();
+            Srt2.SqlQueries.Update select = UpdateCustomer().Set("CustomerName", "Boel Namen");
             select.Add(new EqualToValue("City", "Berlin"));
-            select.Add(new Equal("CustomerName", "ContactName"));
 
             string statement = select.ToString(DbConnectionType);
 
@@ -59,9 +55,9 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void FluentWhere1()
         {
-            string statement = DeleteCustomer()
+            string statement = UpdateCustomer()
+                .Set("CustomerName", "Boel Namen")
                 .Where("City", "Berlin")
-                .WhereField("CustomerName", SqlOperator.Equal, "ContactName")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -69,9 +65,9 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void FluentWhere2()
         {
-            string statement = DeleteCustomer()
+            string statement = UpdateCustomer()
+                .Set("CustomerName", "Boel Namen")
                 .Where("City", "Berlin")
-                .WhereField("CustomerName", "ContactName")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
@@ -80,9 +76,9 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void FluentWhere3()
         {
-            string statement = DeleteCustomer()
+            string statement = UpdateCustomer()
+                .Set("CustomerName", "Boel Namen")
                 .EqualToValue("City", "Berlin")
-                .Equal("CustomerName", "ContactName")
                 .ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);

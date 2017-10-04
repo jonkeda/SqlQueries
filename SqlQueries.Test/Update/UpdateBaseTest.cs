@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Srt2.SqlQueries.Builders.Parts;
 using Srt2.SqlQueries.Test.Base;
 
 namespace Srt2.SqlQueries.Test.Update
@@ -13,25 +14,18 @@ namespace Srt2.SqlQueries.Test.Update
 
         public abstract string Expected { get; } 
 
-        public abstract string TopExpected { get; } 
-
         protected override string GetExpectedSql()
         {
             return Expected;
-            //yield return TopExpected;
         }
 
-        [TestMethod]
-        public virtual void TestTopExpectedSql()
-        {
-            RunSql(TopExpected, null);
-        }
+        public override object[] Parameters { get; } = { "Boel Namen", "Nog een naam" };
 
 
         [TestMethod]
         public void Constructor()
         {
-            string statement = new Srt2.SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType); 
+            string statement = new Srt2.SqlQueries.Update("[TestDatabase].[Dbo].[Customers]").Set("CustomerName", "Boel Namen").Set("ContactName", "Boel Namen").ToString(DbConnectionType); 
 
             Assert.AreEqual(Expected, statement);
         }
@@ -39,10 +33,22 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void Properties()
         {
-            string statement = (new Srt2.SqlQueries.Delete
+            SqlQueries.Update sql = (new Srt2.SqlQueries.Update
             {
-                From = "[TestDatabase].[Dbo].[Customers]"
-            }).ToString(DbConnectionType);
+                Table = "[TestDatabase].[Dbo].[Customers]"
+            });
+
+            sql.Columns.Add(new UpdateField()
+            {
+                Field = "CustomerName",
+                Value = "Boel Namen"
+            });
+            sql.Columns.Add(new UpdateField()
+            {
+                Field = "ContactName",
+                Value = "Boel Namen"
+            });
+            string statement = sql.ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
         }
@@ -50,25 +56,9 @@ namespace Srt2.SqlQueries.Test.Update
         [TestMethod]
         public void Fluent1()
         {
-            string statement = new Srt2.SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").ToString(DbConnectionType);
+            string statement = new Srt2.SqlQueries.Update().Table("[TestDatabase].[Dbo].[Customers]").Set("CustomerName", "Boel Namen").Set("ContactName", "Boel Namen").ToString(DbConnectionType);
 
             Assert.AreEqual(Expected, statement);
-        }
-
-        [TestMethod]
-        public virtual void ConstructorTop()
-        {
-            string statement = new Srt2.SqlQueries.Delete("[TestDatabase].[Dbo].[Customers]", 10).ToString(DbConnectionType);
-
-            Assert.AreEqual(TopExpected, statement);
-        }
-
-        [TestMethod]
-        public virtual void FluentTop()
-        {
-            string statement = new Srt2.SqlQueries.Delete().From("[TestDatabase].[Dbo].[Customers]").Top(10).ToString(DbConnectionType);
-
-            Assert.AreEqual(TopExpected, statement);
         }
     }
 }

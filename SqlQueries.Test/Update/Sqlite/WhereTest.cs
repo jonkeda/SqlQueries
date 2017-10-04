@@ -10,7 +10,7 @@ namespace Srt2.SqlQueries.Test.Update.Sqlite
         {
         }
 
-        public override string Expected { get; } = "UPDATE [Customers] WHERE [City] = @p0 AND [CustomerName] = [ContactName]";
+        public override string Expected { get; } = "UPDATE [Customers] SET [CustomerName] = @p0 WHERE [City] = @p1";
 
     }
 }
